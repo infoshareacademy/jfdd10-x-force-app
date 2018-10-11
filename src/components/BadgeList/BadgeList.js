@@ -1,31 +1,31 @@
 import React, { Component } from 'react'
 import BadgeListItem from '../BadgeListItem/BadgeListItem'
+import PropTypes from 'prop-types'
 
 class BadgeList extends Component {
-    state = {
-        badges: []
+    static propTypes = {
+        badges: PropTypes.array.isRequired
     }
 
-    componentDidMount() {
-        fetch('/data/badges.json').then(
-            response => response.json()
-        ).then(
-            badges => this.setState({ badges: badges })
-        )
-    }
 
     render() {
         return (
             <div>
-                <h1>Badges</h1>
-                <BadgeListItem />
-                {
-                    this.state.badges.map(
-                        badge => (
-                            <p key={badge.id}><img style={{ width: 50, height: 50 }} src={badge.logo}></img> {badge.title} - {badge.description} <button>How to get</button></p>
+                <ul>
+                    {
+                        this.props.badges.map(
+                            badge => (
+                                <BadgeListItem key={badge.id}
+                                    logo={badge.logo}
+                                    title={badge.title}
+                                    description={badge.description}
+                                />
+                            )
                         )
-                    )
-                }
+
+
+                    }
+                </ul>
             </div>
         )
     }
