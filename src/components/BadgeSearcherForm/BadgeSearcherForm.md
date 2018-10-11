@@ -1,0 +1,4 @@
+BadgeSearcherForm 
+```js
+<BadgeSearcherForm/> 
+```
