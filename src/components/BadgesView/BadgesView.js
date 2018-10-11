@@ -26,15 +26,15 @@ class BadgesView extends Component {
         return (
             <div>
                 <h1>Badges List</h1>
-                <Pagination
+                {/* <Pagination
                     activePage={this.state.activePage}
                     itemsCountPerPage={5}
                     totalItemsCount={450}
                     // pageRangeDisplayed={5}
                     onChange={(page) => this.handlePageChange(page)}
-              >
-                {/* <BadgeList badges={this.state.badges} /> */}
-              </Pagination>
+              > */}
+                <BadgeList badges={this.state.badges} />
+              {/* </Pagination> */}
 
             </div>
         )
