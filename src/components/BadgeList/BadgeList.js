@@ -10,23 +10,16 @@ class BadgeList extends Component {
 
     render() {
         return (
-            <div>
-                <ul>
-                    {
-                        this.props.badges.map(
-                            badge => (
-                                <BadgeListItem key={badge.id}
-                                    logo={badge.logo}
-                                    title={badge.title}
-                                    description={badge.description}
-                                />
-                            )
+            <>
+                {
+                    this.props.badges.map(
+                        badge => (
+                            <BadgeListItem key={badge.id} id={badge.id} logo={badge.logo} title={badge.title} description={badge.description} moreInfo={badge.moreInfo}
+                            />
                         )
-
-
-                    }
-                </ul>
-            </div>
+                    )
+                }
+            </>
         )
     }
 }

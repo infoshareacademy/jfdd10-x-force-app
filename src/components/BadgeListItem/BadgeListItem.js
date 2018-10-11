@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 
 class BadgeListItem extends Component {
@@ -15,9 +15,14 @@ class BadgeListItem extends Component {
             //     <p>{this.state.badgeId}</p>
             // </form>
 
-            <li key={this.props.id}>
+            <li>
                 <img style={{ width: 50, height: 50 }} src={this.props.logo}></img> 
                 {this.props.title} - {this.props.description}
+
+                <Link to={{pathname: `/badges/${this.props.id}`, state: {logo: this.props.logo, title: this.props.title, description: this.props.description, moreInfo: this.props.moreInfo  } }} >
+                    Show More
+                    
+                </Link>
             </li>
         )
     }

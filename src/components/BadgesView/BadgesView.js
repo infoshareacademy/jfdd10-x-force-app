@@ -33,7 +33,9 @@ class BadgesView extends Component {
                     // pageRangeDisplayed={5}
                     onChange={(page) => this.handlePageChange(page)}
               > */}
+              <ul>
                 <BadgeList badges={this.state.badges} />
+              </ul>
               {/* </Pagination> */}
 
             </div>
