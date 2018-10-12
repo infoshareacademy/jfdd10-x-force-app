@@ -119,5 +119,42 @@
         "howToFind": null,
         "isTaked": false
 
+    },
+    {
+        "id": 11,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Forward Tactics Supervisor",
+        "description": "Repellendus totam et voluptatibus eum sint architecto explicabo aut.",
+        "moreInfo": "Placeat non odit dolor quis. Tempora qui autem nostrum in maxime sit corporis. Assumenda dolore non. Dolor non facere dignissimos qui maiores tenetur amet aliquid. Error molestias provident ab dolore.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 80,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 12,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Legacy Optimization Agent",
+        "description": "Doloremque itaque atque eum deleniti quo ex expedita ipsam ullam.",
+        "moreInfo": "Voluptatem perspiciatis eum. Est voluptas cum corrupti ipsum.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 100,
+        "howToFind": null,
+        "isTaked": false
+
+    }
+    ,
+    {
+        "id": 13,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "International Branding Orchestrator",
+        "description": "National",
+        "moreInfo": "Hic similique sint repellat laboriosam harum. Culpa error nihil eligendi.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,5,6,7],
+        "howMouchCanBeThisBadge": 26,
+        "howToFind": null,
+        "isTaked": false
+
     }
 ]
