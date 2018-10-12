@@ -1,49 +1,62 @@
-import React, { Component } from 'react'
-import BadgeList from '../BadgeList/BadgeList'
-import Pagination from "react-js-pagination";
+import React, { Component } from "react";
+import BadgeList from "../BadgeList/BadgeList";
+
 
 class BadgesView extends Component {
-    state = {
-        badges: [],
-        activePage: 1,
-        paginatedBadge: []
+  constructor() {
+    super();
+    this.state = {
+      badges: [],
+      currentPage: 1,
+      badgesPerPage: 5
+      // paginatedBadge: []
+    };
+    this.handlePageChange = this.handlePageChange.bind(this);
+  }
+
+  handlePageChange(page) {
+    this.setState({
+      currentPage: Number(page.target.id)
+    });
+  }
+
+  componentDidMount() {
+    fetch("/data/badges.json")
+      .then(response => response.json())
+      .then(badge => this.setState({ badges: badge }));
+  }
+
+  render() {
+    const { badges, currentPage, badgesPerPage } = this.state;
+
+    const indexOfLastBadge = currentPage * badgesPerPage;
+    const indexOfFirstBadge = indexOfLastBadge - badgesPerPage;
+    const currentBadges = badges.slice(indexOfFirstBadge, indexOfLastBadge);
+
+    // Logic for displaying page numbers
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(badges.length / badgesPerPage); i++) {
+      pageNumbers.push(i);
     }
 
-    handlePageChange(activePage) {
-        const page = this.state.badges.slice((activePage - 1) * 2, (activePage - 1) * 2 + 2);
-        // const paginatedBadge = <BadgeList badges={this.state.badges.slice((activePage - 1) * 2, (activePage - 1) * 2 + 2)} />
-        const paginatedBadge = this.state.badges
-        this.setState({ paginatedBadge: paginatedBadge }, {activePage: page});
-    }
+    const renderPageNumbers = pageNumbers.map(number => {
+      return (
+        <li key={number} id={number} onClick={this.handlePageChange}>
+          {number}
+        </li>
+      );
+    });
 
-    componentDidMount() {
-        fetch('/data/badges.json').then(
-            response => response.json()
-        ).then(
-            badge => this.setState({ badges: badge })
-        )
-    }
+    return (
+      <div>
+        <ul key={badges.id}>
+          <BadgeList badges={currentBadges} />
+        </ul>
+        <ul id="page-numbers">{renderPageNumbers}</ul>
+      </div>
+    );
 
-    render() {
-        return (
-            <div>
-                <h1>Badges List</h1>
-                {/* <Pagination data={this.state.paginatedBadge
-                }
-                    activePage={this.state.activePage}
-                    itemsCountPerPage={5}
-                    totalItemsCount={450}
-                    pageRangeDisplayed={5}
-                    onChange={(page) => this.handlePageChange(page)}
-              /> */}
-              <ul>
-                <BadgeList badges={this.state.badges} />
-              </ul>
-              {/* </Pagination> */}
-
-            </div>
-        )
-    }
+  }
 }
 
-export default BadgesView
+export default BadgesView;
