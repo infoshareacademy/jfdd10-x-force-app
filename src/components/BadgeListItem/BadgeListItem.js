@@ -19,7 +19,7 @@ class BadgeListItem extends Component {
                 <img style={{ width: 50, height: 50 }} src={this.props.logo}></img> 
                 {this.props.title} - {this.props.description}
 
-                <Link to={{pathname: `/badges/${this.props.id}`, state: {logo: this.props.logo, title: this.props.title, description: this.props.description, moreInfo: this.props.moreInfo  } }} >
+                <Link to={{pathname: `/badges/${this.props.id}`, state: {logo: this.props.logo, title: this.props.title, description: this.props.description, moreInfo: this.props.moreInfo, IdTrainerWhoCanGiveThisBadge: this.props.IdTrainerWhoCanGiveThisBadge  } }} >
                     Show More
                     
                 </Link>

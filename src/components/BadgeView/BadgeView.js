@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 class BadgeView extends Component {
@@ -16,6 +17,10 @@ class BadgeView extends Component {
                 </p>
                 <p>
                     moreInfo: <br></br> {this.props.location.state.moreInfo}
+                </p>
+
+                <p>
+                    Trainers who can give this badge <br></br> <Link to={`/trainers:trainerID`}>{this.props.location.state.IdTrainerWhoCanGiveThisBadge.join(', ')}</Link>
                 </p>
             </div>
         )

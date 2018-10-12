@@ -5,13 +5,15 @@ import Pagination from "react-js-pagination";
 class BadgesView extends Component {
     state = {
         badges: [],
-        activePage: 1
+        activePage: 1,
+        paginatedBadge: []
     }
 
     handlePageChange(activePage) {
-        // const renderedUsers = this.state.badges.slice((activePage - 1) * 2, (activePage - 1) * 2 + 2);
-        const renderedUsers = <BadgeList badges={this.state.badges.slice((activePage - 1) * 2, (activePage - 1) * 2 + 2)} />
-        this.setState({ activePage: renderedUsers });
+        const page = this.state.badges.slice((activePage - 1) * 2, (activePage - 1) * 2 + 2);
+        // const paginatedBadge = <BadgeList badges={this.state.badges.slice((activePage - 1) * 2, (activePage - 1) * 2 + 2)} />
+        const paginatedBadge = this.state.badges
+        this.setState({ paginatedBadge: paginatedBadge }, {activePage: page});
     }
 
     componentDidMount() {
@@ -26,13 +28,14 @@ class BadgesView extends Component {
         return (
             <div>
                 <h1>Badges List</h1>
-                {/* <Pagination
+                {/* <Pagination data={this.state.paginatedBadge
+                }
                     activePage={this.state.activePage}
                     itemsCountPerPage={5}
                     totalItemsCount={450}
-                    // pageRangeDisplayed={5}
+                    pageRangeDisplayed={5}
                     onChange={(page) => this.handlePageChange(page)}
-              > */}
+              /> */}
               <ul>
                 <BadgeList badges={this.state.badges} />
               </ul>
