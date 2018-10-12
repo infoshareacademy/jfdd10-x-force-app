@@ -16,7 +16,7 @@ class BadgeSearcherForm extends Component {
           })
           return;
         }
-        console.log(this.state.badgeName)
+        this.props.processSearchPhrase(this.state.badgeName)
         this.setState({ badgeName: '', error: null })
       }
     
@@ -24,7 +24,7 @@ class BadgeSearcherForm extends Component {
     handleChange = event => {
         this.setState({
           badgeName: event.target.value
-        })
+        }, () => this.props.processSearchPhrase(this.state.badgeName))
       }
 
   render() {

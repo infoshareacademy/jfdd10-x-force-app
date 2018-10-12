@@ -1,4 +1,4 @@
 BadgeSearcherForm 
 ```js
-<BadgeSearcherForm/> 
+<BadgeSearcherForm processSearchPhrase={(phrase) => console.log('Search phrase: ', phrase)}/> 
 ```
