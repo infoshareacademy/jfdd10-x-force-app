@@ -1,4 +1,4 @@
 BadgeSearcher
 ```js
-<BadgeSearcher>
+<BadgeSearcher >
 ```
