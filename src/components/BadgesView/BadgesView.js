@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import BadgeList from '../BadgeList/BadgeList'
-import Pagination from "react-js-pagination";
+// import Pagination from "react-js-pagination";
 
 class BadgesView extends Component {
     state = {
