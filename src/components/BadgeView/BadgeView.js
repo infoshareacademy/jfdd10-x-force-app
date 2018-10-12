@@ -8,7 +8,7 @@ class BadgeView extends Component {
         // const studentId = { parseInt(props.match.params.studentId) }
         return (
             <div>
-                <img style={{ width: 200, height: 200 }} src={this.props.location.state.logo}></img> 
+                <img style={{ width: 200, height: 200 }} src={this.props.location.state.logo} alt='Badge' />
                 <p>
                     title: {this.props.location.state.title}
                 </p>
