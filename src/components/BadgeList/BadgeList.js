@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 class BadgeList extends Component {
     static propTypes = {
-        badges: PropTypes.array.isRequired
+        badges: PropTypes.array
     }
 
 
@@ -14,7 +14,7 @@ class BadgeList extends Component {
                 {
                     this.props.badges.map(
                         badge => (
-                            <BadgeListItem key={badge.id} id={badge.id} logo={badge.logo} title={badge.title} description={badge.description} moreInfo={badge.moreInfo}
+                            <BadgeListItem key={badge.id} id={badge.id} logo={badge.logo} title={badge.title} description={badge.description} moreInfo={badge.moreInfo} IdTrainerWhoCanGiveThisBadge={badge.IdTrainerWhoCanGiveThisBadge}
                             />
                         )
                     )
