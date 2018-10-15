@@ -10,7 +10,7 @@ return(
 
 <ul>
 {
-this.props.badges.map(
+this.props.badges.slice(0, 5).map(
     badge => (
         <li>{badge.title}</li>
     )
