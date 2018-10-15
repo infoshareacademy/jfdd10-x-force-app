@@ -6,15 +6,6 @@ class BadgeListItem extends Component {
 
     render() {
         return (
-            // <form>
-            //     <input
-            //         placeholder="Search for..."
-            //         ref={input => this.search = input}
-            //         onChange={this.handleInputChange}
-            //     />
-            //     <p>{this.state.badgeId}</p>
-            // </form>
-            
             <li>
             <img style={{ width: 50, height: 50 }} src={this.props.logo} alt="Badge"></img> 
                 {this.props.title} - {this.props.description}
