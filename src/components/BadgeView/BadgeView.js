@@ -8,7 +8,7 @@ class BadgeView extends Component {
         // const studentId = { parseInt(props.match.params.studentId) }
         return (
             <div>
-                <img style={{ width: 200, height: 200 }} src={this.props.location.state.logo}></img> 
+                <img style={{ width: 200, height: 200 }} src={this.props.location.state.logo} alt="Badge"></img> 
                 <p>
                     title: {this.props.location.state.title}
                 </p>
@@ -20,7 +20,7 @@ class BadgeView extends Component {
                 </p>
 
                 <p>
-                    Trainers who can give this badge <br></br> <Link to={`/trainers:trainerID`}>{this.props.location.state.IdTrainerWhoCanGiveThisBadge.join(', ')}</Link>
+                    Trainers who can give this badge <br></br> <Link to={`/trainer:trainerID`}>{this.props.location.state.IdTrainerWhoCanGiveThisBadge.join(', ')}</Link>
                 </p>
             </div>
         )
