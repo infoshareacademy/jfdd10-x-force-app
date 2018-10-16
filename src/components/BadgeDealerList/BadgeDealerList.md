@@ -21,7 +21,7 @@ BadgeDealers - przyjmuje tablice obiektow z atrybutami badges, description, avat
         "http://placehold.jp/60x60.png"
       ],
       description:
-        "Lorem ipsum to roboczy tekst używany do celów projektowych, zwykle do prezentacji kroju pisma, kompozycji.Lorem ipsum to roboczy tekst używany do celów projektowych, zwykle do prezentacji kroju pisma, kompozycji",
+        "Lorem ipsum to roboczy tekroboczy tekst używany do celów projektowych, zwykle do prezentacji kroju pisma, kompozycji.st używany do celów projektowych, zwykle do prezentacji kroju pisma, kompozycji.Lorem ipsum to roboczy tekst używany do celów projektowych, zwykle do prezentacji kroju pisma, kompozycji",
       avatar: "http://placehold.jp/150x150.png"
     }
   ]}
@@ -101,9 +101,7 @@ BadgeDealers - przyjmuje tablice obiektow z atrybutami badges, description, avat
     {
       badges: [
        
-        "http://placehold.jp/60x60.png",
-        "http://placehold.jp/60x60.png",
-        "http://placehold.jp/60x60.png"
+        
       ],
       description:
         "",

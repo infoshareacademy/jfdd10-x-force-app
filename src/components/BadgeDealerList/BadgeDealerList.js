@@ -5,9 +5,9 @@ import '../BadgeDealerList/BadgeDealerList.css'
 class BadgeDealerList extends Component {
   static propTypes = {};
 
-  isArrayNull = event => {
-    this.props.badgeDealers === null && new Error('Error') 
-    }
+  // isArrayNull = event => {
+  //   this.props.badgeDealers === null && new Error('Error') 
+  //   }
 
 
   render() {
@@ -18,15 +18,14 @@ class BadgeDealerList extends Component {
       <div className='badgeDealerList'>
         <h1>Badge dealers</h1>
         <ul>
-            {/* {this.props.BadgeDealerList.length === 0 ? 1 : 0} */}
-            {this.isArrayNull(this.props.badgeDealers).map(dealer =>(
+            {
+              this.props.badgeDealers.length
+              ? this.props.badgeDealers.map(dealer =>(
                 <li><BadgeDealerListItem {...dealer}/></li>
-            ))}
-          {/* {this.props.badgeDealers.map(dealer => (
-              
-              
-            <li><BadgeDealerListItem {...dealer} /></li>
-          ))} */}
+                ))
+              : 'Array is empty'
+            }
+         
         </ul>
       </div>
     );
