@@ -3,11 +3,6 @@ import BadgeDealerListItem from "../BadgeDealerListItem/BadgeDealerListItem";
 import '../BadgeDealerList/BadgeDealerList.css'
 
 class BadgeDealerList extends Component {
-  static propTypes = {};
-
-  // isArrayNull = event => {
-  //   this.props.badgeDealers === null && new Error('Error') 
-  //   }
 
 
   render() {
