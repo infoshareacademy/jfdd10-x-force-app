@@ -21,7 +21,7 @@ class BadgeSearcher extends Component {
     return (
       <div>
         <BadgeSearcherForm processSearchPhrase={this.processSearchPhrase} />
-        <BadgeSearcherResults badges={this.props.badges.filter(badge => badge.title.includes(this.state.searchPhrase))} />
+        <BadgeSearcherResults badges={this.props.badges.filter(badge => badge.title.toLowerCase().includes(this.state.searchPhrase.toLowerCase()))} />
       </div>
     );
   }
