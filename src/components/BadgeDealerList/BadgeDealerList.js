@@ -11,7 +11,7 @@ class BadgeDealerList extends Component {
 
     return (
       <div className='badgeDealerList'>
-        <h1>Badge dealers</h1>
+       
         <ul>
             {
               this.props.badgeDealers.length

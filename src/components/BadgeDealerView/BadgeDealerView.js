@@ -11,6 +11,7 @@ class BadgeDealerView extends Component {
   render() {
     return  (
       <div className="BadgeDealerView">
+       <h1>Badge dealers</h1>
        <BadgeDealerList
   badgeDealers={[
     {
