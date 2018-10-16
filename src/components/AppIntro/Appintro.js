@@ -5,11 +5,11 @@ class Appintro extends Component {
   render() {
     return (
       <div className="Ficzer">
-        <div className="box" ></div>
-        <div className="box" ></div>
-        <div className="box" ></div>
-        <div className="box" ></div>
-        <div className="box" ></div>
+        <div className="Ficzerbox" ></div>
+        <div className="Ficzerbox" ></div>
+        <div className="Ficzerbox" ></div>
+        <div className="Ficzerbox" ></div>
+        <div className="Ficzerbox" ></div>
       </div>
     );
   }
