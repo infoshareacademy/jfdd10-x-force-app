@@ -4,24 +4,59 @@ import { Link } from 'react-router-dom'
 
 class BadgeView extends Component {
 
+    state = {
+        badges: [],
+        trainers: []
+    }
+
+
+    componentDidMount() {
+        fetch(`${process.env.PUBLIC_URL}/data/badges.json`).then(
+            response => response.json()
+        ).then(
+            badges => this.setState({ badges })
+        )
+
+        fetch(`${process.env.PUBLIC_URL}/data/trainers.json`).then(
+            response => response.json()
+        ).then(
+            trainers => this.setState({ trainers })
+        )
+    }
+
     render() {
-        // const studentId = { parseInt(props.match.params.studentId) }
+        const badgeId = parseInt(this.props.match.params.badgeId)
+        const badge = this.state.badges.find(badge => badge.id === badgeId)
+
+        if (badge === undefined) {
+            return <p>Loading badge...</p>
+        }
+
         return (
             <div>
-                <img style={{ width: 200, height: 200 }} src={this.props.location.state.logo} alt="Badge"></img> 
+
+
+                <img style={{ width: 200, height: 200 }} src={badge.logo} alt="Badge"></img> 
                 <p>
-                    title: {this.props.location.state.title}
+                    title: {badge.title}
                 </p>
                 <p>
-                    description: <br></br> {this.props.location.state.description}
+                    description: <br></br> {badge.description}
                 </p>
                 <p>
-                    moreInfo: <br></br> {this.props.location.state.moreInfo}
+                    moreInfo: <br></br> {badge.moreInfo}
                 </p>
 
-                <p>
-                    Trainers who can give this badge <br></br> <Link to={`/trainer:trainerID`}>{this.props.location.state.IdTrainerWhoCanGiveThisBadge.join(', ')}</Link>
-                </p>
+                <div>
+                    Trainers who can give this badge <br></br> 
+                    {badge.IdTrainerWhoCanGiveThisBadge.map(
+                        id => this.state.trainers.find(trainer => trainer.id === id)
+                    ).filter(Boolean).map(
+                        trainer => (
+                            <p><Link to={`/trainer/${trainer.id}`}>{trainer.name}</Link></p>
+                        )
+                    )}
+                </div>
             </div>
         )
     }
