@@ -1,0 +1,6 @@
+BadgeDealerView
+
+
+```js
+<BadgeDealerView />
+```
