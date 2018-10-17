@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
+import './BadgesView.css';
 
 
 class BadgesView extends Component {
@@ -41,9 +42,9 @@ class BadgesView extends Component {
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        <li key={number} id={number} onClick={this.handlePageChange}>
+        <span key={number} id={number} onClick={this.handlePageChange}>
           {number}
-        </li>
+        </span>
       );
     });
 
@@ -52,7 +53,7 @@ class BadgesView extends Component {
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>
-        <ul id="page-numbers">{renderPageNumbers}</ul>
+        <span id="page-numbers">{renderPageNumbers}</span>
       </div>
     );
 
