@@ -11,7 +11,7 @@ class BadgeList extends Component {
     render() {
         return (
             <>
-                {
+                {   
                     this.props.badges.map(
                         badge => (
                             <BadgeListItem key={badge.id} id={badge.id} logo={badge.logo} title={badge.title} description={badge.description} moreInfo={badge.moreInfo} IdTrainerWhoCanGiveThisBadge={badge.IdTrainerWhoCanGiveThisBadge}
