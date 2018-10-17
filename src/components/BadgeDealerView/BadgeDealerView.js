@@ -1,18 +1,39 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import BadgeDealerList from '../BadgeDealerList/BadgeDealerList'
-import './BadgeDealerView.css'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import BadgeDealerList from "../BadgeDealerList/BadgeDealerList";
+import "./BadgeDealerView.css";
 
 class BadgeDealerView extends Component {
-  static propTypes = {
+  state = {
+    dealers: [],
+    badges: []
+  };
 
+  componentDidMount() {
+    fetch("/data/trainers.json")
+      .then(response => response.json())
+      .then(x => this.setState({ dealers: x }));
+
+    fetch("/data/badges.json")
+      .then(response => response.json())
+      .then(badge => this.setState({ badges: badge }));
   }
 
   render() {
-    return  (
+    console.log('sanity check', this.state.badges);
+    return (
       <div className="BadgeDealerView">
-       <h1>Badge dealers</h1>
-       <BadgeDealerList
+        <h1>Badge dealers</h1>
+        <ul className="badgeDealerViewLitOfBadges">
+          {this.state.dealers.map(x => (
+            <li>{x.listOfBadges
+              .map(badgeId => this.state.badges.find(b => b.id === badgeId))
+              .map(badgeItem => 
+                badgeItem ? <img src={badgeItem.logo} alt={badgeItem.logo}></img> : 'nobonus'
+              )}</li>
+          ))}
+        </ul>
+           <BadgeDealerList
   badgeDealers={[
     {
       badges: [
@@ -47,8 +68,8 @@ class BadgeDealerView extends Component {
   ]}
 />
       </div>
-    )
+    );
   }
 }
 
-export default BadgeDealerView
+export default BadgeDealerView;
