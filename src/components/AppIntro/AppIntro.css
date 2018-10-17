@@ -7,21 +7,63 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    cursor: pointer;
+    
+
 }
 
 .Ficzerbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px #000;
+    
+    
     width: 250px;
     margin: 0px auto;
     height: 200px;
     background: rgb(126, 122, 114);
 margin: 0px 10px;
-transition: 2s;
+transition: 1s ;
+
 
 }
+
 .Ficzerbox:hover{
     transform: scale(1.4);
     background: #bdb5af;
     z-index: 2;
     box-shadow: 2px 2px 2px #000;
     
+    
+    
+}
+
+.Foto{
+    margin-top: 3px;
+    background: yellow;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgb(192, 164, 164);
+
+}
+
+.Foto:hover{
+    margin-top: 15px;
+    transform: scale(1.2);
+  
+    z-index: 2;
+    box-shadow: 1px 1px 3px rgb(192, 164, 164);
+}
+
+.Opis{
+    background: rgb(109, 76, 32);
+    width: 90%;
+    height: 50%;
+    margin: 2px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px rgb(192, 164, 164);
+    text-align: center
 }
