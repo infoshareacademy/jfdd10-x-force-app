@@ -36,7 +36,7 @@ class App extends Component {
               <Route exact path="/badges" component={BadgesView} />
               <Route path="/badges/:badgesId" component={BadgeView} />
             </div>
-          </Router>
+          </Router>                                            
         </header>
       </div>
     );
