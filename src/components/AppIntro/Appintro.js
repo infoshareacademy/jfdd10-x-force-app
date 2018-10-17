@@ -6,20 +6,20 @@ class Appintro extends Component {
     return (
       <div className="Ficzer">
         <div className="Ficzerbox">
-          <div className="Foto" ></div>
-          <div className="Opis" >Miejsc na opis</div>
+          <div className="Foto 1" ></div>
+          <div className="Opis" ><h3>Miejssce na opis</h3></div>
         </div>
         <div className="Ficzerbox">
-          <div className="Foto" ></div>
-          <div className="Opis" >Miejsc na opis</div>
+          <div className="Foto 2" ></div>
+          <div className="Opis" ><h3>Miejssce na opis</h3></div>
         </div>
         <div className="Ficzerbox">
-          <div className="Foto" ></div>
-          <div className="Opis" >Miejsc na opis</div>
+          <div className="Foto 3" ></div>
+          <div className="Opis" ><h3>Miejssce na opis</h3></div>
         </div>
         <div className="Ficzerbox">
-          <div className="Foto" ></div>
-          <div className="Opis" >Miejsc na opis</div>
+          <div className="Foto 4" ></div>
+          <div className="Opis" ><h3>Miejssce na opis</h3></div>
         </div>
       </div>
     );
