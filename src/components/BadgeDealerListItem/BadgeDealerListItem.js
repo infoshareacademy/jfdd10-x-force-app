@@ -18,13 +18,13 @@ class BadgeDealerListItem extends Component {
                     </div>
                     <div className='badges'>
 
-                    {
-                        this.props.badges.slice(0,5).map(
-                            badge => (
-                                <img src={badge} />
-                            )
-                        )
-                    }
+                {this.props.listOfBadges
+              .map(badgeId => this.props.badge.slice(0,6).find(b => b.id === badgeId))
+              .map(badgeItem => 
+                badgeItem && <img src={badgeItem.logo} alt={badgeItem.logo}/>
+              )}
+
+                   
                     
                     </div>
                 </div>

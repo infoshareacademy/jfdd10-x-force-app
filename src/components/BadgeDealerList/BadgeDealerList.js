@@ -16,7 +16,7 @@ class BadgeDealerList extends Component {
             {
               this.props.badgeDealers.length
               ? this.props.badgeDealers.map(dealer =>(
-                <li><BadgeDealerListItem {...dealer}/></li>
+                <li><BadgeDealerListItem badge={this.props.badge} {...dealer}/></li>
                 ))
               : 'Array is empty'
             }
