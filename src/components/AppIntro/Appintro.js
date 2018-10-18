@@ -1,7 +1,21 @@
 import React, { Component } from "react";
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import "./AppIntro.css";
 
+
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
+});
+
 class Appintro extends Component {
+  // const { classes } = props;
   state = {
     alreadyShown: localStorage.getItem('alreadyShown')
   }
@@ -12,6 +26,8 @@ class Appintro extends Component {
     })
     localStorage.setItem('alreadyShown', 'true')
   }
+
+  
   render() {
     if (this.state.alreadyShown) {
       return null
@@ -42,10 +58,10 @@ class Appintro extends Component {
         </div>
       </div>
      
-         <button className="Close" onClick={this.handleCloseClick}>close</button>
+         <Button variant="outlined"  onClick={this.handleCloseClick}>close</Button>
          </div>
     );
   }
 }
 
-export default Appintro;
+export default withStyles(styles)(Appintro);
