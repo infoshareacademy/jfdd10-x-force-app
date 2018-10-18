@@ -29,7 +29,7 @@ class BadgeDealerView extends Component {
       <div className="BadgeDealerView">
         <h1>Badge dealers</h1>
         
-        <BadgeDealerList badge={this.state.badges} badgeDealers={this.state.dealers} />
+        <BadgeDealerList badges={this.state.badges} badgeDealers={this.state.dealers} />
           
       </div>
     );
