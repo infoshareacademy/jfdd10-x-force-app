@@ -34,7 +34,8 @@ class App extends Component {
               <Route exact path="/" component={() => <h1>Hello</h1>} />
               <BadgeSearcher badges={this.state.badges}/>
               <Route exact path="/badges" component={BadgesView} />
-              <Route path="/badges/:badgesId" component={BadgeView} />
+              <Route path="/badges/:badgeId" component={BadgeView} />
+              <Route path="/trainer/:trainerId" component={(props) => <h1>Trainer view {props.match.params.trainerId}</h1>}/>
             </div>
           </Router>                                            
         </header>
