@@ -3,7 +3,8 @@
     height: 500px;
     padding: 20px;
     margin: 0px auto;
-    background: antiquewhite;
+    background-image: url("https://images.unsplash.com/photo-1523958940417-b5818e64cf16?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=890168d2efdcae79035eba9e5e63a045&auto=format&fit=crop&w=2036&q=80");
+   
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,13 +20,14 @@
     width: 250px;
     margin: 0px auto;
     height: 200px;
-    background: rgb(126, 122, 114);
+    background: rgb(190, 190, 190);
     margin: 0px 10px;
     transition: 1s;
     /*animacja pudełek*/
-    animation-duration: 3s;
+    animation-duration: 4s ;
     animation-name: slidein;
     animation-iteration-count: 1;
+  
 }
 
 @keyframes slidein {
@@ -48,7 +50,7 @@
 
 .Foto {
     margin-top: 3px;
-    background: yellow;
+    
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -63,7 +65,7 @@
 }
 
 .Opis {
-    background: rgb(109, 76, 32);
+    background: rgb(214, 214, 214);
     width: 90%;
     height: 50%;
     margin: 2px;
@@ -72,3 +74,30 @@
     text-align: center
 }
 
+.f1{
+    background: url("https://png.icons8.com/ios/100/000000/triceps.png") no-repeat center;
+    background-size: 60%
+}
+
+.f2 {
+    background: url("https://png.icons8.com/ios/100/000000/crossfit.png") no-repeat center;
+    background-size: 60%
+}
+
+
+.f3 {
+    background: url("https://png.icons8.com/ios/100/000000/prelum.png") no-repeat center;
+    background-size: 60%
+}
+
+
+.f4 {
+    background: url("https://png.icons8.com/ios/100/000000/bench-press.png") no-repeat center;
+    background-size: 60%
+}
+
+
+.f5 {
+    background: url("https://png.icons8.com/ios/100/000000/mommy-fitness.png") no-repeat center;
+    background-size: 60%
+}
