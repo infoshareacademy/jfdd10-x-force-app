@@ -1,0 +1,160 @@
+[
+    {
+        "id": 1,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "king of gym",
+        "description": "Bądź największym twardzielem z pośród wszystkich",
+        "moreInfo": "Officiis debitis facere quia ut asperiores quo sint quia non. Cum vel magni nihil voluptatem. Non non voluptas quia. Cumque officiis qui quam rerum ipsum aut excepturi minus. Qui ex neque corrupti ut unde. Quo consectetur fugiat vel minus.",
+        "IdTrainerWhoCanGiveThisBadge": [1,3,7],
+        "howMouchCanBeThisBadge": 1,        
+        "howToFind": null,
+        "isTaked": false
+        
+    },
+    {
+        "id": 2,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Be the best",
+        "description": "jesteś mistrzem tej siłowni",
+        "moreInfo": "Unde debitis perspiciatis ullam dolor quasi et est culpa. Qui eius repellat. Dolore aut voluptatum minus.",
+        "IdTrainerWhoCanGiveThisBadge": [1,6,7],
+        "howMouchCanBeThisBadge": 10,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 3,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "The talented",
+        "description": "Ten typ nie boi się żadnych wyzwań",
+        "moreInfo": "Veritatis rem ut repellendus veritatis nam asperiores non. Ut aut dolorem facere ipsa deserunt numquam exercitationem. Reiciendis facilis quasi repellendus sint illum qui quis voluptatum sit. Quis iure laudantium. Nobis nobis libero et exercitationem ut reiciendis.",
+        "IdTrainerWhoCanGiveThisBadge": [4,5,6,7],
+        "howMouchCanBeThisBadge": 20,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 4,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Principal Intranet Producer",
+        "description": "Aut eum dolores et.",
+        "moreInfo": "Fugit non eos incidunt qui animi tempora nobis dolores. Repudiandae fuga rerum. Necessitatibus itaque officiis velit commodi quia eius. Aut voluptatem beatae sit. A quia et rerum et. Provident ullam et quisquam.",
+        "IdTrainerWhoCanGiveThisBadge": [1,3,6,7],
+        "howMouchCanBeThisBadge": 33,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 5,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Central Functionality Designer",
+        "description": "Odit vitae nulla ut.",
+        "moreInfo": "Similique accusantium sequi eveniet. Aut optio fugit. Sit tempora adipisci porro id aut adipisci.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 40,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 6,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Customer Configuration Coordinator",
+        "description": "Similique laboriosam ducimus et tenetur fugit.",
+        "moreInfo": "Aut totam et a itaque est cum. Fugiat omnis harum et dolores. Voluptate debitis reiciendis sapiente rerum nobis cupiditate at facere laudantium. Minima eos velit et atque qui. Vero porro veniam.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,7],
+        "howMouchCanBeThisBadge": 52,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 7,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Legacy Security Executive",
+        "description": "Praesentium amet velit sequi tenetur id quas iste est perspiciatis.",
+        "moreInfo": "Temporibus facilis cum nam expedita ipsa vero fugit voluptatem. Eius corporis est enim. Possimus atque eum. Voluptas ut officia magni rerum ex qui. Et tempore voluptatem omnis suscipit. Et ut consequatur natus ab esse.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4],
+        "howMouchCanBeThisBadge": 20,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 8,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Dynamic Research Architect",
+        "description": "Repellendus totam et voluptatibus eum sint architecto explicabo aut.",
+        "moreInfo": "Placeat non odit dolor quis. Tempora qui autem nostrum in maxime sit corporis. Assumenda dolore non. Dolor non facere dignissimos qui maiores tenetur amet aliquid. Error molestias provident ab dolore.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 80,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 9,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Principal Paradigm Liaison",
+        "description": "Itaque non nostrum animi neque.",
+        "moreInfo": "Voluptatem perspiciatis eum. Est voluptas cum corrupti ipsum.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 100,
+        "howToFind": null,
+        "isTaked": false
+
+    }
+    ,
+    {
+        "id": 10,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Dynamic Group Assistant",
+        "description": "Ratione veniam maxime commodi repellat deleniti facilis quam magni.",
+        "moreInfo": "Reprehenderit quisquam consectetur. Commodi est suscipit tempore rerum est. Reprehenderit reprehenderit neque accusamus consequuntur. Velit quia qui labore enim eos perspiciatis sequi. Fugit voluptatem harum aut eos odit minima.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,5,6,7],
+        "howMouchCanBeThisBadge": 26,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 11,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Forward Tactics Supervisor",
+        "description": "Repellendus totam et voluptatibus eum sint architecto explicabo aut.",
+        "moreInfo": "Placeat non odit dolor quis. Tempora qui autem nostrum in maxime sit corporis. Assumenda dolore non. Dolor non facere dignissimos qui maiores tenetur amet aliquid. Error molestias provident ab dolore.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 80,
+        "howToFind": null,
+        "isTaked": false
+
+    },
+    {
+        "id": 12,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "Legacy Optimization Agent",
+        "description": "Doloremque itaque atque eum deleniti quo ex expedita ipsam ullam.",
+        "moreInfo": "Voluptatem perspiciatis eum. Est voluptas cum corrupti ipsum.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,3,4,5,6,7],
+        "howMouchCanBeThisBadge": 100,
+        "howToFind": null,
+        "isTaked": false
+
+    }
+    ,
+    {
+        "id": 13,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Photographer_Barnstar.png", 
+        "title": "International Branding Orchestrator",
+        "description": "National",
+        "moreInfo": "Hic similique sint repellat laboriosam harum. Culpa error nihil eligendi.",
+        "IdTrainerWhoCanGiveThisBadge": [1,2,5,6,7],
+        "howMouchCanBeThisBadge": 26,
+        "howToFind": null,
+        "isTaked": false
+
+    }
+]
