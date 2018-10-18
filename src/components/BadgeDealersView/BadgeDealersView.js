@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import BadgeDealerList from "../BadgeDealerList/BadgeDealerList";
-import "./BadgeDealerView.css";
+import "./BadgeDealersView.css";
 
-class BadgeDealerView extends Component {
+class BadgeDealersView extends Component {
   state = {
     dealers: [],
     badges: [],
@@ -26,7 +26,7 @@ class BadgeDealerView extends Component {
   render() {
     console.log('sanity check', this.state.badges);
     return (
-      <div className="BadgeDealerView">
+      <div className="BadgeDealersView">
         <h1>Badge dealers</h1>
         
         <BadgeDealerList badges={this.state.badges} badgeDealers={this.state.dealers} />
@@ -36,4 +36,4 @@ class BadgeDealerView extends Component {
   }
 }
 
-export default BadgeDealerView;
+export default BadgeDealersView;
