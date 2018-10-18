@@ -1,13 +1,23 @@
-.Ficzer {
-
-    width: 100vw;
-    height: 100vh;
+.AppIntro {
+    display: flex;
     position: fixed;
+    background-image: url("https://images.unsplash.com/photo-1523958940417-b5818e64cf16?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=890168d2efdcae79035eba9e5e63a045&auto=format&fit=crop&w=2036&q=80");
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  flex-direction: column    
+}
+
+
+
+
+.Ficzer {
+
+    width: 100vw;
+    height: 100vh;
+    
     padding: 0px;
     margin: 0px auto;
     background-image: url("https://images.unsplash.com/photo-1523958940417-b5818e64cf16?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=890168d2efdcae79035eba9e5e63a045&auto=format&fit=crop&w=2036&q=80");
@@ -85,6 +95,14 @@
     box-shadow: 1px 1px 3px rgb(192, 164, 164);
     text-align: center
 }
+
+.Close {
+    width: 20vw;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+}
+
 
 .f1{
     background: url("https://png.icons8.com/ios/100/000000/triceps.png") no-repeat center;

@@ -17,8 +17,9 @@ class Appintro extends Component {
       return null
     }
     return (
+      <div className="AppIntro">
       <div className="Ficzer">
-      {/* <button onClick={this.handleCloseClick}>close</button> */}
+     
         <div className="Ficzerbox">
           <div className="Foto f1" ></div>
           <div className="Opis" ><h3>Zrób trica</h3></div>
@@ -40,6 +41,9 @@ class Appintro extends Component {
           <div className="Opis" ><h3>Miejssce na opis</h3></div>
         </div>
       </div>
+     
+         <button className="Close" onClick={this.handleCloseClick}>close</button>
+         </div>
     );
   }
 }
