@@ -9,6 +9,7 @@ class BadgeList extends Component {
 
 
     render() {
+        console.log(this.props.badges)
         return (
             <>
                 {   

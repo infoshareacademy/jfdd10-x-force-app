@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+// import BadgeList from "../BadgeList/BadgeList";
+// import BadgeListItem  from '../BadgeListItem/BadgeListItem';
+// import BadgesView from '../BadgesView/BadgesView'
 import BadgeList from "../BadgeList/BadgeList";
-
 import "./BadgesOfDealerView.css";
 
 class BadgesOfDealerView extends Component {
@@ -33,10 +35,27 @@ class BadgesOfDealerView extends Component {
 
   render() {
     console.log("foobar", this.props);
+    const trainerId = this.props.match.params.trainerId
+    const trainerObject = this.state.trainers.find(trainer => trainer.id === parseInt(trainerId))
+  
     return (
       <div className="BadgesOfDealerView">
         <h1>BadgesOfDealerView</h1>
 
+
+        {
+          trainerObject && 
+          trainerObject.listOfBadges &&
+            <BadgeList badges={trainerObject.listOfBadges.map(
+              trainerBadgeNumber =>
+               this.state.badges.find(
+                 badge => 
+                 badge.id === trainerBadgeNumber
+                 )
+                 )
+                }/>
+        }
+   
         {/* <BadgeList badges={this.state.badges.map(this.state.trainer ) } /> */}
         {/* // <BadgeList badges={this.state.badges.map(badge => badge.id).map(this.state.trainer => this.state.trainer.listOfBadges === badgeItemId ? this.state.badges : null )} */}
         {/* // <BadgeList badges={this.state.badges.map(badge => badge.id).filter(badgeItemId => this.state.trainer.listOfBadges === badgeItemId ? this.state.badges : null )} */}
@@ -63,8 +82,9 @@ class BadgesOfDealerView extends Component {
           ))}
         </ul> */}
       </div>
-    );
+    
+    )
+    }
   }
-}
 
 export default BadgesOfDealerView;

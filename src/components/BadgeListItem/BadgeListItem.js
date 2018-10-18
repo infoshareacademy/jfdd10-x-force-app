@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 class BadgeListItem extends Component {
+    
 
     render() {
         return (
