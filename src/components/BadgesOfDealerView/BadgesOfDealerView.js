@@ -50,7 +50,7 @@ class BadgesOfDealerView extends Component {
               trainerBadgeNumber =>
                this.state.badges.find(
                  badge => 
-                 badge.id === trainerBadgeNumber
+                 badge && ( badge.id === trainerBadgeNumber)
                  )
                  )
                 }/>
