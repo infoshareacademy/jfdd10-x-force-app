@@ -5,6 +5,7 @@ import BadgeView from '../BadgeView/BadgeView'
 import BadgesOfDealerView from '../BadgesOfDealerView/BadgesOfDealerView';
 import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
+import BadgeDealerMap from '../BadgeDealerMap/BadgeDealerMap';
 import './App.css';
 
 
@@ -33,6 +34,7 @@ class App extends Component {
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/badges">badges View</NavLink></li>
                 <li><NavLink to="/badgedealersview">badges dealers view</NavLink></li>
+                <li><NavLink to="/badgeDealerMap">badges map</NavLink></li>
               </ul>
 
               <Route exact path="/" component={() => <HomeView badges={this.state.badges}/>} />
@@ -42,6 +44,7 @@ class App extends Component {
               <Route path="/badges/:badgeId" component={BadgeView} />
               <Route path="/trainer/:trainerId" component={BadgesOfDealerView}/>
               <Route exact path="/badgedealersview" component={BadgeDealersView} />
+              <Route exact path="/badgeDealerMap" component={BadgeDealerMap} />
             </div>
           </Router>                                            
         </header>
