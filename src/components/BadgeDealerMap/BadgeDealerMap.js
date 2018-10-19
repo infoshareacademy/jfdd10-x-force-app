@@ -34,7 +34,7 @@ class BadgeDealerMap extends Component {
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
               {this.state.trainers.map(trainer => (
-                <Marker position={trainer.position}>
+                <Marker key={trainer.id} center={trainer.position} position={trainer.position}>
                   <Popup>
                     {<img src={trainer.avatar} alt="" />}
                     {trainer.description}
