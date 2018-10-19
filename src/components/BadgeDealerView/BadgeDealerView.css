@@ -1,11 +1,45 @@
-.BadgeDealerView {
-  background-color: aqua;
-  height: 500px;
-  width: 80vw;
+.dealer, .dealer_top, .dealer_avatar{
+    margin: 0;
+    padding: 0;
 }
 
-.top {
-    background-color: brown;
-    height: 200px;
+
+.dealer{
+    background: grey;
+    height: 500px;
+    width: 40vw;
 }
 
+.dealer_top{
+    background-color: rgb(71, 71, 71);
+    height: 150px;
+    display: flex;
+}
+
+.dealer_avatar{
+    
+    height: 150px;
+    background-color: rgb(99, 99, 99);
+}
+.dealer_description{
+    padding: 10px;
+}
+
+.dealer_map{
+    background-color: rgb(161, 161, 161);
+    height: 350px;
+}
+
+.dealer_badges{
+    background-color: rgb(80, 80, 80);
+   
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dealer_badges img{
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
