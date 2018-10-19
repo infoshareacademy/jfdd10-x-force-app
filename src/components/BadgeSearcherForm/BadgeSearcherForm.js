@@ -35,7 +35,7 @@ class BadgeSearcherForm extends Component {
         }
         <input placeholder='Find the badge' value={this.state.badgeName} onChange={this.handleChange}/>
         
-        <button>Search</button>
+        
       </form>  
     )
   }

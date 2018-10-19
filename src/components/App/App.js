@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import BadgesView from '../BadgesView/BadgesView'
 import BadgeView from '../BadgeView/BadgeView'
-import BadgeSearcher from '../BadgeSearcher/BadgeSearcher'
 import BadgesOfDealerView from '../BadgesOfDealerView/BadgesOfDealerView';
+import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
 import './App.css';
 
@@ -35,14 +35,15 @@ class App extends Component {
                 <li><NavLink to="/badgedealersview">badges dealers view</NavLink></li>
               </ul>
 
-              <Route exact path="/" component={() => <h1>Hello</h1>} />
-              <BadgeSearcher badges={this.state.badges}/>
+              <Route exact path="/" component={() => <HomeView badges={this.state.badges}/>} />
+              
+              {/* <BadgeSearcher badges={this.state.badges}/> */}
               <Route exact path="/badges" component={BadgesView} />
               <Route path="/badges/:badgeId" component={BadgeView} />
               <Route path="/trainer/:trainerId" component={BadgesOfDealerView}/>
               <Route exact path="/badgedealersview" component={BadgeDealersView} />
             </div>
-          </Router>
+          </Router>                                            
         </header>
       </div>
     );
