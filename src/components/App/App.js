@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import BadgesView from '../BadgesView/BadgesView'
 import BadgeView from '../BadgeView/BadgeView'
-import BadgeSearcher from '../BadgeSearcher/BadgeSearcher'
+import BadgesOfDealerView from '../BadgesOfDealerView/BadgesOfDealerView';
+import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
 import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
 import './App.css';
@@ -13,7 +14,8 @@ import './App.css';
 class App extends Component {
 
   state = {
-    badges: []
+    badges: [],
+    trainerId: null
   }
 
   componentDidMount() {
@@ -34,15 +36,16 @@ class App extends Component {
                 <li><NavLink to="/badgedealersview">badges dealers view</NavLink></li>
               </ul>
 
-              <Route exact path="/" component={() => <h1>Hello</h1>} />
-              <BadgeSearcher badges={this.state.badges}/>
+              <Route exact path="/" component={() => <HomeView badges={this.state.badges}/>} />
+              
+              {/* <BadgeSearcher badges={this.state.badges}/> */}
               <Route exact path="/badges" component={BadgesView} />
               <Route path="/badges/:badgeId" component={BadgeView} />
-              <Route path="/trainer/:trainerId" component={(props) => <h1>Trainer view {props.match.params.trainerId}</h1>}/>
+              <Route path="/trainer/:trainerId" component={BadgesOfDealerView}/>
               <Route exact path="/badgedealersview" component={BadgeDealersView} />
               <Route path="/badgedealersview/:badgeDealerViewId" component={BadgeDealerView} />
             </div>
-          </Router>
+          </Router>                                            
         </header>
       </div>
     );
