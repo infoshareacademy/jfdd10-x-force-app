@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import BadgeDealerList from "../BadgeDealerList/BadgeDealerList";
 import "./BadgeDealersView.css";
 
+
 class BadgeDealersView extends Component {
   state = {
     dealers: [],
@@ -30,7 +31,7 @@ class BadgeDealersView extends Component {
         <h1>Badge dealers</h1>
         
         <BadgeDealerList badges={this.state.badges} badgeDealers={this.state.dealers} />
-          
+        
       </div>
     );
   }
