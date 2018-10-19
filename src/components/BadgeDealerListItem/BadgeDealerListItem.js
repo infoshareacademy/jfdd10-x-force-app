@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './BadgeDealerListItem.css'
-
+import { Link } from 'react-router-dom'
 class BadgeDealerListItem extends Component {
     render() {
         return (
@@ -14,7 +14,8 @@ class BadgeDealerListItem extends Component {
                 <div className='section2'>
                     <div className='description'>
                     <p>{this.props.description}</p>
-
+                    
+                    <p><Link to={`/badgedealersview/${this.props.id}`}>more</Link></p>
                     </div>
                     <div className='badges'>
 
