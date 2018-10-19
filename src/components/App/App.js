@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import BadgesView from '../BadgesView/BadgesView'
 import BadgeView from '../BadgeView/BadgeView'
-import BadgesOfDealerView from '../BadgesOfDealerView/BadgesOfDealerView';
 import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
-import BadgeDealerMap from '../BadgeDealerMap/BadgeDealerMap';
 import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
 import './App.css';
 
@@ -35,7 +33,6 @@ class App extends Component {
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/badges">badges View</NavLink></li>
                 <li><NavLink to="/badgedealersview">badges dealers view</NavLink></li>
-                <li><NavLink to="/badgeDealerMap">badges map</NavLink></li>
               </ul>
 
               <Route exact path="/" component={() => <HomeView badges={this.state.badges}/>} />
@@ -43,10 +40,8 @@ class App extends Component {
               {/* <BadgeSearcher badges={this.state.badges}/> */}
               <Route exact path="/badges" component={BadgesView} />
               <Route path="/badges/:badgeId" component={BadgeView} />
-              <Route path="/trainer/:trainerId" component={BadgesOfDealerView}/>
               <Route exact path="/badgedealersview" component={BadgeDealersView} />
               <Route path="/badgedealersview/:badgeDealerViewId" component={BadgeDealerView} />
-              <Route exact path="/badgeDealerMap" component={BadgeDealerMap} />
             </div>
           </Router>                                            
         </header>

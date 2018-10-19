@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
-// import BadgeList from "../BadgeList/BadgeList";
-// import BadgeListItem  from '../BadgeListItem/BadgeListItem';
-// import BadgesView from '../BadgesView/BadgesView'
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
 
@@ -10,18 +6,8 @@ class BadgesOfDealerView extends Component {
   state = {
     trainerId: null,
     trainers: [],
-    trainer: {
-      id: 3,
-      name: "Hillard",
-      surname: "Cole",
-      listOfBadges: [1, 5, 6, 7, 11]
-    },
     badges: []
   };
-
-  // filterBadges = (badgeId, trainerId) => {
-  //   return this.state.trainer.listOfBadges.filter(this.state.badges(badgeId));
-  // };
 
   componentDidMount() {
     fetch("/data/badges.json")
@@ -34,57 +20,23 @@ class BadgesOfDealerView extends Component {
   }
 
   render() {
-    console.log("foobar", this.props);
-    const trainerId = this.props.match.params.trainerId
-    const trainerObject = this.state.trainers.find(trainer => trainer.id === parseInt(trainerId))
-  
     return (
       <div className="BadgesOfDealerView">
         <h1>BadgesOfDealerView</h1>
-
-
-        {
-          trainerObject && 
-          trainerObject.listOfBadges &&
-            <BadgeList badges={trainerObject.listOfBadges.map(
-              trainerBadgeNumber =>
-               this.state.badges.find(
-                 badge => 
-                 badge && ( badge.id === trainerBadgeNumber)
-                 )
-                 )
-                }/>
-        }
-   
-        {/* <BadgeList badges={this.state.badges.map(this.state.trainer ) } /> */}
-        {/* // <BadgeList badges={this.state.badges.map(badge => badge.id).map(this.state.trainer => this.state.trainer.listOfBadges === badgeItemId ? this.state.badges : null )} */}
-        {/* // <BadgeList badges={this.state.badges.map(badge => badge.id).filter(badgeItemId => this.state.trainer.listOfBadges === badgeItemId ? this.state.badges : null )} */}
-        {/* /> */}
-        
-        {/* <ul>
-          {this.state.trainers.map(x => (
-            <p>
-              {x.listOfBadges
-                .map(badgeId => this.state.badges.find(b => b.id === badgeId))
-                .map(
-                  badgeItem =>
-                    badgeItem ? (
-                      <img
-                        src={badgeItem.logo}
-                        style={{ width: 100, height: 100 }}
-                        alt={badgeItem.logo}
-                      />
-                    ) : (
-                      "nobonus"
-                    )
-                )}
-            </p>
-          ))}
-        </ul> */}
+        {this.props.trainerObject &&
+          this.props.trainerObject.listOfBadges && (
+            <BadgeList
+              badges={this.props.trainerObject.listOfBadges.map(
+                trainerBadgeNumber =>
+                  this.props.badges.find(
+                    badge => badge && badge.id === trainerBadgeNumber
+                  )
+              )}
+            />
+          )}
       </div>
-    
-    )
-    }
+    );
   }
+}
 
 export default BadgesOfDealerView;

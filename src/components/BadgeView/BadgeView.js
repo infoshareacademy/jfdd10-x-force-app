@@ -31,11 +31,8 @@ class BadgeView extends Component {
         if (badge === undefined) {
             return <p>Loading badge...</p>
         }
-
         return (
             <div>
-
-
                 <img style={{ width: 200, height: 200 }} src={badge.logo} alt="Badge"></img> 
                 <p>
                     title: {badge.title}
@@ -53,7 +50,7 @@ class BadgeView extends Component {
                         id => this.state.trainers.find(trainer => trainer.id === id)
                     ).filter(Boolean).map(
                         trainer => (
-                            <p><Link to={`/trainer/${trainer.id}`}>{trainer.name}</Link></p>
+                            <p><Link to={`/badgedealersview/${trainer.id}`}>{trainer.name}{trainer.surname}</Link></p>
                         )
                     )}
                 </div>

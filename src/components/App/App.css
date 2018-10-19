@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 /* 
 .App {
   animation: App-logo-spin infinite 20s linear;
@@ -16,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  font-size: 30px;
   color: white;
 }
 

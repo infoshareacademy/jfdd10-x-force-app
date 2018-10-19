@@ -6,8 +6,8 @@
 
 .dealer{
     background: grey;
-    height: 500px;
-    width: 40vw;
+    height: 100%;
+    width: 100%;
 }
 
 .dealer_top{
@@ -27,7 +27,6 @@
 
 .dealer_map{
     background-color: rgb(161, 161, 161);
-    height: 350px;
 }
 
 .dealer_badges{
