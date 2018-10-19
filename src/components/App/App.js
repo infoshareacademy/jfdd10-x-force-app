@@ -5,6 +5,7 @@ import BadgeView from '../BadgeView/BadgeView'
 import BadgesOfDealerView from '../BadgesOfDealerView/BadgesOfDealerView';
 import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
+import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
 import './App.css';
 
 
@@ -42,6 +43,7 @@ class App extends Component {
               <Route path="/badges/:badgeId" component={BadgeView} />
               <Route path="/trainer/:trainerId" component={BadgesOfDealerView}/>
               <Route exact path="/badgedealersview" component={BadgeDealersView} />
+              <Route path="/badgedealersview/:badgeDealerViewId" component={BadgeDealerView} />
             </div>
           </Router>                                            
         </header>
