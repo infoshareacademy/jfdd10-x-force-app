@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
+// import PropTypes from "prop-types";
+import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerView.css";
 
 class BadgeDealerView extends Component {
-  static propTypes = {};
+  // static propTypes = {};
 
   state = {
     dealers: [],
@@ -30,24 +32,30 @@ class BadgeDealerView extends Component {
           .filter(dealer => dealer.id === dealerId)
           .map(dealer => (
             <div>
-            <div className="dealer_top">
-              <div className="dealer_avatar"> 
-              <img src={dealer.avatar}/>
+              <div className="dealer_top">
+                <div className="dealer_avatar">
+                  <img src={dealer.avatar} alt="" />
+                </div>
+                <div className="dealer_description">{dealer.description}</div>
               </div>
-              <div className='dealer_description'>
-              {dealer.description}
+              <div className="dealer_map">
+                <BadgeDealerMap
+                  center={dealer.position}
+                  dealers={this.state.dealers}
+                />
               </div>
-            </div>
-            <div className='dealer_map'>
+              <div className="dealer_badges">
+                {dealer.listOfBadges
+                  .map(badgeId => this.state.badges.find(b => b.id === badgeId))
+                  .map(
+                    badgeItem =>
+                    badgeItem && (
+                      <img src={badgeItem.logo} alt={badgeItem.logo} />
+                      )
+                      )}
+                      <BadgesOfDealerView badges={this.state.dealers.listOfBadges} />
+              </div>
 
-            </div>
-            <div className='dealer_badges'>
-            {dealer.listOfBadges
-              .map(badgeId => this.state.badges.find(b => b.id === badgeId))
-              .map(badgeItem => 
-                badgeItem && <img src={badgeItem.logo} alt={badgeItem.logo}/>
-              )}
-            </div>
             </div>
           ))}
       </div>

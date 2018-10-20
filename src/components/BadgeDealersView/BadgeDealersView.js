@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import BadgeDealerList from "../BadgeDealerList/BadgeDealerList";
 import "./BadgeDealersView.css";
 
