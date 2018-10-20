@@ -2,31 +2,17 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 // import { render } from "react-dom";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-
+import BadgesOfDealerView from '../BadgesOfDealerView/'
 import "./BadgeDealerMap.css";
 
 class BadgeDealerMap extends Component {
   static propTypes = {
     dealers: PropTypes.array,
-    center: PropTypes.array
+    center: PropTypes.array,
+    badges: PropTypes.array
   };
 
-  // state = {
-  //   trainers: []
-  // };
-
-  // onMapClick(e) {
-  //   alert("You clicked the map at " + e.latlng);
-  // }
-
-  // componentDidMount() {
-  //   fetch("/data/trainers.json")
-  //     .then(response => response.json())
-  //     .then(trainers => this.setState({ trainers: trainers }));
-  // }
-
   render() {
-    // const position = [54.403277, 18.569947];
     return (
       <div className="BadgeDealerMap">
         <div id="mapid">
@@ -41,6 +27,7 @@ class BadgeDealerMap extends Component {
                   <Popup>
                     {<img src={trainer.avatar} alt="" />}
                     {trainer.description}
+                    <BadgesOfDealerView badges={this.props.badges} />
                   </Popup>
                 </Marker>
               ))}

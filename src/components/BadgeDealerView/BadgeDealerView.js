@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 // import PropTypes from "prop-types";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
+import BadgeList from "../BadgeList/BadgeList";
 
 import "./BadgeDealerView.css";
 
@@ -10,7 +11,8 @@ class BadgeDealerView extends Component {
 
   state = {
     dealers: [],
-    badges: []
+    badges: [],
+    trainerId: null
   };
 
   componentDidMount() {
@@ -25,7 +27,10 @@ class BadgeDealerView extends Component {
 
   render() {
     const dealerId = parseInt(this.props.match.params.badgeDealerViewId);
-
+    const trainerId = this.props.match.params.trainerId;
+    const trainerObject = this.state.dealers.find(
+      trainer => trainer.id === parseInt(trainerId)
+    );
     return (
       <div className="dealer">
         {this.state.dealers
@@ -44,18 +49,20 @@ class BadgeDealerView extends Component {
                   dealers={this.state.dealers}
                 />
               </div>
-              <div className="dealer_badges">
-                {dealer.listOfBadges
-                  .map(badgeId => this.state.badges.find(b => b.id === badgeId))
-                  .map(
-                    badgeItem =>
-                    badgeItem && (
-                      <img src={badgeItem.logo} alt={badgeItem.logo} />
-                      )
+              <div className="BadgesOfDealerView">
+                <h1>BadgesOfDealerView</h1>
+                {trainerObject &&
+                  trainerObject.listOfBadges && (
+                    <BadgeList
+                      badges={this.props.trainerObject.listOfBadges.map(
+                        trainerBadgeNumber =>
+                          this.props.badges.find(
+                            badge => badge && badge.id === trainerBadgeNumber
+                          )
                       )}
-                      <BadgesOfDealerView badges={this.state.dealers.listOfBadges} />
+                    />
+                  )}
               </div>
-
             </div>
           ))}
       </div>
