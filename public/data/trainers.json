@@ -12,7 +12,7 @@
         "name": "Frederic" ,
         "surname": "Spencer",
         "description": "Frederic Spencer",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Heather&eyeType=Wink&eyebrowType=Default&mouthType=Smile&skinColor=Light",
         "listOfBadges": [4,5,6]
     },
     {
@@ -20,7 +20,7 @@
         "name": "Hillard" ,
         "surname": "Cole",
         "description": "Hillard Cole",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesar&accessoriesType=Blank&hairColor=BrownDark&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Black&graphicType=Bat&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
         "listOfBadges": [1,5,6, 7,11]
     },
     {
@@ -28,7 +28,7 @@
         "name": "Conrad" ,
         "surname": "Dicki",
         "description": "Conrad Dicki",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Platinum&facialHairType=MoustacheMagnum&facialHairColor=Auburn&clotheType=Hoodie&clotheColor=Red&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
         "listOfBadges": [1,3,4,5,6, 12,13]
     },
     {
@@ -36,7 +36,7 @@
         "name": "Jorge" ,
         "surname": "Marquardt",
         "description": "Jorge Marquardt",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShaggyMullet&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Heather&eyeType=Squint&eyebrowType=UpDown&mouthType=Smile&skinColor=Light",
         "listOfBadges": [1,3,6,8,9,10]
     },
     {
@@ -44,7 +44,7 @@
         "name": "Toy" ,
         "surname": "Swaniawski",
         "description": "Toy Swaniawski",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardLight&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Heather&graphicType=Hola&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
         "listOfBadges": [1,3,4,5,6]
     },
     {
@@ -52,15 +52,15 @@
         "name": "Guy" ,
         "surname": "Block",
         "description": "Guy Block",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFrida&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Pale",
         "listOfBadges": [4,5,6]
     },
     {
         "id": 8,
-        "name": "Tre" ,
-        "surname": "Connelly",
-        "description": "Tre Connelly",
-        "avatar": "http://placehold.jp/150x150.png",
+        "name": "Janina" ,
+        "surname": "Radzikowski",
+        "description": "Janina Radzikowski",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFroBand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Blue02&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Black",
         "listOfBadges": [1,5,6, 7,11]
     },
     {
@@ -68,7 +68,7 @@
         "name": "Ricky" ,
         "surname": "Sauer",
         "description": "Ricky Sauer",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairSides&accessoriesType=Blank&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=Overall&clotheColor=Heather&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
         "listOfBadges": [1,3,4,5,6, 12,13]
     },
     {
@@ -76,7 +76,7 @@
         "name": "Eve" ,
         "surname": "Runte",
         "description": "Eve Runte",
-        "avatar": "http://placehold.jp/150x150.png",
+        "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&eyeType=WinkWacky&eyebrowType=Default&mouthType=Twinkle&skinColor=Light",
         "listOfBadges": [1,3,6,8,9,10]
     }
 ]
