@@ -34,7 +34,7 @@ class BadgeDealerView extends Component {
             <div key={dealer.id}>
               <div className="dealer_top">
                 <div className="dealer_avatar">
-                  <img src={dealer.avatar} alt="" />
+                  <img style={{ width:150, height: 150 }} src={dealer.avatar} alt="" />
                 </div>
                 <div className="dealer_description">{dealer.description}</div>
               </div>
