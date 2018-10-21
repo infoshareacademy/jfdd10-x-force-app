@@ -11,22 +11,7 @@ class BadgeDealerMap extends Component {
     center: PropTypes.array
   };
 
-  // state = {
-  //   trainers: []
-  // };
-
-  // onMapClick(e) {
-  //   alert("You clicked the map at " + e.latlng);
-  // }
-
-  // componentDidMount() {
-  //   fetch("/data/trainers.json")
-  //     .then(response => response.json())
-  //     .then(trainers => this.setState({ trainers: trainers }));
-  // }
-
   render() {
-    // const position = [54.403277, 18.569947];
     return (
       <div className="BadgeDealerMap">
         <div id="mapid">

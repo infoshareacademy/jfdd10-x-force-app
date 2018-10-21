@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import './BadgeListItem.css'
 
 class BadgeListItem extends Component {
-    
-
     render() {
         return (
             
@@ -26,5 +24,4 @@ class BadgeListItem extends Component {
         )
     }
 }
-
 export default BadgeListItem

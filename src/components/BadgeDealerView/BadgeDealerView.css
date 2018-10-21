@@ -1,5 +1,14 @@
 .dealer_map{
     height: 500px;
     width: 500px;
+    background-color: rgb(161, 161, 161);
+}
+
+.dealer_badges{
+    background-color: rgb(80, 80, 80);
+   
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 

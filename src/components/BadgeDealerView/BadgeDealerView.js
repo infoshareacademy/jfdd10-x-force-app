@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
-// import PropTypes from "prop-types";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerView.css";
 
 class BadgeDealerView extends Component {
-  // static propTypes = {};
 
   state = {
     dealers: [],
-    badges: []
+    badges: [],
+    badgeDealerViewId: null,
+    trainers: []
   };
 
   componentDidMount() {
@@ -21,20 +21,32 @@ class BadgeDealerView extends Component {
     fetch("/data/badges.json")
       .then(response => response.json())
       .then(badge => this.setState({ badges: badge }));
+
+    fetch("/data/trainers.json")
+      .then(response => response.json())
+      .then(trainers => this.setState({ trainers: trainers }));
   }
 
   render() {
     const dealerId = parseInt(this.props.match.params.badgeDealerViewId);
+    const badgeDealerViewId = this.props.match.params.badgeDealerViewId;
+    const trainerObject = this.state.trainers.find(
+      trainer => trainer.id === parseInt(badgeDealerViewId)
+    );
 
     return (
       <div className="dealer">
         {this.state.dealers
           .filter(dealer => dealer.id === dealerId)
           .map(dealer => (
-            <div>
+            <div key={dealer.id}>
               <div className="dealer_top">
                 <div className="dealer_avatar">
-                  <img style={{ width:150, height: 150 }} src={dealer.avatar} alt="" />
+                  <img
+                    style={{ width: 150, height: 150 }}
+                    src={dealer.avatar}
+                    alt=""
+                  />
                 </div>
                 <div className="dealer_description">{dealer.description}</div>
               </div>
@@ -45,17 +57,13 @@ class BadgeDealerView extends Component {
                 />
               </div>
               <div className="dealer_badges">
-                {dealer.listOfBadges
-                  .map(badgeId => this.state.badges.find(b => b.id === badgeId))
-                  .map(
-                    badgeItem =>
-                    badgeItem && (
-                      <img style={{ width: 50, height: 50 }} src={badgeItem.logo} alt={badgeItem.logo} />
-                      )
-                      )}
-                      <BadgesOfDealerView badges={this.state.dealers.listOfBadges} />
+                <BadgesOfDealerView
+                  trainerObject={trainerObject}
+                  badgeDealerViewId={badgeDealerViewId}
+                  trainers={this.state.trainers}
+                  badges={this.state.badges}
+                />
               </div>
-
             </div>
           ))}
       </div>
