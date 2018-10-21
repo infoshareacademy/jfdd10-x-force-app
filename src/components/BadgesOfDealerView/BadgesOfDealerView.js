@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
 
 class BadgesOfDealerView extends Component {
+  static PropTypes ={
+    
+  }
+
   state = {
     trainerId: null,
     trainers: [],

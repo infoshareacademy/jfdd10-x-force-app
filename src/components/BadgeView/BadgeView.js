@@ -20,6 +20,7 @@ class BadgeView extends Component {
   render() {
     const badgeId = parseInt(this.props.match.params.badgeId);
     const badge = this.state.badges.find(badge => badge.id === badgeId);
+    const trainer = this.state.trainers.find(trainer => badge === trainer.listOfBadges )
 
     if (badge === undefined) {
       return <p>Loading badge...</p>;
@@ -34,30 +35,19 @@ class BadgeView extends Component {
         <p>
           moreInfo: <br /> {badge.moreInfo}
         </p>
-
         <div>
-          {/* TODO: synchonize badge with trainer who can give the bdge because now the badges are not the same as the badges which the trainer have */}
           Trainers who can give this badge <br />
-          {badge.IdTrainerWhoCanGiveThisBadge.map(id =>
+          {/* badge.IdTrainerWhoCanGiveThisBadge.map */}
+          {trainer.listOfBadges.map(id =>
             this.state.trainers.find(trainer => trainer.id === id)
           )
             .filter(Boolean)
             .map(trainer => (
-              // <p><Link to={`/badgedealersview/${trainer.id}`}>{trainer.name}{trainer.surname}</Link></p>
-              <p><Link
-              to={{
-                pathname: `/badgedealersview/${trainer.id}`,
-                state: {
-                  logo: this.props.logo,
-                  title: this.props.title,
-                  description: this.props.description,
-                }
-              }}
-            >
-              {/* Show More */}
-              {trainer.name}
-              {trainer.surname}
-            </Link></p>
+              <p>
+                <Link to={`/badgedealersview/${trainer.id}`}>
+                  {trainer.name}
+                </Link>
+              </p>
             ))}
         </div>
       </div>
