@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
+import './BadgeView.css'
 
 class BadgeView extends Component {
 
@@ -32,25 +32,26 @@ class BadgeView extends Component {
             return <p>Loading badge...</p>
         }
         return (
-            <div>
-                <img style={{ width: 200, height: 200 }} src={badge.logo} alt="Badge"></img> 
-                <p>
-                    title: {badge.title}
+            <div className='badgeView'>
+            <p className='color'>
+                    {badge.title}
                 </p>
-                <p>
-                    description: <br></br> {badge.description}
+                <img  src={badge.logo} alt="Badge"></img> 
+                
+                <p className='color'>
+                    {badge.description}
                 </p>
-                <p>
-                    moreInfo: <br></br> {badge.moreInfo}
+                <p className='moreInfo'>
+                     {badge.moreInfo}
                 </p>
 
                 <div>
-                    Trainers who can give this badge <br></br> 
+                <p className='color'> Trenerzy którzy posiadają odznakę:</p>
                     {badge.IdTrainerWhoCanGiveThisBadge.map(
                         id => this.state.trainers.find(trainer => trainer.id === id)
                     ).filter(Boolean).map(
                         trainer => (
-                            <p><Link to={`/badgedealersview/${trainer.id}`}>{trainer.name}{trainer.surname}</Link></p>
+                            <p><Link className='linki' to={`/badgedealersview/${trainer.id}`}>{trainer.name} {trainer.surname}</Link></p>
                         )
                     )}
                 </div>
