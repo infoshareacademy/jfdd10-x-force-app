@@ -1,18 +1,68 @@
-.badgeListItem li{
-   margin-top: 40px;
-   border: 1px solid black;
-    padding-top: 15px;
-    padding-bottom: 30px;
-    display: flex;
-    justify-content: space-around;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.badgeListItem {
-   width: 50%;
-   margin: 0 auto;
-     
- }
- .badgeListItem span {
-    padding-top: 15px;
-      
-  }
+
+@media (min-width: 100px) {
+
+
+    .li_badgeListItem{
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: chartreuse;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .badgeListItem{
+        display: flex;
+
+    }
+    .badgeListItem img{
+        width: 10vw;
+        height: auto;
+        
+        
+    }
+    .badgeListItem .logo{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        
+    }
+
+    .badgeListItem .description{
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .link_holder{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        padding-top: 13px;
+    }
+    .badgeListItem .link{
+        font-size: 15px;
+        
+    }
+}
+
+@media (min-width: 750px) {
+    .li_badgeListItem{
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: chartreuse;
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        margin: 10px auto;
+    }
+
+    
+}
