@@ -10,6 +10,7 @@ class BadgeList extends Component {
     console.log(this.props.badges);
     return (
       <>
+      <h1>Odznaki</h1>
         {this.props.badges.map(badge => (
           <BadgeListItem
             key={badge.id}

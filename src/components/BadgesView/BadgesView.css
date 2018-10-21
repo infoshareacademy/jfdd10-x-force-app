@@ -1,0 +1,8 @@
+.counter{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.counter:hover{
+    color: white;
+}

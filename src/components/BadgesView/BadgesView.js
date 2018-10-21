@@ -42,14 +42,14 @@ class BadgesView extends Component {
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        <span key={number} id={number} onClick={this.handlePageChange}>
+        <span className='counter' key={number} id={number} onClick={this.handlePageChange}>
           {number}
         </span>
       );
     });
 
     return (
-      <div>
+      <div >
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>

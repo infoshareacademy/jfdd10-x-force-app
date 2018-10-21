@@ -19,11 +19,11 @@
         
         .badgeSearcherResults li {
         
-           border: 1px solid black;
+         
            border-radius: 10px;
            width: 70%;
            margin: 15px auto;
-           background-color: chartreuse;
+           background-color: #A2B3D5;
            padding: 20px;
             }
       
@@ -37,11 +37,11 @@
             
             .badgeSearcherResults li {
             
-               border: 1px solid black;
+              
                border-radius: 10px;
                width: 40%;
                margin: 15px auto;
-               background-color: chartreuse;
+              
                padding: 20px;
                 }
           

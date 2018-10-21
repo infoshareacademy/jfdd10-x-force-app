@@ -8,9 +8,9 @@
 
 
     .li_badgeListItem{
-        border: 1px solid black;
+       
         border-radius: 10px;
-        background-color: chartreuse;
+        background-color: #A2B3D5;
         display: flex;
         justify-content: space-between;
         width: 90%;
@@ -44,8 +44,10 @@
     .link_holder{
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         padding: 5px;
         padding-top: 13px;
+        
     }
     .badgeListItem .link{
         font-size: 15px;
@@ -54,15 +56,40 @@
 }
 
 @media (min-width: 750px) {
+
+    
     .li_badgeListItem{
         border: 1px solid black;
         border-radius: 10px;
-        background-color: chartreuse;
+      
         display: flex;
         justify-content: space-between;
         width: 50%;
         margin: 10px auto;
     }
+    .badgeListItem .description{
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        padding: 5px;
+    }
+    .badgeListItem .link{
+        font-size: 17px;
+        
+    }
+}
+
+@media (min-width: 900px) {
 
     
+    
+    .badgeListItem .description{
+        
+        font-size: 20px;
+      
+    }
+    .badgeListItem .link{
+        font-size: 20px;
+        
+    }
 }

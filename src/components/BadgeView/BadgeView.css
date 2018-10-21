@@ -9,7 +9,7 @@
 
 .badgeView{
 
-    border: 2px solid black;
+   
     width: 90%;
     margin: 0 auto;
 
@@ -23,7 +23,8 @@
     padding: 10px;
 }
 .badgeView .color{
-    background-color: chartreuse;
+    background-color: #A2B3D5;
+    border-radius: 10px;
     font-weight: bold;
 }
 

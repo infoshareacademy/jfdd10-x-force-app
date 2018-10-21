@@ -1,14 +1,140 @@
-.dealer_map{
-    height: 500px;
-    width: 500px;
-    background-color: rgb(161, 161, 161);
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (min-width: 100px) {
+.dealer{
+   
+    width: 90%;
+    margin: 0 auto;
 }
 
 .dealer_badges{
-    background-color: rgb(80, 80, 80);
-   
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    margin: 20px;
 }
 
+h1{
+  font-size: 22px;
+}
+
+
+
+
+.dealer_header{
+    background-color: #A2B3D5;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.dealer_avatar{
+    margin: 10px;
+  
+}
+.dealer_avatar img{
+    margin: 10px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.dealer_description{
+    margin: 10px;
+}
+.dealer_map{
+    width: 90%;
+    margin: 20px auto;
+    
+}
+
+}
+
+@media (min-width: 600px) {
+  
+    .dealer_avatar img{
+        margin: 10px;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+    .dealer{
+   
+        width: 80%;
+        margin: 0 auto;
+    }
+    h1{
+        font-size: 28px;
+      }
+      
+    
+    
+    .dealer_header{
+       
+        width: 100%;
+        font-size: 20px;
+        padding: 7px;
+        box-sizing: border-box;
+    }
+    .dealer_avatar{
+        margin: 20px;
+    }
+    .dealer_description{
+        margin: 25px;
+    }
+
+    .dealer_description p{
+        font-size: 20px;
+    }
+    .dealer_map{
+        width: 90%;
+        margin: 30px auto;
+        
+    }
+    
+    }
+
+
+    @media (min-width: 900px) {
+  
+        .dealer_avatar img{
+            margin: 10px;
+            border-radius: 50%;
+            width: 230px;
+            height: 230px;
+        }
+        
+        h1{
+            font-size: 40px;
+          }
+          
+          .dealer{
+   
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .dealer_header{
+           
+            width: 100%;
+            font-size: 20px;
+            padding: 7px;
+            box-sizing: border-box;
+        }
+        .dealer_avatar{
+            margin: 20px;
+        }
+        .dealer_description{
+            margin: 25px;
+        }
+    
+        .dealer_description p{
+            font-size: 25px;
+        }
+        .dealer_map{
+            width: 90%;
+            margin: 30px auto;
+            
+
+        }
+        
+        }

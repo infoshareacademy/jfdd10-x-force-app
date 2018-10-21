@@ -5,7 +5,8 @@ import './BadgeListItem.css'
 class BadgeListItem extends Component {
     render() {
         return (
-            
+            <div>
+                
             <li className='li_badgeListItem'>
                 <div className='badgeListItem'>
                 <div className='logo'>
@@ -21,6 +22,7 @@ class BadgeListItem extends Component {
                 
                 </div>
             </li>
+            </div>
         )
     }
 }

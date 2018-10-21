@@ -9,7 +9,7 @@
     margin: 10px auto;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: chartreuse;
+    background-color: #A2B3D5;
     width: 90%;
 }
 
@@ -17,6 +17,7 @@
     width: 30vw;
     height: auto;
     padding: 10px;
+    border-radius: 50%;
 }
 
 .name{
@@ -38,6 +39,7 @@
 .badges img{
     width: auto;
     height: 5vh;
+    
 }
 .link_contener{
     padding-bottom: 10px;
@@ -124,7 +126,7 @@
     }
     .description{
 
-        font-size: 16px;
+        font-size: 20px;
     }
    .link{
        font-size: 20px;
