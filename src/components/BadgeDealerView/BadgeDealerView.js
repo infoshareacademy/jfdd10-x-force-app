@@ -31,7 +31,7 @@ class BadgeDealerView extends Component {
         {this.state.dealers
           .filter(dealer => dealer.id === dealerId)
           .map(dealer => (
-            <div>
+            <div key={dealer.id}>
               <div className="dealer_top">
                 <div className="dealer_avatar">
                   <img src={dealer.avatar} alt="" />
