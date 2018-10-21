@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './BadgeSearcherForm.css'
 
 class BadgeSearcherForm extends Component {
 
@@ -29,14 +29,16 @@ class BadgeSearcherForm extends Component {
 
   render() {
     return (
+      <div className='badgeSearcherForm'>
      <form onSubmit={this.handleSubmit}>
         {
           this.state.error && <p>{this.state.error.message}</p>
         }
-        <input placeholder='Find the badge' value={this.state.badgeName} onChange={this.handleChange}/>
+        <input placeholder='Znajdź odznakę' value={this.state.badgeName} onChange={this.handleChange}/>
         
         
       </form>  
+      </div>
     )
   }
 }

@@ -29,11 +29,13 @@ class App extends Component {
         <header className="App-header">
           <Router>
             <div className="App">
+            <div className="navigation">
               <ul>
-                <li><NavLink exact to="/">Home</NavLink></li>
-                <li><NavLink to="/badges">badges View</NavLink></li>
-                <li><NavLink to="/badgedealersview">badges dealers view</NavLink></li>
+                <li><NavLink className='links' exact to="/"> Główna</NavLink></li>
+                <li><NavLink className='links'  to="/badges">Odznaki</NavLink></li>
+                <li><NavLink className='links'  to="/badgedealersview">Trenerzy</NavLink></li>
               </ul>
+              </div>
 
               <Route exact path="/" component={() => <HomeView badges={this.state.badges}/>} />
               

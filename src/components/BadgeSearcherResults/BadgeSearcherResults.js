@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-
+import './BadgeSearcherResults.css'
 class BadgeSearcherResults extends Component {
 
 render() {
 
 return( 
-<div>  
- <div>{this.props.badges.length}</div>    
+<div className='badgeSearcherResults'>  
+ {/* <div>{this.props.badges.length}</div>     */}
 
 <ul>
 {

@@ -1,4 +1,45 @@
-.App{
-  text-align: center;
-  background-color: rgb(90, 90, 158);
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+@media (min-width: 100px) {
+
+  .App{
+    text-align: center;
+    background-color: rgb(90, 90, 158);
+  }
+  
+  .navigation{
+    font-size: 20px;
+  
+   
+  }
+
+  .links{
+    text-decoration: none;
+    color: black;
+  }
+  
+  
+  .navigation ul{
+  
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  }
+
+  .navigation li{
+  
+    background-color: chartreuse;
+    border-radius: 10px;
+    padding: 5px;
+    }
+
+    
+
 }
