@@ -8,26 +8,30 @@ class BadgeDealerListItem extends Component {
 
             <div className="contener">
                 <div className="logo">
-                <img src={this.props.avatar} alt=''/>
+
+                <img className='avatar'  src={this.props.avatar} alt='' />
+                
                 
                 </div>
                 <div className='section2'>
                     <div className='description'>
-                    <p>{this.props.description}</p>
+                    <p className='name'>{this.props.name} {this.props.surname}</p>
+                    <p className='description'>{this.props.description}</p>
                     
-                    <p><Link to={`/badgedealersview/${this.props.id}`}>more</Link></p>
+                    
                     </div>
                     <div className='badges'>
 
                 {this.props.listOfBadges
               .map(badgeId => this.props.badges.find(b => b.id === badgeId))
               .map(badgeItem => 
-                badgeItem && <img style={{ width: 50, height: 50 }} src={badgeItem.logo} alt={badgeItem.logo}/>
+                badgeItem && <img  src={badgeItem.logo} alt={badgeItem.logo}/>
               )}
 
                    
                     
                     </div>
+                    <p className='link_contener' ><Link className='link' to={`/badgedealersview/${this.props.id}`}>Więcej</Link></p>
                 </div>
             </div>
 

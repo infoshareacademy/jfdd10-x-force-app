@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 100px) {
+
+.contener{
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(126, 197, 78);
+    width: 90%;
+}
+
+.avatar{
+    width: 30vw;
+    height: auto;
+    padding: 10px;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.badges{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+
+}
+.badges img{
+    width: auto;
+    height: 5vh;
+}
+.link_contener{
+    padding-bottom: 10px;
+}
+.link{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+
+}
+
+.link:hover{
+    color: white;
+}
+.description{
+    padding: 0px 10px;
+    font-size: 14px;
+}
+
+}
+
+@media (min-width: 500px) {
+
+    .contener{
+       
+        width: 70%;
+    }
+
+}
+@media (min-width: 600px) {
+
+    .contener{
+       
+        width: 60%;
+    }
+    .avatar{
+        width: 20vw;
+        height: auto;
+        padding: 10px;
+    }
+}
+@media (min-width: 800px) {
+
+    .contener{
+       
+        width: 60%;
+    }
+    .avatar{
+        width: 15vw;
+        height: auto;
+        padding: 10px;
+    }
+    .badges img{
+        width: auto;
+        height: 6vh;
+    }
+}
+@media (min-width: 900px) {
+
+    .contener{
+       
+        width: 45%;
+    }
+    .avatar{
+        width: 15vw;
+        height: auto;
+        padding: 10px;
+    }
+    .badges img{
+        width: auto;
+        height: 6vh;
+    }
+    .name{
+        font-size: 25px;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    .badges{
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+    
+    }
+    .description{
+
+        font-size: 16px;
+    }
+   .link{
+       font-size: 20px;
+   }
+}

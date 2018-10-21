@@ -1,0 +1,18 @@
+.badgeListItem li{
+   margin-top: 40px;
+   border: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.badgeListItem {
+   width: 50%;
+   margin: 0 auto;
+     
+ }
+ .badgeListItem span {
+    padding-top: 15px;
+      
+  }

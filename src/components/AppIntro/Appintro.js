@@ -42,7 +42,7 @@ class Appintro extends Component {
         </div>
         <div className="Ficzerbox">
           <div className="Foto f2" ></div>
-          <div className="Opis" ><h3>Miejssce na opis</h3></div>
+          <div className="Opis" ><h3>Miejssced na opis</h3></div>
         </div>
         <div className="Ficzerbox">
           <div className="Foto f3" ></div>
