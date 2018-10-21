@@ -5,7 +5,8 @@
       "surname": "Tracz",
       "description": "Janusz Tracz",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairDreads&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Blue01&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
-      "listOfBadges": [1,3,4,5,6]
+      "listOfBadges": [1,3,4,5,6],
+      "position": [54.403277, 18.569947]
   },
   {
       "id": 2,
@@ -13,7 +14,8 @@
       "surname": "Sprzączka",
       "description": "Krzysztof Sprzączka",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Heather&eyeType=Wink&eyebrowType=Default&mouthType=Smile&skinColor=Light",
-      "listOfBadges": [4,5,6]
+      "listOfBadges": [4,5,6],
+      "position": [54.406045, 18.576298]
   },
   {
       "id": 3,
@@ -21,7 +23,8 @@
       "surname": "Szczery",
       "description": "Krzesisław Szczery",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesar&accessoriesType=Blank&hairColor=BrownDark&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Black&graphicType=Bat&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
-      "listOfBadges": [1,5,6, 7,11]
+      "listOfBadges": [1,5,6, 7,11],
+      "position": [54.402314, 18.579614]
   },
   {
       "id": 4,
@@ -29,7 +32,8 @@
       "surname": "Dicki",
       "description": "Conrad Dicki",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Platinum&facialHairType=MoustacheMagnum&facialHairColor=Auburn&clotheType=Hoodie&clotheColor=Red&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
-      "listOfBadges": [1,3,4,5,6, 12,13]
+      "listOfBadges": [1,3,4,5,6, 12,13],
+      "position": [54.404421, 18.58191]
   },
   {
       "id": 5,
@@ -37,7 +41,8 @@
       "surname": "Jolie",
       "description": "Angelina Jolie",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShaggyMullet&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Heather&eyeType=Squint&eyebrowType=UpDown&mouthType=Smile&skinColor=Light",
-      "listOfBadges": [1,3,6,8,9,10]
+      "listOfBadges": [1,3,6,8,9,10],
+      "position": [54.422426, 18.57139]
   },
   {
       "id": 6,
@@ -45,7 +50,8 @@
       "surname": "Swaniawski",
       "description": "Toy Swaniawski",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardLight&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Heather&graphicType=Hola&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
-      "listOfBadges": [1,3,4,5,6]
+      "listOfBadges": [1,3,4,5,6],
+      "position": [54.399486, 18.579378]
   },
   {
       "id": 7,
@@ -53,7 +59,8 @@
       "surname": "Ripley",
       "description": "Ellen Ripley",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFrida&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Pale",
-      "listOfBadges": [4,5,6]
+      "listOfBadges": [4,5,6],
+      "position": [54.432886, 18.560683]
   },
   {
       "id": 8,
@@ -61,7 +68,8 @@
       "surname": "Radzikowski",
       "description": "Janina Radzikowski",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFroBand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Blue02&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Black",
-      "listOfBadges": [1,5,6, 7,11]
+      "listOfBadges": [1,5,6, 7,11],
+      "position": [54.434633, 18.574136]
   },
   {
       "id": 9,
@@ -69,7 +77,8 @@
       "surname": "Martin",
       "description": "Ricky Martin",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairSides&accessoriesType=Blank&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=Overall&clotheColor=Heather&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
-      "listOfBadges": [1,3,4,5,6, 12,13]
+      "listOfBadges": [1,3,4,5,6, 12,13],
+      "position": [54.440149, 18.554567]
   },
   {
       "id": 10,
@@ -77,6 +86,7 @@
       "surname": "GoKu",
       "description": "Chchi GoKu",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&eyeType=WinkWacky&eyebrowType=Default&mouthType=Twinkle&skinColor=Light",
-      "listOfBadges": [1,3,6,8,9,10]
+      "listOfBadges": [1,3,6,8,9,10],
+      "position": [54.444392, 18.565468]
   }
 ]

@@ -8,7 +8,7 @@ class BadgeDealerListItem extends Component {
 
             <div className="contener">
                 <div className="logo">
-                <img src={this.props.avatar} alt=''/>
+                <img  src={this.props.avatar} alt=''/>
                 
                 </div>
                 <div className='section2'>
