@@ -60,31 +60,20 @@ class BadgeDealerView extends Component {
                 />
               </div>
               <div className="dealer_badges">
-                {dealer.listOfBadges
-                  .map(badgeId => this.state.badges.find(b => b.id === badgeId))
-                  .map(
-                    badgeItem =>
-                      badgeItem && (
-                        <img src={badgeItem.logo} alt={badgeItem.logo} />
-                      )
+                {trainerObject &&
+                  trainerObject.listOfBadges && (
+                    <BadgeList
+                      badges={trainerObject.listOfBadges.map(
+                        trainerBadgeNumber =>
+                          this.state.badges.find(
+                            badge => badge && badge.id === trainerBadgeNumber
+                          )
+                      )}
+                    />
                   )}
               </div>
             </div>
           ))}
-
-        <div className="BadgesOfDealerView">
-          <h1>BadgesOfDealerView</h1>
-          {trainerObject &&
-            trainerObject.listOfBadges && (
-              <BadgeList
-                badges={trainerObject.listOfBadges.map(trainerBadgeNumber =>
-                  this.state.badges.find(
-                    badge => badge && badge.id === trainerBadgeNumber
-                  )
-                )}
-              />
-            )}
-        </div>
       </div>
     );
   }

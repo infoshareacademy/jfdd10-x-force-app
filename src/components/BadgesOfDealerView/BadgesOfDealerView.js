@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
+import PropTypes from 'prop-types'
 
 class BadgesOfDealerView extends Component {
+
+  static propTypes = {
+    badges: PropTypes.array,
+    trainers: PropTypes.array,
+    badgeDealerViewId : PropTypes.number
+  }
+
   state = {
     badgeDealerViewId: null,
     trainers: [],
@@ -22,7 +30,7 @@ class BadgesOfDealerView extends Component {
   render() {
     console.log("foobar", this.props);
     const badgeDealerViewId = this.props.match.params.badgeDealerViewId
-    const trainerObject = this.state.trainers.find(trainer => trainer.id === parseInt(badgeDealerViewId))
+    const trainerObject = this.props.trainers.find(trainer => trainer.id === parseInt(badgeDealerViewId))
   
     return (
       <div className="BadgesOfDealerView">
@@ -32,7 +40,7 @@ class BadgesOfDealerView extends Component {
           trainerObject.listOfBadges &&
             <BadgeList badges={trainerObject.listOfBadges.map(
               trainerBadgeNumber =>
-               this.state.badges.find(
+               this.props.badges.find(
                  badge => 
                  badge && ( badge.id === trainerBadgeNumber)
                  )
