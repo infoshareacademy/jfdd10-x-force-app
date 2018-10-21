@@ -1,45 +1,4 @@
-.dealer, .dealer_top, .dealer_avatar{
-    margin: 0;
-    padding: 0;
-}
-
-
-.dealer{
-    background: grey;
-    height: 100%;
-    width: 100%;
-}
-
-.dealer_top{
-    background-color: rgb(71, 71, 71);
-    height: 150px;
-    display: flex;
-}
-
-.dealer_avatar{
-    
-    height: 150px;
-    background-color: rgb(99, 99, 99);
-}
-.dealer_description{
-    padding: 10px;
-}
-
 .dealer_map{
-    background-color: rgb(161, 161, 161);
-}
-
-.dealer_badges{
-    background-color: rgb(80, 80, 80);
-   
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    height: 400px;
-}
-
-.dealer_badges img{
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    height: 500px;
+    width: 500px;
 }
