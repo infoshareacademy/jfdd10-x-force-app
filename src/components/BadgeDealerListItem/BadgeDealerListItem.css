@@ -4,7 +4,7 @@
 }
 .contener{
     height: 150px;
-    background-color: rgb(63, 54, 54);
+   
     display: flex;
 
 }
@@ -42,3 +42,7 @@
 
 }
 
+.contener img {
+    width: 150px;
+    height: 150px;
+}
