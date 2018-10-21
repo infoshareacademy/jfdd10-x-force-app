@@ -7,9 +7,6 @@ import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
 import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
 import './App.css';
 
-
-
-
 class App extends Component {
 
   state = {
@@ -21,7 +18,6 @@ class App extends Component {
     fetch("/data/badges.json").then(response => response.json()
       ).then(allBadges => this.setState({ badges: allBadges }));
   }
-
 
   render() {
     return (
@@ -49,5 +45,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
-// import PropTypes from "prop-types";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerView.css";
-import BadgeList from "../BadgeList/BadgeList";
 
 class BadgeDealerView extends Component {
-  // static propTypes = {};
 
   state = {
     dealers: [],
