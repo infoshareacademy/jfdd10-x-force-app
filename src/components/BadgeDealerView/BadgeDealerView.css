@@ -35,7 +35,6 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 400px;
 }
 
 .dealer_badges img{

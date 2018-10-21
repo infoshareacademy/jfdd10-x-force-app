@@ -1,25 +1,19 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
+import PropTypes from "prop-types";
 
 class BadgesOfDealerView extends Component {
-  state = {
-    trainerId: null,
-    trainers: [],
-    badges: []
+  static propTypes = {
+    badges: PropTypes.array,
+    trainers: PropTypes.array,
+    badgeDealerViewId: PropTypes.number,
+    trainerObject: PropTypes.array
   };
 
-  componentDidMount() {
-    fetch("/data/badges.json")
-      .then(response => response.json())
-      .then(badges => this.setState({ badges: badges }));
-
-    fetch("/data/trainers.json")
-      .then(response => response.json())
-      .then(trainers => this.setState({ trainers: trainers }));
-  }
-
   render() {
+    console.log("foobar", this.props);
+
     return (
       <div className="BadgesOfDealerView">
         <h1>BadgesOfDealerView</h1>
