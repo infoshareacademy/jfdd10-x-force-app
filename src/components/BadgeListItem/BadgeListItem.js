@@ -18,7 +18,7 @@ class BadgeListItem extends Component {
             </div>
             <div className="link_holder">
               {" "}
-              <Link to={`/badges/${this.props.id}`}>Więcej</Link>{" "}
+              <Link className='link' to={`/badges/${this.props.id}`}>Więcej</Link>{" "}
             </div>
           </div>
         </li>
