@@ -3,7 +3,11 @@
   padding: 0;
 }
 
+body{
+  background-color: #2D4471;
+  height: 100%;
 
+}
 
 
 @media (min-width: 100px) {
