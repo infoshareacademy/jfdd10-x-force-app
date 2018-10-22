@@ -17,6 +17,7 @@ class HomeView extends Component {
       <div>
         <AppIntro/>
         <BadgeSearcher badges={this.props.badges}/>
+       
       </div>
     )
   }
