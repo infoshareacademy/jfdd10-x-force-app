@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './BadgeSearcherResults.css'
+import BadgeList from '../BadgeList/BadgeList';
+import BadgeListItem from '../BadgeListItem/BadgeListItem';
 class BadgeSearcherResults extends Component {
 
 render() {
@@ -12,7 +14,14 @@ return(
 {
 this.props.badges.slice(0, 5).map(
     badge => (
-        <li>{badge.title}</li>
+        <li><BadgeListItem
+        key={badge.id}
+        id={badge.id}
+        logo={badge.logo}
+        title={badge.title}
+        description={badge.description}
+        moreInfo={badge.moreInfo}
+      /></li>
     )
 )
 }
