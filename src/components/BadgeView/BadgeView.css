@@ -1,70 +1,59 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-@media (min-width:100px){
-
-
-
-.badgeView{
-
-   
-    width: 90%;
-    margin: 0 auto;
-
-}
-.badgeView img{
-
-    width: 40vw;
-}
-.badgeView p{
-   
-    padding: 10px;
-}
-.badgeView .color{
-    background-color: #A2B3D5;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-.badgeView .linki{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-.badgeView .linki:hover{
-    color: white;
-}
+@media (min-width:100px) {
+    .moreInfo {
+        color: white
+    }
+    .badgeView {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .badgeView img {
+        width: 40vw;
+    }
+    .badgeView p {
+        padding: 10px;
+    }
+    .badgeView .color {
+        background-color: #A2B3D5;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+    .badgeView .linki {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    .badgeView .linki:hover {
+        color: white;
+    }
 }
 
-@media (min-width:600px){
-    .badgeView img{
-
+@media (min-width:600px) {
+    .badgeView img {
         width: 30vw;
     }
-.badgeView p{
-    font-size: 18px;
-    padding: 15px;
-}
+    .badgeView p {
+        font-size: 18px;
+        padding: 15px;
+    }
 }
 
-@media (min-width:800px){
-    .badgeView img{
-
+@media (min-width:800px) {
+    .badgeView img {
         width: 20vw;
     }
-.badgeView p{
-    font-size: 25px;
-    padding: 15px;
-}
-.badgeView{
-
-    width: 60%;
-    
-
-}
-.moreInfo{
-   margin: 20px auto;
-}
+    .badgeView p {
+        font-size: 25px;
+        padding: 15px;
+    }
+    .badgeView {
+        width: 60%;
+    }
+    .moreInfo {
+        margin: 20px auto;
+    }
 }
