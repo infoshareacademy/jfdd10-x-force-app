@@ -25,7 +25,7 @@ class BadgesOfDealerView extends Component {
                   this.props.badges.find(
                     badge => badge && badge.id === trainerBadgeNumber
                   )
-              )}
+              ).filter(Boolean)}
             />
           )}
       </div>
