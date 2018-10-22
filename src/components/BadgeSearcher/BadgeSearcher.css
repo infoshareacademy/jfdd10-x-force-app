@@ -1,0 +1,24 @@
+.dystrybution{
+   margin:  auto;
+    width: 300px;
+   color: azure;
+   margin-top: 50px;
+   margin-bottom: 50px
+   
+   
+
+}
+
+
+@media (max-width: 500px) {
+    .dystrybution h1{
+        font-size: 30px
+    }
+    .dystrybution h4{
+        font-size: 15px
+    }
+    
+    }
+    
+
+    
