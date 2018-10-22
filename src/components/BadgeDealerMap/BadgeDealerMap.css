@@ -1,9 +1,32 @@
-.BadgeDealerMap {
-  
-}
+@media(min-width:100px){
+
 
 .leaflet-container {
-    height: 60vh;
-    width: 100vh;
+  height: 250px;
+  width: 100%;
+  justify-content: center;
+}
+
+}
+
+@media(min-width:600px){
+
+
+  .leaflet-container {
+    height: 400px;
+    width: 100%;
     justify-content: center;
   }
+  
+  }
+
+  @media(min-width:900px){
+
+
+    .leaflet-container {
+      height: 600px;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    }

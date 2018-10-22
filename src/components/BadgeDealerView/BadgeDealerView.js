@@ -33,29 +33,47 @@ class BadgeDealerView extends Component {
     const trainerObject = this.state.trainers.find(
       trainer => trainer.id === parseInt(badgeDealerViewId)
     );
-
+    
+    if (dealerId === undefined) {
+      return <p>Loading badge...</p>;
+    }
+    if (badgeDealerViewId === undefined) {
+      return <p>Loading badge...</p>;
+    }
+    if (trainerObject === undefined) {
+      return <p>Loading badge...</p>;
+    }
     return (
       <div className="dealer">
         {this.state.dealers
           .filter(dealer => dealer.id === dealerId)
           .map(dealer => (
             <div key={dealer.id}>
+            <div className='dealer_header'>
+           <p> {dealer.name} {dealer.surname}</p>
+            </div>
               <div className="dealer_top">
                 <div className="dealer_avatar">
                   <img
-                    style={{ width: 150, height: 150 }}
+                   
                     src={dealer.avatar}
                     alt=""
                   />
                 </div>
-                <div className="dealer_description">{dealer.description}</div>
+                <div className='dealer_header'>Opis</div>
+                <div className="dealer_description">
+                
+                <p>{dealer.description}</p>
+                </div>
               </div>
+              <div className='dealer_header'>Tu mnie znajdziesz</div>
               <div className="dealer_map">
                 <BadgeDealerMap
                   center={dealer.position}
                   dealers={this.state.dealers}
                 />
               </div>
+              <div className='dealer_header'>Te odznaki posiadam</div>
               <div className="dealer_badges">
                 <BadgesOfDealerView
                   trainerObject={trainerObject}

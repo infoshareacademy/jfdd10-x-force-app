@@ -58,7 +58,7 @@ class Appintro extends Component {
         </div>
       </div>
      
-         <Button variant="outlined"  onClick={this.handleCloseClick}>close</Button>
+         <Button className="AppButon" variant="outlined"  onClick={this.handleCloseClick}>Przejdź do aplikacji</Button>
          </div>
     );
   }

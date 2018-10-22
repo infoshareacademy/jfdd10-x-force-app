@@ -27,7 +27,7 @@ class BadgeDealersView extends Component {
     console.log('sanity check', this.state.badges);
     return (
       <div className="BadgeDealersView">
-        <h1>Badge dealers</h1>
+        <h1>Trenerzy</h1>
         
         <BadgeDealerList badges={this.state.badges} badgeDealers={this.state.dealers} />
         

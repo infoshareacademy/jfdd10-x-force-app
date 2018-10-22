@@ -1,17 +1,29 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./BadgeListItem.css";
 
 class BadgeListItem extends Component {
-    render() {
-        return (
-            <li>
-            <img style={{ width: 50, height: 50 }} src={this.props.logo} alt="Badge"></img> 
+  render() {
+    return (
+      <div>
+        <li className="li_badgeListItem">
+          <div className="badgeListItem">
+            <div className="logo">
+              <img src={this.props.logo} alt="Badge" />
+            </div>
+            <div className="description">
+              <span className="title">
                 {this.props.title} - {this.props.description}
-                <Link to={`/badges/${this.props.id}`} >
-                    Show More
-                </Link>
-            </li>
-        )
-    }
+              </span>
+            </div>
+            <div className="link_holder">
+              {" "}
+              <Link to={`/badges/${this.props.id}`}>Więcej</Link>{" "}
+            </div>
+          </div>
+        </li>
+      </div>
+    );
+  }
 }
-export default BadgeListItem
+export default BadgeListItem;

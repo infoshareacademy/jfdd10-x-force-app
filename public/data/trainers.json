@@ -3,7 +3,7 @@
       "id": 1,
       "name": "Janusz" ,
       "surname": "Tracz",
-      "description": "Janusz Tracz",
+      "description": "Trener personalny z wieloletnim doświadczeniem. Absolwent wychowania fizycznego i fizjoterapii. Instruktor fitness i masażysta.Na podstawie wieloletniego doświadczenia obrał skuteczne metody redukcji wagi i kształtowania sylwetki swoich podopiecznych. Ma na koncie wiele spektakularnych przemian. Dodatkowo jako dyplomowany fizjoterapeuta zajmuje się klientami z problemami ortopedycznymi.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairDreads&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Blue01&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
       "listOfBadges": [1,3,4,5,6],
       "position": [54.403277, 18.569947]
@@ -12,7 +12,7 @@
       "id": 2,
       "name": "Krzysztof" ,
       "surname": "Sprzączka",
-      "description": "Krzysztof Sprzączka",
+      "description": "Na swoich zajęciach zwraca szczególną uwagę na poprawność i technikę wykonywanych ćwiczeń. Entuzjazm i uśmiech na zajęciach to jego nieodzowna cecha, gdyż uwielbia pracę z ludźmi, a ich radość z osiąganych efektów napędza go do działania i podnoszenia swoich umiejętności. Jako Trener Personalny nie jest tylko specjalistą w zakresie swojej specjalizacji, ale posiada również bardzo dużą wiedzę na temat zasad zdrowego żywienia i dietetyki sportowej.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Heather&eyeType=Wink&eyebrowType=Default&mouthType=Smile&skinColor=Light",
       "listOfBadges": [4,5,6],
       "position": [54.406045, 18.576298]
@@ -21,7 +21,7 @@
       "id": 3,
       "name": "Krzesisław" ,
       "surname": "Szczery",
-      "description": "Krzesisław Szczery",
+      "description": "Cześć, nazywam się Krzesisław Szczery i od ponad sześciu lat zajmuję się indywidualną pracą z klientem. Interesuję się biochemią, chemią żywności, fizjologią oraz wpływem czynników zewnętrznych na funkcjonowanie organizmu człowieka. Wychodzę z założenia, że wszystko może przynieść dobroczynny wpływ na nasz organizm pod warunkiem, że wiemy jak i kiedy tego użyć. Kiedy pracujemy razem staram się poznać Ciebie jak najlepiej. Im więcej o Tobie wiem tym lepiej będę w stanie Ci pomóc.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesar&accessoriesType=Blank&hairColor=BrownDark&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Black&graphicType=Bat&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
       "listOfBadges": [1,5,6, 7,11],
       "position": [54.402314, 18.579614]
@@ -30,7 +30,7 @@
       "id": 4,
       "name": "Conrad" ,
       "surname": "Dicki",
-      "description": "Conrad Dicki",
+      "description": "Prowadzę treningi zarówno z dziećmi, młodzieżą, dorosłymi jak i z osobami w wieku emerytalnym, na siłowni, w salach fitnessu, jak i na świeżym powietrzu, wszystko w zależności od potrzeb klienta.Treningi ze mną to nie tylko 1h wysiłek fizyczny ale także coaching zarówno treningowy, żywieniowy jak i mentalny. Osoby z którymi ćwiczę lub też ćwiczyłem wiedzą, że współpraca ze mną to nie tylko ciężki, efektywny trening ale również przyjemność i wspólne osiąganie celów.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Platinum&facialHairType=MoustacheMagnum&facialHairColor=Auburn&clotheType=Hoodie&clotheColor=Red&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
       "listOfBadges": [1,3,4,5,6, 12,13],
       "position": [54.404421, 18.58191]
@@ -39,7 +39,7 @@
       "id": 5,
       "name": "Angelina" ,
       "surname": "Jolie",
-      "description": "Angelina Jolie",
+      "description": "Pasjonatka sportu i aktywności fizycznej. Komunikatywność i przyjazne usposobienie z pewnością są jej największymi zaletami, a uśmiechem pokonuje wszelkie bariery kontaktu z Klientem. W pracy z podopiecznymi kieruje się przeświadczeniem, że trening powinien być przyjemnością, a odżywianie racjonalnym i świadomym wyborem, podyktowanym przekonaniem, że dieta to nie wyrzeczenia, a początek nowych, ale smacznych nawyków żywieniowych.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShaggyMullet&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Heather&eyeType=Squint&eyebrowType=UpDown&mouthType=Smile&skinColor=Light",
       "listOfBadges": [1,3,6,8,9,10],
       "position": [54.422426, 18.57139]
@@ -48,7 +48,7 @@
       "id": 6,
       "name": "Toy" ,
       "surname": "Swaniawski",
-      "description": "Toy Swaniawski",
+      "description": "Ze sportem związany od dziecka. Wyczynowo trenuje Taekwondo Olimpijskie od 17 lat. Członek Kadry Narodowej od 2006 roku. Piąty zawodnik Mistrzostw Świata Seniorów. Brązowy medalista Mistrzostw Europy Młodzieżowców oraz Mistrzostw Europy Juniorów, czterokrotny Mistrz Polski Seniorów w kategorii ciężkiej, wielokrotny medalista turniejów międzynarodowych w Taekwondo Olimpijskim.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardLight&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Heather&graphicType=Hola&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
       "listOfBadges": [1,3,4,5,6],
       "position": [54.399486, 18.579378]
@@ -57,7 +57,7 @@
       "id": 7,
       "name": "Ellen" ,
       "surname": "Ripley",
-      "description": "Ellen Ripley",
+      "description": "Od najmłodszych lat pasjonuje się tańcem, zdobywczyni klasy mistrzowskiej w tańcach latynoamerykańskich i standartowych. Pełna optymizmu i pogody ducha. Pasjonuje ją człowiek i praca z nim. Uwielbia zarażać energią, ale nie ogranicza się tylko do fizycznego aspektu zajęć, ciągle poszukuje mentalnej świadomości ciała i ruchu.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFrida&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Pale",
       "listOfBadges": [4,5,6],
       "position": [54.432886, 18.560683]
@@ -66,7 +66,7 @@
       "id": 8,
       "name": "Janina" ,
       "surname": "Radzikowski",
-      "description": "Janina Radzikowski",
+      "description": "Dyplomowany nauczyciel jogi B.K.S Iyengara ( II stopień nauczycielski). Praktykuje jogę od 12 lat. Swój warsztat nauczycielski kształtowała między innymi w Ramamani Iyengar Instytute w Punie (Indie). Doskonali swoją wiedzę poprzez regularny udział w międzynarodowych warsztatach dla nauczycieli jogi.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFroBand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Blue02&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Black",
       "listOfBadges": [1,5,6, 7,11],
       "position": [54.434633, 18.574136]
@@ -75,7 +75,7 @@
       "id": 9,
       "name": "Ricky" ,
       "surname": "Martin",
-      "description": "Ricky Martin",
+      "description": "Do opieki nad Klientem podchodzi jak do procesu coachingowego, wyznaczając każdemu indywidualny plan rozwoju. Określenie priorytetów oraz podporządkowanie im treningu to początek drogi do sukcesu. Jest wsparciem w drodze do wytyczonego celu, dzieląc się wiedzą i doświadczeniem. Chcąc być dobrym, w tym co robi, stale się rozwija, by podopieczni w bezpieczny sposób wkraczali na wyżyny swoich umiejętności.",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairSides&accessoriesType=Blank&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=Overall&clotheColor=Heather&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
       "listOfBadges": [1,3,4,5,6, 12,13],
       "position": [54.440149, 18.554567]
@@ -84,7 +84,7 @@
       "id": 10,
       "name": "Chchi" ,
       "surname": "GoKu",
-      "description": "Chchi GoKu",
+      "description": "Trener personalny, licencjonowany Instruktor TRX Suspension Training. Od 8 lat Instruktor fitness oraz Indoor Cycling Basic. Uczestniczka licznych szkoleń i warsztatów z zakresu treningów funkcjonalnych, oceny funkcjonalnej FMS, dietetyki i suplementacji oraz wszelkich zajęć wzmacniających jak i choreograficznych.Prywatnie żona Song goKu",
       "avatar": "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&eyeType=WinkWacky&eyebrowType=Default&mouthType=Twinkle&skinColor=Light",
       "listOfBadges": [1,3,6,8,9,10],
       "position": [54.444392, 18.565468]

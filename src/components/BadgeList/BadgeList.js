@@ -8,20 +8,21 @@ class BadgeList extends Component {
   };
   render() {
     console.log(this.props.badges);
-    return (
-      <>
-        {this.props.badges.map(badge => (
-          <BadgeListItem
-            key={badge.id}
-            id={badge.id}
-            logo={badge.logo}
-            title={badge.title}
-            description={badge.description}
-            moreInfo={badge.moreInfo}
-          />
-        ))}
-      </>
-    );
+
+      return (
+        <>
+          {this.props.badges.map(badge => (
+            <BadgeListItem
+              key={badge.id}
+              id={badge.id}
+              logo={badge.logo}
+              title={badge.title}
+              description={badge.description}
+              moreInfo={badge.moreInfo}
+            />
+          ))}
+        </>
+      );
   }
 }
 export default BadgeList;

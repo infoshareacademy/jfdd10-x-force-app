@@ -1,4 +1,8 @@
-#page-numbers {
-    display: flex;
-    justify-content: center;
+.counter{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.counter:hover{
+    color: white;
 }

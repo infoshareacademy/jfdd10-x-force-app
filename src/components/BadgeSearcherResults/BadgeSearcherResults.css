@@ -1,0 +1,51 @@
+
+      
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+    @media (min-width: 100px) {
+     
+    
+        
+        .badgeSearcherResults ul {
+        
+       
+        width: 90%;
+        margin: 40px auto;
+        padding: 30px 10px;
+        }
+        
+        .badgeSearcherResults li {
+        
+         
+           border-radius: 10px;
+           width: 70%;
+           margin: 15px auto;
+           background-color: #A2B3D5;
+           padding: 20px;
+            }
+      
+      }
+
+
+
+    @media (min-width: 800px) {
+     
+       
+            
+            .badgeSearcherResults li {
+            
+              
+               border-radius: 10px;
+               width: 40%;
+               margin: 15px auto;
+              
+               padding: 20px;
+                }
+          
+          
+    
+      
+      }

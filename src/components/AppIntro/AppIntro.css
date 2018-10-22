@@ -1,7 +1,7 @@
 .AppIntro {
     display: flex;
     position: fixed;
-    background-image: url("https://images.unsplash.com/photo-1523958940417-b5818e64cf16?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=890168d2efdcae79035eba9e5e63a045&auto=format&fit=crop&w=2036&q=80");
+   
   top: 0;
   bottom: 0;
   left: 0;
@@ -20,13 +20,14 @@
     
     padding: 0px;
     margin: 0px auto;
-    background-image: url("https://images.unsplash.com/photo-1523958940417-b5818e64cf16?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=890168d2efdcae79035eba9e5e63a045&auto=format&fit=crop&w=2036&q=80");
+    background-color: rgb(90, 90, 158);
    
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    cursor: zoom-in
+    cursor: zoom-in;
+
 }
 
 .Ficzerbox {
@@ -38,13 +39,14 @@
     width: 250px;
     margin: 0px auto;
     height: 400px;
-    background: rgb(190, 190, 190);
+    background-color: chartreuse;
     margin: 0px 10px;
     transition: 1s ease-out;
     /*animacja pudełek*/
     animation-duration: 4s;
     animation-name: slidein;
     animation-iteration-count: 1;
+    border-radius: 10px
   
 }
 
@@ -105,29 +107,34 @@
 
 
 .f1{
-    background: url("https://png.icons8.com/ios/100/000000/triceps.png") no-repeat center;
+    background: url("https://png.icons8.com/ios/100/000000/flex-biceps-filled.png") no-repeat center;
     background-size: 60%
 }
 
 .f2 {
-    background: url("https://png.icons8.com/ios/100/000000/crossfit.png") no-repeat center;
+    background: url("https://png.icons8.com/ios/100/000000/crossfit-filled.png") no-repeat center;
     background-size: 60%
 }
 
 
 .f3 {
-    background: url("https://png.icons8.com/ios/100/000000/prelum.png") no-repeat center;
+    background: url("https://png.icons8.com/ios/100/000000/deadlift-filled.png") no-repeat center;
     background-size: 60%
 }
 
 
 .f4 {
-    background: url("https://png.icons8.com/ios/100/000000/bench-press.png") no-repeat center;
+    background: url("https://png.icons8.com/ios/100/000000/bench-press-filled.png") no-repeat center;
     background-size: 60%
 }
 
 
 .f5 {
-    background: url("https://png.icons8.com/ios/100/000000/mommy-fitness.png") no-repeat center;
+    background: url("https://png.icons8.com/ios/100/000000/prenatal-yoga-filled.png") no-repeat center;
     background-size: 60%
+}
+
+
+.AppButon{
+    height: 4px;
 }

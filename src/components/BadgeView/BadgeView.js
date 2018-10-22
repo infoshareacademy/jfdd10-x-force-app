@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./BadgeView.css";
 
 class BadgeView extends Component {
   state = {
@@ -20,32 +21,28 @@ class BadgeView extends Component {
   render() {
     const badgeId = parseInt(this.props.match.params.badgeId);
     const badge = this.state.badges.find(badge => badge.id === badgeId);
-    // const trainer = this.state.trainers.find(badge => trainer.listOfBadges === badge.id )
 
     if (badge === undefined) {
       return <p>Loading badge...</p>;
     }
     return (
-      <div>
-        <img style={{ width: 200, height: 200 }} src={badge.logo} alt="Badge" />
-        <p> title: {badge.title}</p>
-        <p>
-          description: <br /> {badge.description}
-        </p>
-        <p>
-          moreInfo: <br /> {badge.moreInfo}
-        </p>
+      <div className="badgeView">
+        <p className="color">{badge.title}</p>
+        <img src={badge.logo} alt="Badge" />
+
+        <p className="color">{badge.description}</p>
+        <p className="moreInfo">{badge.moreInfo}</p>
+
         <div>
-          Trainers who can give this badge <br />
-          {/* badge.IdTrainerWhoCanGiveThisBadge.map */}
+          <p className="color"> Trenerzy którzy posiadają odznakę:</p>
           {badge.IdTrainerWhoCanGiveThisBadge.map(id =>
             this.state.trainers.find(trainer => trainer.id === id)
           )
             .filter(Boolean)
             .map(trainer => (
               <p>
-                <Link to={`/badgedealersview/${trainer.id}`}>
-                  {trainer.name}
+                <Link className="linki" to={`/badgedealersview/${trainer.id}`}>
+                  {trainer.name} {trainer.surname}
                 </Link>
               </p>
             ))}

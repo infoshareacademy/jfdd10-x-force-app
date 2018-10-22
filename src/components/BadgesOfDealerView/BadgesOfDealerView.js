@@ -16,7 +16,7 @@ class BadgesOfDealerView extends Component {
 
     return (
       <div className="BadgesOfDealerView">
-        <h1>BadgesOfDealerView</h1>
+       
         {this.props.trainerObject &&
           this.props.trainerObject.listOfBadges && (
             <BadgeList
