@@ -33,7 +33,16 @@ class BadgeDealerView extends Component {
     const trainerObject = this.state.trainers.find(
       trainer => trainer.id === parseInt(badgeDealerViewId)
     );
-
+    
+    if (dealerId === undefined) {
+      return <p>Loading badge...</p>;
+    }
+    if (badgeDealerViewId === undefined) {
+      return <p>Loading badge...</p>;
+    }
+    if (trainerObject === undefined) {
+      return <p>Loading badge...</p>;
+    }
     return (
       <div className="dealer">
         {this.state.dealers
