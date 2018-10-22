@@ -60,7 +60,7 @@ class Appintro extends Component {
             <div className="Opis">
               <h3>
                 <br />
-                Martwy ciąg do obok przysiadu jedno z najpotrzebniejszych
+                Martwy ciąg to obok przysiadu jedno z najpotrzebniejszych
                 ćwiczeń siłowych. Jest to ćwiczenie wielostawowe, angażujące
                 wiele grup mięśniowych, ale głównie prostowniki grzbietowe,
                 mięsień najszerszy grzbiet, dwugłowy oraz mięśnie

@@ -21,6 +21,7 @@ class BadgeView extends Component {
   render() {
     const badgeId = parseInt(this.props.match.params.badgeId);
     const badge = this.state.badges.find(badge => badge.id === badgeId);
+    const trainer = this.state.trainers.find(badge => badge.id === badgeId);
 
     if (badge === undefined) {
       return <p>Loading badge...</p>;
