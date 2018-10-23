@@ -1,3 +1,11 @@
+.map{
+  height: 200px;
+  width: 200px;
+  justify-content: center
+}
+
+
+
 @media(min-width:100px){
 
 

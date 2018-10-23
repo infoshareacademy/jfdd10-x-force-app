@@ -39,7 +39,7 @@ class BadgeDealerView extends Component {
     }
     if (badgeDealerViewId === undefined) {
       return <p>Loading badge...</p>;
-    }
+    } 
     if (trainerObject === undefined) {
       return <p>Loading badge...</p>;
     }
