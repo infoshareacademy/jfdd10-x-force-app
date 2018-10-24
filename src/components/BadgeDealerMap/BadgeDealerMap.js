@@ -17,18 +17,6 @@ class BadgeDealerMap extends Component {
   };
 
   render() {
-    // const badgeDealerViewId = this.props.match.params.badgeDealerViewId;
-    // const trainerObject = this.state.trainers.find(
-    //   trainer => trainer.id === parseInt(badgeDealerViewId)
-    // );
-    
-
-    // if (badgeDealerViewId === undefined) {
-    //   return <p>Loading badge...</p>;
-    // }
-    // if (trainerObject === undefined) {
-    //   return <p>Loading badge...</p>;
-    // }
     return (
       <div className="BadgeDealerMap">
         <div id="mapid">
@@ -57,15 +45,15 @@ class BadgeDealerMap extends Component {
                         alt=""
                       />
                     }
-                    {trainer.listOfBadges.map(badge => (
-                      <BadgesOfDealerView
-                      trainerObject={this.props.trainerObject}
-                      badgeDealerViewId={this.props.badgeDealerViewId}
-                      trainers={this.props.trainers}
-                      badges={this.props.badges}
-                    />
-
-                    ))}
+                    <div className="badgesMap">
+                      <BadgesOfDealerView 
+                        logo={this.props.logo} 
+                        trainerObject={this.props.trainerObject}
+                        badgeDealerViewId={this.props.badgeDealerViewId}
+                        trainers={this.props.trainers}
+                        badges={this.props.badges}
+                      />
+                    </div>
                   </Popup>
                 </Marker>
               ))}
