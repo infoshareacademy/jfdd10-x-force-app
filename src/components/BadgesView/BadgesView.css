@@ -6,3 +6,20 @@
 .counter:hover{
     color: white;
 }
+
+.active{
+    color: white;
+}
+
+.right {
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+   
+    border-left: 20px solid rgb(250, 1, 1);
+  }
+  .page-numbers{
+    width: 500px;
+  }
