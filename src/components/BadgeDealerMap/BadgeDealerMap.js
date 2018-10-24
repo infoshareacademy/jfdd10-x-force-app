@@ -5,24 +5,23 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerMap.css";
+import BadgeList from "../BadgeList/BadgeList";
 
 class BadgeDealerMap extends Component {
   static propTypes = {
     dealers: PropTypes.array,
     center: PropTypes.array,
-    badge: PropTypes.array,
+    badges: PropTypes.array,
     badgeDealerViewId: PropTypes.number,
     trainerObject: PropTypes.array
   };
 
   render() {
-
     // const badgeDealerViewId = this.props.match.params.badgeDealerViewId;
     // const trainerObject = this.state.trainers.find(
     //   trainer => trainer.id === parseInt(badgeDealerViewId)
     // );
-    
-   
+
     // if (badgeDealerViewId === undefined) {
     //   return <p>Loading badge...</p>;
     // }
@@ -57,13 +56,14 @@ class BadgeDealerMap extends Component {
                         alt=""
                       />
                     }
-
-                    {/* <BadgesOfDealerView
-                      trainerObject={this.props.trainerObject}
-                      badgeDealerViewId={this.props.badgeDealerViewId}
-                      trainers={this.state.trainers}
-                      badges={this.state.badges}
-                    /> */}
+                    <BadgeList
+                      badges={this.props.trainerObject.listOfBadges.map(
+                        trainerBadgeNumber =>
+                          this.props.badges.find(
+                            badge => badge && badge.id === trainerBadgeNumber
+                          )
+                      )}
+                    />
                   </Popup>
                 </Marker>
               ))}
