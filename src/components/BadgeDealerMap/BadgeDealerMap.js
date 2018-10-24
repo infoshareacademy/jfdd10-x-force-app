@@ -21,6 +21,7 @@ class BadgeDealerMap extends Component {
     // const trainerObject = this.state.trainers.find(
     //   trainer => trainer.id === parseInt(badgeDealerViewId)
     // );
+    
 
     // if (badgeDealerViewId === undefined) {
     //   return <p>Loading badge...</p>;
@@ -56,14 +57,15 @@ class BadgeDealerMap extends Component {
                         alt=""
                       />
                     }
-                    <BadgeList
-                      badges={this.props.trainerObject.listOfBadges.map(
-                        trainerBadgeNumber =>
-                          this.props.badges.find(
-                            badge => badge && badge.id === trainerBadgeNumber
-                          )
-                      )}
+                    {trainer.listOfBadges.map(badge => (
+                      <BadgesOfDealerView
+                      trainerObject={this.props.trainerObject}
+                      badgeDealerViewId={this.props.badgeDealerViewId}
+                      trainers={this.props.trainers}
+                      badges={this.props.badges}
                     />
+
+                    ))}
                   </Popup>
                 </Marker>
               ))}
