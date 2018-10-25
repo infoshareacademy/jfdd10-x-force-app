@@ -7,12 +7,11 @@ class BadgeList extends Component {
     badges: PropTypes.array
   };
   render() {
-    console.log(this.props.badges);
-
       return (
         <>
           {this.props.badges.map(badge => (
             <BadgeListItem
+              onlyLogo={this.props.onlyLogo}
               key={badge.id}
               id={badge.id}
               logo={badge.logo}

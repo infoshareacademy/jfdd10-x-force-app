@@ -39,7 +39,7 @@ class BadgeDealerView extends Component {
     }
     if (badgeDealerViewId === undefined) {
       return <p>Loading badge...</p>;
-    }
+    } 
     if (trainerObject === undefined) {
       return <p>Loading badge...</p>;
     }
@@ -71,14 +71,16 @@ class BadgeDealerView extends Component {
                 <BadgeDealerMap
                   center={dealer.position}
                   dealers={this.state.dealers}
+                  trainerObject={trainerObject}
+                  badgeDealerViewId={badgeDealerViewId}
+                  trainers={this.state.trainers}
+                  badges={this.state.badges}
                 />
               </div>
               <div className='dealer_header'>Te odznaki posiadam</div>
               <div className="dealer_badges">
                 <BadgesOfDealerView
                   trainerObject={trainerObject}
-                  badgeDealerViewId={badgeDealerViewId}
-                  trainers={this.state.trainers}
                   badges={this.state.badges}
                 />
               </div>

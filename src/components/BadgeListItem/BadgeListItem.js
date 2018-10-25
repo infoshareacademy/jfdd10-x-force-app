@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./BadgeListItem.css";
 
@@ -11,14 +11,20 @@ class BadgeListItem extends Component {
             <div className="logo">
               <img src={this.props.logo} alt="Badge" />
             </div>
-            <div className="description">
-              <span className="title">
-                {this.props.title} - {this.props.description}
-              </span>
-            </div>
+            {!this.props.onlyLogo && (
+              <Fragment>
+                <div className="description">
+                  <span className="title">
+                    {this.props.title} - {this.props.description}
+                  </span>
+                </div>
+              </Fragment>
+            )}
             <div className="link_holder">
               {" "}
-              <Link className='link' to={`/badges/${this.props.id}`}>Więcej</Link>{" "}
+              <Link className="link" to={`/badges/${this.props.id}`}>
+                Więcej
+              </Link>{" "}
             </div>
           </div>
         </li>
