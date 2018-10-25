@@ -1,21 +1,21 @@
 .map {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 250px;
   justify-content: center;
 }
 
-/* .badgeListItem {
+.badgesMap .badgeListItem {
   display: flex;
 }
-.badgeListItem img {
+.badgesMap .badgeListItem img {
   width: 10px;
   height: auto;
 }
-.badgeListItem .logo {
+.badgesMap .badgeListItem .logo {
   display: flex;
   align-items: center;
   padding: 5px;
-} */
+}
 
 @media (min-width: 100px) {
   .leaflet-container {

@@ -47,11 +47,9 @@ class BadgeDealerMap extends Component {
                     }
                     <div className="badgesMap">
                       <BadgesOfDealerView 
-                        logo={this.props.logo} 
                         trainerObject={this.props.trainerObject}
-                        badgeDealerViewId={this.props.badgeDealerViewId}
-                        trainers={this.props.trainers}
                         badges={this.props.badges}
+                        onlyLogo={true}
                       />
                     </div>
                   </Popup>

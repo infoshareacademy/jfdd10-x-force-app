@@ -81,8 +81,6 @@ class BadgeDealerView extends Component {
               <div className="dealer_badges">
                 <BadgesOfDealerView
                   trainerObject={trainerObject}
-                  badgeDealerViewId={badgeDealerViewId}
-                  trainers={this.state.trainers}
                   badges={this.state.badges}
                 />
               </div>
