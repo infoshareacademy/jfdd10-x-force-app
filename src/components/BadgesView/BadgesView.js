@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
-import './BadgesView.css';
-
+import "./BadgesView.css";
 
 class BadgesView extends Component {
   constructor() {
@@ -19,6 +18,15 @@ class BadgesView extends Component {
     this.setState({
       currentPage: Number(page.target.id)
     });
+  }
+
+  handlePageChangeOnArrowRight(page, number) {
+    number.length !== page && this.setState({ currentPage: page + 1 });
+  }
+
+  handlePageChangeOnArrowLeft(page, number) {
+    number.length - number.length + 1 !== page &&
+      this.setState({ currentPage: page - 1 });
   }
 
   componentDidMount() {
@@ -42,21 +50,39 @@ class BadgesView extends Component {
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        <span className='counter' key={number} id={number} onClick={this.handlePageChange}>
+        <span
+          className={currentPage === number ? "active counter" : "counter"}
+          key={number}
+          id={number}
+          onClick={this.handlePageChange}
+        >
           {number}
         </span>
       );
     });
 
     return (
-      <div >
+      <div>
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>
-        <span id="page-numbers">{renderPageNumbers}</span>
+        <div className="container_page_numbers">
+          <span
+            onClick={() =>
+              this.handlePageChangeOnArrowLeft(currentPage, pageNumbers)
+            }
+            className="left arrow"
+          />
+          <span id="page-numbers">{renderPageNumbers}</span>
+          <span
+            onClick={() =>
+              this.handlePageChangeOnArrowRight(currentPage, pageNumbers)
+            }
+            className="right arrow"
+          />
+        </div>
       </div>
     );
-
   }
 }
 
