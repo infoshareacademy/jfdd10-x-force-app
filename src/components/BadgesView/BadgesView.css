@@ -11,15 +11,35 @@
     color: white;
 }
 
+.container_page_numbers{
+    position: relative;
+    display: flex;
+   justify-content: space-around;
+   width: 200px;
+   margin: 0 auto;
+
+
+}
+
 .right {
-    position: absolute;
+    position: relative;
     width: 0; 
     height: 0; 
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-   
-    border-left: 20px solid rgb(250, 1, 1);
+    border-left: 20px solid black;
+  }
+
+  .left{
+      position: relative;
+
+     
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:20px solid black; 
   }
   .page-numbers{
-    width: 500px;
+    
   }

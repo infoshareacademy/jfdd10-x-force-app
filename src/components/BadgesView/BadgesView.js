@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
-import './BadgesView.css';
-
+import "./BadgesView.css";
 
 class BadgesView extends Component {
   constructor() {
@@ -42,27 +41,31 @@ class BadgesView extends Component {
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        
-        <span className={currentPage === number? 'active counter': 'counter'} key={number} id={number} onClick={this.handlePageChange}>
-          {number} 
+        <span
+          className={currentPage === number ? "active counter" : "counter"}
+          key={number}
+          id={number}
+          onClick={this.handlePageChange}
+        >
+          {number}
 
-          {console.log(currentPage)} 
-        </span> 
-       
-        
-        
+          {console.log(currentPage)}
+        </span>
       );
     });
 
     return (
-      <div >
+      <div>
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>
-        <span className='right'></span><span id="page-numbers">{renderPageNumbers}</span><span className='right'></span>
+        <div className='container_page_numbers'>
+        <span className="left" />
+        <span id="page-numbers">{renderPageNumbers}</span>
+        <span className="right" />
+        </div>
       </div>
     );
-
   }
 }
 
