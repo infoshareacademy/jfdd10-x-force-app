@@ -20,6 +20,15 @@ class BadgesView extends Component {
     });
   }
 
+  handlePageChangeOnArrowRight(page, number) {
+    number.length !== page && this.setState({ currentPage: page + 1 });
+  }
+
+  handlePageChangeOnArrowLeft(page, number) {
+    number.length - number.length + 1 !== page &&
+      this.setState({ currentPage: page - 1 });
+  }
+
   componentDidMount() {
     fetch("/data/badges.json")
       .then(response => response.json())
@@ -48,8 +57,6 @@ class BadgesView extends Component {
           onClick={this.handlePageChange}
         >
           {number}
-
-          {console.log(currentPage)}
         </span>
       );
     });
@@ -59,10 +66,20 @@ class BadgesView extends Component {
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>
-        <div className='container_page_numbers'>
-        <span className="left" />
-        <span id="page-numbers">{renderPageNumbers}</span>
-        <span className="right" />
+        <div className="container_page_numbers">
+          <span
+            onClick={() =>
+              this.handlePageChangeOnArrowLeft(currentPage, pageNumbers)
+            }
+            className="left arrow"
+          />
+          <span id="page-numbers">{renderPageNumbers}</span>
+          <span
+            onClick={() =>
+              this.handlePageChangeOnArrowRight(currentPage, pageNumbers)
+            }
+            className="right arrow"
+          />
         </div>
       </div>
     );

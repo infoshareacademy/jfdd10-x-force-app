@@ -40,6 +40,12 @@
     border-bottom: 20px solid transparent; 
     border-right:20px solid black; 
   }
-  .page-numbers{
-    
+  .arrow{
+      cursor: pointer;
+  }
+  .right:hover{
+    border-left: 20px solid rgb(255, 255, 255);
+  }
+  .left:hover{
+    border-right: 20px solid rgb(255, 255, 255);
   }
