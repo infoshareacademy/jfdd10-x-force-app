@@ -6,3 +6,46 @@
 .counter:hover{
     color: white;
 }
+
+.active{
+    color: white;
+}
+
+.container_page_numbers{
+    position: relative;
+    display: flex;
+   justify-content: space-around;
+   width: 200px;
+   margin: 0 auto;
+
+
+}
+
+.right {
+    position: relative;
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid black;
+  }
+
+  .left{
+      position: relative;
+
+     
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:20px solid black; 
+  }
+  .arrow{
+      cursor: pointer;
+  }
+  .right:hover{
+    border-left: 20px solid rgb(255, 255, 255);
+  }
+  .left:hover{
+    border-right: 20px solid rgb(255, 255, 255);
+  }
