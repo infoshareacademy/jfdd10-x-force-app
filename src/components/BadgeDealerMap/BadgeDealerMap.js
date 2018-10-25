@@ -6,6 +6,7 @@ import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerMap.css";
 import BadgeList from "../BadgeList/BadgeList";
+import {bind} from 'leaflet';
 
 class BadgeDealerMap extends Component {
   static propTypes = {
@@ -21,13 +22,15 @@ class BadgeDealerMap extends Component {
       <div className="BadgeDealerMap">
         <div id="mapid">
           {
-            <Map center={this.props.center} zoom={18}>
+            <Map center={this.props.center} zoom={17} >
+            
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
               {this.props.dealers.map(trainer => (
                 <Marker
+                
                   key={trainer.id}
                   center={trainer.position}
                   position={trainer.position}
