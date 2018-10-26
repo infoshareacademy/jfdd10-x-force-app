@@ -6,7 +6,8 @@ class SignInForm extends Component {
   state = {
     email: "",
     password: "",
-    error: null
+    error: null,
+    trainer: false
   };
 
   handleChange = event => {
@@ -41,6 +42,7 @@ class SignInForm extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
+          <input type="checkbox" name="trainer" value="trainer">Jesteś trenerem?</input>
 
           <button>Sign in</button>
         </form>
