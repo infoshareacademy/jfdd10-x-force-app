@@ -2,18 +2,18 @@ const trainerApiUrl = "https://x-force-app.firebaseio.com/";
 
 //for later to show all users and their badges
 
-// export const getUsers = () =>
-//   fetch(trainerApiUrl + "/users.json")
+// export const getTrainers = () =>
+//   fetch(trainerApiUrl + "/trainers.json")
 //     .then(response => response.json())
 //     .then(users =>
-//       Object.entries(users || {}).map(([id, value]) => ({
+//       Object.entries(trainers || {}).map(([id, value]) => ({
 //         id,
 //         ...value
 //       }))
 //     );
 
 export const addTrainer = (name, surname, badges, description, avatar) =>
-  fetch(trainerApiUrl + "/users.json", {
+  fetch(trainerApiUrl + "/trainers.json", {
     method: "POST",
     body: JSON.stringify({
       name,

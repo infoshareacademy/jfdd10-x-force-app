@@ -15,8 +15,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("/data/badges.json").then(response => response.json()
-      ).then(allBadges => this.setState({ badges: allBadges }));
+    fetch("https://x-force-app.firebaseio.com/badges.json")
+      .then(response => response.json())
+      .then(data =>
+        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
+      )
+      .then(badges => this.setState({ badges }));
   }
 
   render() {
