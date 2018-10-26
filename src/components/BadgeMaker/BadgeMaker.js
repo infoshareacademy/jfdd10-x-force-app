@@ -26,6 +26,20 @@ class BadgeMaker extends Component {
     });
   };
 
+  makeHandleEnterEditMode = badge => event => {
+    this.props.firebaseRef.child(badge.id).update({
+      inEdit: true
+    });
+
+    this.setState({
+      badgeTitleEdit: badge.title, 
+      badgeLogoEdit: badge.logo,
+      badgeDescriptionEdit: badge.description,
+      badgeMoreInfoEdit: badge.moreInfo
+    });
+  };
+
+
   handleSubmit = event => {
     event.preventDefault();
     this.props.firebaseRef.push({
@@ -46,12 +60,12 @@ class BadgeMaker extends Component {
 
   componentDidMount() {
     this.props.firebaseRef.on("value", snapshot => {
-      const tasks = Object.entries(snapshot.val() || {})
+      const badges = Object.entries(snapshot.val() || {})
         .map(([id, value]) => ({ id, ...value }))
         .reverse();
 
       this.setState({
-        tasks
+        badges
       });
     });
   }
@@ -66,23 +80,27 @@ class BadgeMaker extends Component {
             value={this.state.taskTitleAdd}
             onChange={this.makeHandleChange("taskTitleAdd")}
           />
+          <label for="avatar">Logo:</label>
           <input
+            type="file"
+            // name="avatar"
+            accept="image/png, image/jpeg"
             className="make badge"
             placeholder="Badge Logo"
             value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            onChange={this.makeHandleChange("badgeLogoAdd")}
           />
           <input
             className="make badge"
             placeholder="Badge Description"
             value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            onChange={this.makeHandleChange("badgeDescriptionAdd")}
           />
           <input
             className="make badge"
-            placeholder="Badge Name"
+            placeholder="Badge more info"
             value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            onChange={this.makeHandleChange("badgeMoreInfoAdd")}
           />
         </form>
       </div>
