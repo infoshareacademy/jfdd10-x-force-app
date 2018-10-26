@@ -29,7 +29,26 @@ class SignUpForm extends Component {
   };
 
   render() {
-    return <div className="SignUpForm">SignUpForm</div>;
+    return (
+      <div className="SignUpForm">
+        <form onSubmit={this.handleSubmit} className="SignUpForm">
+          {this.state.error && <p>{this.state.error.message}</p>}
+          <input
+            placeholder="Enter email"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+          <input
+            placeholder="Enter password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+          />
+          <button>Sign up</button>
+        </form>
+      </div>
+    );
   }
 }
 
