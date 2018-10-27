@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Segment } from "semantic-ui-react";
-import 'semantic-ui-css/semantic.min.css';
+import "semantic-ui-css/semantic.min.css";
 
 import "./AppIntro.css";
 
@@ -86,20 +86,17 @@ class Appintro extends Component {
             </div>
           </div>
         </div>
-     
+
+        <div className='AppIntroButton'>
           <Button
-            class="ui fluid primary button"
-            role="button"
-            className=""
+            inverted
+            color="blue"
+            className="IntroButton"
             onClick={this.handleCloseClick}
           >
             Przejdź do aplikacji
           </Button>
-         
-        
-
-      
-
+        </div>
       </div>
     );
   }
