@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './BadgeSearcherForm.css'
+import { Input } from 'semantic-ui-react'
+
 
 class BadgeSearcherForm extends Component {
 
@@ -34,7 +36,7 @@ class BadgeSearcherForm extends Component {
         {
           this.state.error && <p>{this.state.error.message}</p>
         }
-        <input placeholder='Znajdź odznakę' value={this.state.badgeName} onChange={this.handleChange}/>
+        <Input focus placeholder='Znajdź odznakę' value={this.state.badgeName} onChange={this.handleChange}/>
         
         
       </form>  

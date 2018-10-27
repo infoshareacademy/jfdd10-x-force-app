@@ -25,7 +25,7 @@ body{
 
   .links{
     text-decoration: none;
-    color: black;
+    
   }
   
   
@@ -39,7 +39,7 @@ body{
 
   .navigation li{
   
-    background-color: #A2B3D5;
+    
     border-radius: 10px;
     padding: 5px;
     }
