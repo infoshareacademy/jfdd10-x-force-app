@@ -1,16 +1,8 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
-import "./AppIntro.css";
+import { Button, Segment } from "semantic-ui-react";
+import 'semantic-ui-css/semantic.min.css';
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit
-  },
-  input: {
-    display: "none"
-  }
-});
+import "./AppIntro.css";
 
 class Appintro extends Component {
   // const { classes } = props;
@@ -94,17 +86,23 @@ class Appintro extends Component {
             </div>
           </div>
         </div>
+     
+          <Button
+            class="ui fluid primary button"
+            role="button"
+            className=""
+            onClick={this.handleCloseClick}
+          >
+            Przejdź do aplikacji
+          </Button>
+         
+        
 
-        <Button
-          className="AppButon"
-          variant="outlined"
-          onClick={this.handleCloseClick}
-        >
-          Przejdź do aplikacji
-        </Button>
+      
+
       </div>
     );
   }
 }
 
-export default withStyles(styles)(Appintro);
+export default Appintro;
