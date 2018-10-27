@@ -14,7 +14,7 @@ body{
 
   .App{
     text-align: center;
-    background-color: #2D4471;
+    background-color: rgb(61, 61, 61);
   }
   
   .navigation{
@@ -25,6 +25,7 @@ body{
 
   .links{
     text-decoration: none;
+    font-size: 30px
     
   }
   

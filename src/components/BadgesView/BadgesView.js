@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesView.css";
+import { Segment, Icon } from 'semantic-ui-react'
+import "semantic-ui-css/semantic.min.css";
 
 class BadgesView extends Component {
   constructor() {
@@ -71,19 +73,10 @@ class BadgesView extends Component {
           <BadgeList badges={currentBadges} />
         </ul>
         <div className="container_page_numbers">
-          <span
-            onClick={() =>
-              this.handlePageChangeOnArrowLeft(currentPage, pageNumbers)
-            }
-            className="left arrow"
-            />
+        <span><Icon size='huge' inverted color='blue' name='caret left' onClick={() =>this.handlePageChangeOnArrowLeft  (currentPage, pageNumbers)}/></span>
           <span id="page-numbers">{renderPageNumbers}</span>
-          <span
-            onClick={() =>
-              this.handlePageChangeOnArrowRight(currentPage, pageNumbers)
-            }
-            className="right arrow"
-            />
+
+          <span><Icon size='huge' inverted color='blue' name='caret right' onClick={() =>this.handlePageChangeOnArrowRight(currentPage, pageNumbers)}/></span>
         </div>
       </div>
     );

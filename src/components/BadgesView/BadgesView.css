@@ -21,31 +21,8 @@
 
 }
 
-.right {
-    position: relative;
-    width: 0; 
-    height: 0; 
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid black;
-  }
 
-  .left{
-      position: relative;
-
-     
-    width: 0; 
-    height: 0; 
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent; 
-    border-right:20px solid black; 
-  }
-  .arrow{
+  
+  .caret{
       cursor: pointer;
-  }
-  .right:hover{
-    border-left: 20px solid rgb(255, 255, 255);
-  }
-  .left:hover{
-    border-right: 20px solid rgb(255, 255, 255);
   }
