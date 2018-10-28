@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./BadgeListItem.css";
+import { Button, Segment } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
+
 
 class BadgeListItem extends Component {
   render() {
@@ -19,11 +22,11 @@ class BadgeListItem extends Component {
                   </span>
                 </div>
               </Fragment>
-            )}
+            )}  
             <div className="link_holder">
               {" "}
               <Link className="link" to={`/badges/${this.props.id}`}>
-                Więcej
+                Więcej  
               </Link>{" "}
             </div>
           </div>

@@ -4,6 +4,8 @@ import "./BadgesView.css";
 import { Segment, Icon } from 'semantic-ui-react'
 import "semantic-ui-css/semantic.min.css";
 
+
+
 class BadgesView extends Component {
   constructor() {
     super();
@@ -68,6 +70,7 @@ class BadgesView extends Component {
 
     return (
       <div>
+        
         {console.log(badges)}
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
@@ -76,8 +79,9 @@ class BadgesView extends Component {
         <span><Icon size='huge' inverted color='blue' name='caret left' onClick={() =>this.handlePageChangeOnArrowLeft  (currentPage, pageNumbers)}/></span>
           <span id="page-numbers">{renderPageNumbers}</span>
 
-          <span><Icon size='huge' inverted color='blue' name='caret right' onClick={() =>this.handlePageChangeOnArrowRight(currentPage, pageNumbers)}/></span>
+          <span><Icon size='huge' inverted color='blue' name='caret right' onClick={() =>this.handlePageChangeOnArrowRight(currentPage, pageNumbers)}/> </span>
         </div>
+     
       </div>
     );
   }
