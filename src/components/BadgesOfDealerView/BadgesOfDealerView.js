@@ -3,6 +3,7 @@ import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
 import PropTypes from "prop-types";
 
+
 class BadgesOfDealerView extends Component {
   static propTypes = {
     badges: PropTypes.array,

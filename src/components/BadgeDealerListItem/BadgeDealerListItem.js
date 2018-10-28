@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './BadgeDealerListItem.css'
 import { Link } from 'react-router-dom'
+import { Button,  } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 class BadgeDealerListItem extends Component {
     render() {
         return (
@@ -31,7 +33,7 @@ class BadgeDealerListItem extends Component {
                    
                     
                     </div>
-                    <p className='link_contener' ><Link className='link' to={`/badgedealersview/${this.props.id}`}>Więcej</Link></p>
+                    <p className='link_contener' ><Link className='link' to={`/badgedealersview/${this.props.id}`}><Button inverted  color="blue" className="IntroButton">Więcej </Button></Link></p>
                 </div>
             </div>
 
