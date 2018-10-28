@@ -24,10 +24,13 @@ class BadgeListItem extends Component {
               </Fragment>
             )}  
             <div className="link_holder">
+  
               {" "}
-              <Link className="link" to={`/badges/${this.props.id}`}>
+              <Link className="link" to={`/badges/${this.props.id}`}><Button inverted  color="blue" className="IntroButton">
                 Więcej  
-              </Link>{" "}
+                </Button></Link>{" "}
+              
+              
             </div>
           </div>
         </li>
