@@ -4,9 +4,9 @@
 }
 
 body{
-  background-color: #2D4471;
-  height: 100%;
-
+  background: url(https://images.unsplash.com/photo-1525121211281-e941dc8c5f9e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7d94d53f20d2e54268cfe09b87ce183&auto=format&fit=crop&w=2134&q=80) center;
+  height: 100vh;
+  background-size: 100%
 }
 
 
@@ -14,7 +14,7 @@ body{
 
   .App{
     text-align: center;
-    background-color: rgb(61, 61, 61);
+    
   }
   
   .navigation{

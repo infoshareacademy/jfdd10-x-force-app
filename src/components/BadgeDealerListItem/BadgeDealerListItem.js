@@ -10,7 +10,7 @@ class BadgeDealerListItem extends Component {
 
             <div className="contener">
                 <div className="logo">
-
+                
                 <img className='avatar'  src={this.props.avatar} alt='' />
                 
                 
