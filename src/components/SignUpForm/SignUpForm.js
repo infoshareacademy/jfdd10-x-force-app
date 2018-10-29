@@ -10,6 +10,7 @@ class SignUpForm extends Component {
   state = {
     email: "",
     password: "",
+    name: "",
     error: null
   };
 
@@ -24,7 +25,10 @@ class SignUpForm extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.setState({ erro: null }))
+      .then((data) => {
+        firebase.database().ref('/users/' + data.user.uid).set({ name: this.state.name })
+        this.setState({ erro: null })
+      })
       .catch(error => this.setState({ error }));
   };
 
@@ -45,6 +49,14 @@ class SignUpForm extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
+          <input
+            placeholder="Enter name"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+          <label>Jesteś trenerem?</label>
+           <input type="checkbox" name="trainer" value="trainer"/>
           <button>Sign up</button>
         </form>
       </div>
