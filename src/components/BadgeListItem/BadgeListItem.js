@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./BadgeListItem.css";
-import { Button, Transition } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+  import { Button, } from "semantic-ui-react";
+  import "semantic-ui-css/semantic.min.css";
+
 
 class BadgeListItem extends Component {
-
-  
   render() {
     return (
       <div>
@@ -23,15 +22,15 @@ class BadgeListItem extends Component {
                   </span>
                 </div>
               </Fragment>
-            )}
+            )}  
             <div className="link_holder">
-                <Transition animation={"tada"} duration={1000} visible={true}>
-              <Link className="link" to={`/badges/${this.props.id}`}>
-                  <Button toggle inverted color="blue" className="IntroButton">
-                    Więcej
-                  </Button>
-              </Link>
-                </Transition>
+  
+              {" "}
+              <Link className="link" to={`/badges/${this.props.id}`}><Button toggle inverted  color="blue" className="IntroButton">
+                Więcej  
+                </Button></Link>{" "}
+              
+              
             </div>
           </div>
         </li>
