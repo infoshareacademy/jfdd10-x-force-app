@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesView.css";
-import { Transition, Icon } from 'semantic-ui-react'
+import { Transition, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-
 
 class BadgesView extends Component {
   constructor() {
     super();
-    
+
     this.state = {
       badges: [],
       currentPage: 1,
       badgesPerPage: 5,
-      isVisible: true
+      isVisibleLeft: true,
+      isVisableRight: true
 
-      
       // paginatedBadge: []
     };
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -30,14 +29,14 @@ class BadgesView extends Component {
   handlePageChangeOnArrowRight(page, number) {
     number.length !== page && this.setState({ currentPage: page + 1 });
 
-    this.setState({ isVisible: !this.state.isVisible})
+    this.setState({ isVisableRight: !this.state.isVisableRight });
   }
 
   handlePageChangeOnArrowLeft(page, number) {
     number.length - number.length + 1 !== page &&
       this.setState({ currentPage: page - 1 });
 
-   
+    this.setState({ isVisibleLeft: !this.state.isVisibleLeft });
   }
 
   componentDidMount() {
@@ -77,18 +76,48 @@ class BadgesView extends Component {
 
     return (
       <div>
-        
         {console.log(badges)}
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>
         <div className="container_page_numbers">
-        <span><Icon size='huge' inverted color='blue' name='caret left' onClick={() =>this.handlePageChangeOnArrowLeft  (currentPage, pageNumbers)}/></span>
+          <span>
+            <Transition
+              animation={"pulse"}
+              duration={1000}
+              visible={this.state.isVisibleLeft}
+            >
+              <Icon
+                size="huge"
+                inverted
+                color="blue"
+                name="caret left"
+                onClick={() =>
+                  this.handlePageChangeOnArrowLeft(currentPage, pageNumbers)
+                }
+              />
+            </Transition>
+          </span>
           <span id="page-numbers">{renderPageNumbers}</span>
-          
-          <span><Transition animation={"pulse"} duration={500} visible={this.state.isVisible}><Icon size='huge' inverted color='blue' name='caret right' onClick={() =>this.handlePageChangeOnArrowRight(currentPage, pageNumbers)}/></Transition></span>
+
+          <span>
+            <Transition
+              animation={"pulse"}
+              duration={1000}
+              visible={this.state.isVisableRight}
+            >
+              <Icon
+                size="huge"
+                inverted
+                color="blue"
+                name="caret right"
+                onClick={() =>
+                  this.handlePageChangeOnArrowRight(currentPage, pageNumbers)
+                }
+              />
+            </Transition>
+          </span>
         </div>
-     
       </div>
     );
   }
