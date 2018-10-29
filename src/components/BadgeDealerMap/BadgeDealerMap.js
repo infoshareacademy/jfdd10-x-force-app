@@ -5,8 +5,6 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerMap.css";
-import BadgeList from "../BadgeList/BadgeList";
-import {bind} from 'leaflet';
 
 class BadgeDealerMap extends Component {
   static propTypes = {

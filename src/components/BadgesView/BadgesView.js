@@ -30,9 +30,12 @@ class BadgesView extends Component {
   }
 
   componentDidMount() {
-    fetch("/data/badges.json")
+    fetch("https://x-force-app.firebaseio.com/badges.json")
       .then(response => response.json())
-      .then(badge => this.setState({ badges: badge }));
+      .then(data =>
+        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
+      )
+      .then(badges => this.setState({ badges }));
   }
 
   render() {
@@ -63,6 +66,7 @@ class BadgesView extends Component {
 
     return (
       <div>
+        {console.log(badges)}
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>
@@ -72,14 +76,14 @@ class BadgesView extends Component {
               this.handlePageChangeOnArrowLeft(currentPage, pageNumbers)
             }
             className="left arrow"
-          />
+            />
           <span id="page-numbers">{renderPageNumbers}</span>
           <span
             onClick={() =>
               this.handlePageChangeOnArrowRight(currentPage, pageNumbers)
             }
             className="right arrow"
-          />
+            />
         </div>
       </div>
     );

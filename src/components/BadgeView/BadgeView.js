@@ -9,12 +9,18 @@ class BadgeView extends Component {
   };
 
   componentDidMount() {
-    fetch(`${process.env.PUBLIC_URL}/data/badges.json`)
+    fetch("https://x-force-app.firebaseio.com/badges.json")
       .then(response => response.json())
+      .then(data =>
+        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
+      )
       .then(badges => this.setState({ badges }));
 
-    fetch(`${process.env.PUBLIC_URL}/data/trainers.json`)
+    fetch("https://x-force-app.firebaseio.com/trainers.json")
       .then(response => response.json())
+      .then(data =>
+        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
+      )
       .then(trainers => this.setState({ trainers }));
   }
 
