@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import firebase from "firebase";
 
 import "./SignUpForm.css";
+import {withRouter} from 'react-router-dom';
 
 class SignUpForm extends Component {
   static propTypes = {};
@@ -11,6 +12,7 @@ class SignUpForm extends Component {
     email: "",
     password: "",
     name: "",
+    isTrainer: false,
     error: null
   };
 
@@ -26,9 +28,10 @@ class SignUpForm extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((data) => {
-        firebase.database().ref('/users/' + data.user.uid).set({ name: this.state.name })
+        console.log(this.state.isTrainer)
+        firebase.database().ref('/users/' + data.user.uid).set({ name: this.state.name, isTrainer: this.state.isTrainer })
         this.setState({ erro: null })
-      })
+      }).then(() => this.props.history.push('/'))
       .catch(error => this.setState({ error }));
   };
 
@@ -56,7 +59,7 @@ class SignUpForm extends Component {
             onChange={this.handleChange}
           />
           <label>Jesteś trenerem?</label>
-           <input type="checkbox" name="trainer" value="trainer"/>
+           <input type="checkbox" name="trainer" checked={this.state.isTrainer} onChange={() => this.setState({ isTrainer: !this.state.isTrainer })}/>
           <button>Sign up</button>
         </form>
       </div>
@@ -64,4 +67,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default SignUpForm;
+export default withRouter(SignUpForm);
