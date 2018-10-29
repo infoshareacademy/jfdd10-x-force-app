@@ -6,6 +6,7 @@ import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
 import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
 import './App.css';
+import BadgeMaker from '../BadgeMaker/BadgeMaker';
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
                 <li><NavLink className='links' exact to="/"> Główna</NavLink></li>
                 <li><NavLink className='links'  to="/badges">Odznaki</NavLink></li>
                 <li><NavLink className='links'  to="/badgedealersview">Trenerzy</NavLink></li>
+                <li><NavLink className='links'  to="/badgeMaker">tworzenie badga</NavLink></li>
               </ul>
               </div>
 
@@ -40,6 +42,7 @@ class App extends Component {
               <Route path="/badges/:badgeId" component={BadgeView} />
               <Route exact path="/badgedealersview" component={BadgeDealersView} />
               <Route path="/badgedealersview/:badgeDealerViewId" component={BadgeDealerView} />
+              <Route path="/badgeMaker" component={BadgeMaker} />
           
             </div>
           </Router>                                            

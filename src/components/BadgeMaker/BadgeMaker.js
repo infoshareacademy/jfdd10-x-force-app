@@ -32,13 +32,12 @@ class BadgeMaker extends Component {
     });
 
     this.setState({
-      badgeTitleEdit: badge.title, 
+      badgeTitleEdit: badge.title,
       badgeLogoEdit: badge.logo,
       badgeDescriptionEdit: badge.description,
       badgeMoreInfoEdit: badge.moreInfo
     });
   };
-
 
   handleSubmit = event => {
     event.preventDefault();
@@ -52,56 +51,69 @@ class BadgeMaker extends Component {
 
     this.setState({
       taskTitleAdd: "",
-      badgeLogoAdd: "",
+      // badgeLogoAdd: "",
       badgeDescriptionAdd: "",
       badgeMoreInfoAdd: ""
     });
   };
 
-  componentDidMount() {
-    this.props.firebaseRef.on("value", snapshot => {
-      const badges = Object.entries(snapshot.val() || {})
-        .map(([id, value]) => ({ id, ...value }))
-        .reverse();
+  // componentDidMount() {
+  //   this.props.firebaseRef.on("value", snapshot => {
+  //     const badges = Object.entries(snapshot.val() || {})
+  //       .map(([id, value]) => ({ id, ...value }))
+  //       .reverse();
 
-      this.setState({
-        badges
-      });
-    });
-  }
+  //     this.setState({
+  //       badges
+  //     });
+  //   });
+  // }
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <label for="avatar">Tytuł: </label>
           <input
             className="make badge"
             placeholder="Badge Title"
             value={this.state.taskTitleAdd}
             onChange={this.makeHandleChange("taskTitleAdd")}
           />
-          <label for="avatar">Logo:</label>
+          <br />
+          <br />
+          <label for="avatar">Logo: </label>
           <input
             type="file"
             // name="avatar"
             accept="image/png, image/jpeg"
             className="make badge"
             placeholder="Badge Logo"
-            value={this.state.taskTitleAdd}
+            // value={this.state.badgeLogoAdd}
             onChange={this.makeHandleChange("badgeLogoAdd")}
           />
+          <br />
+          <br />
+          <label for="avatar">Opis: </label>
           <input
             className="make badge"
             placeholder="Badge Description"
-            value={this.state.taskTitleAdd}
+            value={this.state.badgeDescriptionAdd}
             onChange={this.makeHandleChange("badgeDescriptionAdd")}
           />
+          <br />
+          <br />
+          <label for="avatar">Więcej informacji: </label>
           <input
             className="make badge"
             placeholder="Badge more info"
-            value={this.state.taskTitleAdd}
+            value={this.state.badgeMoreInfoAdd}
             onChange={this.makeHandleChange("badgeMoreInfoAdd")}
           />
+          <br />
+          <br />
+
+          <button>ADD</button>
         </form>
       </div>
     );
