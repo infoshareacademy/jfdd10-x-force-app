@@ -1,0 +1,201 @@
+{
+  "badges" : [ {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 3, 7 ],
+    "description" : "Powiększ obwód bicepsa",
+    "howMouchCanBeThisBadge" : 1,
+    "id" : 1,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/flex-biceps-filled.png",
+    "moreInfo" : "To nie puszka szpinaku powiększa biceps a wyselekcjonowane ćwiczenia pod okiem doświadczonego trenera z którym powiększysz obwód bicepsa trwale !",
+    "title" : "Super Biceps Papaya"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 6, 7 ],
+    "description" : "Wyciskanie na ławce",
+    "howMouchCanBeThisBadge" : 10,
+    "id" : 2,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/bench-press-filled.png",
+    "moreInfo" : "Wyciskanie sztangi w leżeniu na ławce poziomej – popularne ćwiczenie angażujące duże partie mięśniowe: mięśnie klatki piersiowej, mięśnie trójgłowe ramion, przednie aktony mięśni naramiennych.",
+    "title" : "Mistrz wyciskania"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 4, 5, 6, 7 ],
+    "description" : "Podciaganie na drążu",
+    "howMouchCanBeThisBadge" : 20,
+    "id" : 3,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/pullups-filled.png",
+    "moreInfo" : "Podciąganie to ćwiczenie budujące całą górę: szerokie plecy i potężne ramiona. Oto sposób, by opanować je do perfekcji, niezależnie od poziomu, z którego startujesz. Ten trening sprawi, że Twoje plecy przybiorą kształt litery V, a ramiona wypełnią rękawki koszulki.",
+    "title" : "Podciąganie !"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 3, 6, 7 ],
+    "description" : "Pompki !",
+    "howMouchCanBeThisBadge" : 33,
+    "id" : 4,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/material/196/000000/pushups.png",
+    "moreInfo" : "Pompki są jednym z najpopularniejszych ćwiczeń, fizycznych. Są doskonałe do budowy mięśni klatki piersiowej, barków, ramion i wielu mięśni tułowia, w tym również mięśni brzucha",
+    "title" : "Mistrz Pompmowania"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4, 5, 6, 7 ],
+    "description" : "Siła dzięki martwemu ciągowi",
+    "howMouchCanBeThisBadge" : 40,
+    "id" : 5,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/deadlift-filled.png",
+    "moreInfo" : "Martwy ciąg do obok przysiadu jedno z najpotrzebniejszych ćwiczeń siłowych. Jest to ćwiczenie wielostawowe, angażujące wiele grup mięśniowych, ale głównie prostowniki grzbietowe, mięsień najszerszy grzbiet, dwugłowy oraz mięśnie pośladkowe.Jego technika jest dość trudno, ale ziemia jest dla tego produktu",
+    "title" : "Martwy Ciąg"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4, 5, 7 ],
+    "description" : "Joga w służbie spokojnej i zdrowej ciąży oraz świadomego, naturalnego porodu.",
+    "howMouchCanBeThisBadge" : 52,
+    "id" : 6,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/prenatal-yoga-filled.png",
+    "moreInfo" : "Joga ma nieocenioną wartość w służbie nowoczesnego macierzyństwa. Traktuje kobietę w ciąży ze szczególną uwagą i pomaga jej utrzymać holistyczną harmonię w obrębie ciała, umysłu i serca.",
+    "title" : "Joga Prenatalna"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4 ],
+    "description" : "Trening ze skakanką.",
+    "howMouchCanBeThisBadge" : 20,
+    "id" : 7,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/jump-rope-filled.png",
+    "moreInfo" : "Myślisz, że trening ze skakanką to zabawa tylko dla dzieci? Nic bardziej mylnego! Sprawdź, jakich cudów może dokonać regularne skakanie na skakance – systematyczne ćwiczenia pomogą ci schudnąć i sprawią, że na nowo polubisz skakanie.",
+    "title" : "Skacz jak Rocy Balboa"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4, 5, 6, 7 ],
+    "description" : "CroosFit.",
+    "howMouchCanBeThisBadge" : 80,
+    "id" : 8,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/crossfit-filled.png",
+    "moreInfo" : "CrossFit – program treningu siłowego i kondycyjnego, który opiera się na wzroście dziesięciu najważniejszych zdolności siłowych. Podczas ćwiczeń rozwija się siłę i masę mięśni, aby wzmocnić siłę ruchu mięśni.",
+    "title" : "Silny jak Żóbr"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4, 5, 6, 7 ],
+    "description" : "Poznaj matkę wszystkich sporów.",
+    "howMouchCanBeThisBadge" : 100,
+    "id" : 9,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios-glyphs/190/000000/artistic-gymnastics.png",
+    "moreInfo" : "Podczas zajęć gimnastyki sportowej można nauczyć się między innymi stania i chodzenia na rękach, flagi, szpagatów oraz mostków, a jej zadaniem jest zwiększenie gibkości i sprężystości ciała, poprawienie jego motoryki, zręczności oraz koordynacji ruchowej.",
+    "title" : "Gimanstyka Sportowa"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 5, 6, 7 ],
+    "description" : "Piltes.",
+    "howMouchCanBeThisBadge" : 26,
+    "id" : 10,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/pilates-filled.png",
+    "moreInfo" : "Pilates jest niemal dla każdego - to uniwersalny trening wzmacniający wszystkie mięśnie ciała, poprawiający posturę, zapobiegający bólom pleców wynikającym z siedzącego trybu życia.",
+    "title" : "Uniwersalne wzmocnienie"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4, 5, 6, 7 ],
+    "description" : "Joga !.",
+    "howMouchCanBeThisBadge" : 80,
+    "id" : 11,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/yoga-filled.png",
+    "moreInfo" : "Joga - według najpopularniejszych interpretacji tego terminu - to połączenie ciała, umysłu i duszy, filozofia życiowa, która ma doprowadzić do harmonii pomiędzy ciałem, umysłem i duszą",
+    "title" : "Harmonia Życia"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 3, 4, 5, 6, 7 ],
+    "description" : "Trening nóg.",
+    "howMouchCanBeThisBadge" : 100,
+    "id" : 12,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/leg-filled.png",
+    "moreInfo" : "Trening nóg to jeden z ważniejszych elementów planu treningowego. Mimo to wiele osób próbuje pominąć ten dzień z powodu dużych obciążeń, które ciężko wytrzymać. W konsekwencji otrzymujemy tzw. wygląd bociana. Można to oczywiście poprawić, stosując odpowiednie ćwiczenia.",
+    "title" : "Stalowe nogi SuperMena"
+  }, {
+    "IdTrainerWhoCanGiveThisBadge" : [ 1, 2, 5, 6, 7 ],
+    "description" : "Spining !",
+    "howMouchCanBeThisBadge" : 26,
+    "id" : 13,
+    "isTaked" : false,
+    "logo" : "https://png.icons8.com/ios/200/000000/spinning-filled.png",
+    "moreInfo" : "Spinning to ćwiczenia na rowerach stacjonarnych – ale nieco innych niż te domowe albo z siłowni. Rowery do spinningu są wzorowane na kolarskich – miały bowiem służyć sportowcom do treningów poza sezonem.",
+    "title" : "Kondycja Orła"
+  } ],
+  "trainers" : [ {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairDreads&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Blue01&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
+    "description" : "Trener personalny z wieloletnim doświadczeniem. Absolwent wychowania fizycznego i fizjoterapii. Instruktor fitness i masażysta.Na podstawie wieloletniego doświadczenia obrał skuteczne metody redukcji wagi i kształtowania sylwetki swoich podopiecznych. Ma na koncie wiele spektakularnych przemian. Dodatkowo jako dyplomowany fizjoterapeuta zajmuje się klientami z problemami ortopedycznymi.",
+    "id" : 1,
+    "listOfBadges" : [ 1, 3, 4, 5, 6 ],
+    "name" : "Janusz",
+    "position" : [ 54.403277, 18.569947 ],
+    "surname" : "Tracz"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Heather&eyeType=Wink&eyebrowType=Default&mouthType=Smile&skinColor=Light",
+    "description" : "Na swoich zajęciach zwraca szczególną uwagę na poprawność i technikę wykonywanych ćwiczeń. Entuzjazm i uśmiech na zajęciach to jego nieodzowna cecha, gdyż uwielbia pracę z ludźmi, a ich radość z osiąganych efektów napędza go do działania i podnoszenia swoich umiejętności. Jako Trener Personalny nie jest tylko specjalistą w zakresie swojej specjalizacji, ale posiada również bardzo dużą wiedzę na temat zasad zdrowego żywienia i dietetyki sportowej.",
+    "id" : 2,
+    "listOfBadges" : [ 4, 5, 6 ],
+    "name" : "Krzysztof",
+    "position" : [ 54.406045, 18.576298 ],
+    "surname" : "Sprzączka"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesar&accessoriesType=Blank&hairColor=BrownDark&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Black&graphicType=Bat&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
+    "description" : "Cześć, nazywam się Krzesisław Szczery i od ponad sześciu lat zajmuję się indywidualną pracą z klientem. Interesuję się biochemią, chemią żywności, fizjologią oraz wpływem czynników zewnętrznych na funkcjonowanie organizmu człowieka. Wychodzę z założenia, że wszystko może przynieść dobroczynny wpływ na nasz organizm pod warunkiem, że wiemy jak i kiedy tego użyć. Kiedy pracujemy razem staram się poznać Ciebie jak najlepiej. Im więcej o Tobie wiem tym lepiej będę w stanie Ci pomóc.",
+    "id" : 3,
+    "listOfBadges" : [ 1, 5, 6, 7, 11 ],
+    "name" : "Krzesisław",
+    "position" : [ 54.402314, 18.579614 ],
+    "surname" : "Szczery"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Platinum&facialHairType=MoustacheMagnum&facialHairColor=Auburn&clotheType=Hoodie&clotheColor=Red&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Twinkle&skinColor=Light",
+    "description" : "Prowadzę treningi zarówno z dziećmi, młodzieżą, dorosłymi jak i z osobami w wieku emerytalnym, na siłowni, w salach fitnessu, jak i na świeżym powietrzu, wszystko w zależności od potrzeb klienta.Treningi ze mną to nie tylko 1h wysiłek fizyczny ale także coaching zarówno treningowy, żywieniowy jak i mentalny. Osoby z którymi ćwiczę lub też ćwiczyłem wiedzą, że współpraca ze mną to nie tylko ciężki, efektywny trening ale również przyjemność i wspólne osiąganie celów.",
+    "id" : 4,
+    "listOfBadges" : [ 1, 3, 4, 5, 6, 12, 13 ],
+    "name" : "Conrad",
+    "position" : [ 54.404421, 18.58191 ],
+    "surname" : "Dicki"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShaggyMullet&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Heather&eyeType=Squint&eyebrowType=UpDown&mouthType=Smile&skinColor=Light",
+    "description" : "Pasjonatka sportu i aktywności fizycznej. Komunikatywność i przyjazne usposobienie z pewnością są jej największymi zaletami, a uśmiechem pokonuje wszelkie bariery kontaktu z Klientem. W pracy z podopiecznymi kieruje się przeświadczeniem, że trening powinien być przyjemnością, a odżywianie racjonalnym i świadomym wyborem, podyktowanym przekonaniem, że dieta to nie wyrzeczenia, a początek nowych, ale smacznych nawyków żywieniowych.",
+    "id" : 5,
+    "listOfBadges" : [ 1, 3, 6, 8, 9, 10 ],
+    "name" : "Angelina",
+    "position" : [ 54.422426, 18.57139 ],
+    "surname" : "Jolie"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardLight&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Heather&graphicType=Hola&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
+    "description" : "Ze sportem związany od dziecka. Wyczynowo trenuje Taekwondo Olimpijskie od 17 lat. Członek Kadry Narodowej od 2006 roku. Piąty zawodnik Mistrzostw Świata Seniorów. Brązowy medalista Mistrzostw Europy Młodzieżowców oraz Mistrzostw Europy Juniorów, czterokrotny Mistrz Polski Seniorów w kategorii ciężkiej, wielokrotny medalista turniejów międzynarodowych w Taekwondo Olimpijskim.",
+    "id" : 6,
+    "listOfBadges" : [ 1, 3, 4, 5, 6 ],
+    "name" : "Toy",
+    "position" : [ 54.399486, 18.579378 ],
+    "surname" : "Swaniawski"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFrida&accessoriesType=Kurt&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Pale",
+    "description" : "Od najmłodszych lat pasjonuje się tańcem, zdobywczyni klasy mistrzowskiej w tańcach latynoamerykańskich i standartowych. Pełna optymizmu i pogody ducha. Pasjonuje ją człowiek i praca z nim. Uwielbia zarażać energią, ale nie ogranicza się tylko do fizycznego aspektu zajęć, ciągle poszukuje mentalnej świadomości ciała i ruchu.",
+    "id" : 7,
+    "listOfBadges" : [ 4, 5, 6 ],
+    "name" : "Ellen",
+    "position" : [ 54.432886, 18.560683 ],
+    "surname" : "Ripley"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFroBand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Blue02&eyeType=Surprised&eyebrowType=Default&mouthType=Twinkle&skinColor=Black",
+    "description" : "Dyplomowany nauczyciel jogi B.K.S Iyengara ( II stopień nauczycielski). Praktykuje jogę od 12 lat. Swój warsztat nauczycielski kształtowała między innymi w Ramamani Iyengar Instytute w Punie (Indie). Doskonali swoją wiedzę poprzez regularny udział w międzynarodowych warsztatach dla nauczycieli jogi.",
+    "id" : 8,
+    "listOfBadges" : [ 1, 5, 6, 7, 11 ],
+    "name" : "Janina",
+    "position" : [ 54.434633, 18.574136 ],
+    "surname" : "Radzikowski"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairSides&accessoriesType=Blank&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=Overall&clotheColor=Heather&eyeType=Close&eyebrowType=UpDownNatural&mouthType=Smile&skinColor=Light",
+    "description" : "Do opieki nad Klientem podchodzi jak do procesu coachingowego, wyznaczając każdemu indywidualny plan rozwoju. Określenie priorytetów oraz podporządkowanie im treningu to początek drogi do sukcesu. Jest wsparciem w drodze do wytyczonego celu, dzieląc się wiedzą i doświadczeniem. Chcąc być dobrym, w tym co robi, stale się rozwija, by podopieczni w bezpieczny sposób wkraczali na wyżyny swoich umiejętności.",
+    "id" : 9,
+    "listOfBadges" : [ 1, 3, 4, 5, 6, 12, 13 ],
+    "name" : "Ricky",
+    "position" : [ 54.440149, 18.554567 ],
+    "surname" : "Martin"
+  }, {
+    "avatar" : "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&eyeType=WinkWacky&eyebrowType=Default&mouthType=Twinkle&skinColor=Light",
+    "description" : "Trener personalny, licencjonowany Instruktor TRX Suspension Training. Od 8 lat Instruktor fitness oraz Indoor Cycling Basic. Uczestniczka licznych szkoleń i warsztatów z zakresu treningów funkcjonalnych, oceny funkcjonalnej FMS, dietetyki i suplementacji oraz wszelkich zajęć wzmacniających jak i choreograficznych.Prywatnie żona Song goKu",
+    "id" : 10,
+    "listOfBadges" : [ 1, 3, 6, 8, 9, 10 ],
+    "name" : "Chchi",
+    "position" : [ 54.444392, 18.565468 ],
+    "surname" : "GoKu"
+  } ]
+}

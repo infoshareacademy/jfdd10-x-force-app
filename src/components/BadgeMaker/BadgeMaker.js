@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import "./BadgeMaker.css";
 
 class BadgeMaker extends Component {
-
   state = {
     badgeTitleAdd: "",
     badgeLogoAdd: "",
@@ -49,7 +48,7 @@ class BadgeMaker extends Component {
       )
       .then(this.props.getBadges);
     this.props
-      .trainerUpdate(this.props.args, "avatar")
+      .trainerUpdate(this.props.dealer.id, , "avatar")
       .then(this.props.getTrainers);
   };
 
