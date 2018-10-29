@@ -5,6 +5,8 @@ import { Button, Transition } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 class BadgeListItem extends Component {
+
+  
   render() {
     return (
       <div>
@@ -23,13 +25,13 @@ class BadgeListItem extends Component {
               </Fragment>
             )}
             <div className="link_holder">
+                <Transition animation={"tada"} duration={1000} visible={true}>
               <Link className="link" to={`/badges/${this.props.id}`}>
-                <Transition animation={"jiggle"} duration={1000} visible={true}>
                   <Button toggle inverted color="blue" className="IntroButton">
-                    Więcejkk
+                    Więcej
                   </Button>
-                </Transition>
               </Link>
+                </Transition>
             </div>
           </div>
         </li>
