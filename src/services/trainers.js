@@ -2,17 +2,17 @@ const trainerApiUrl = "https://x-force-app.firebaseio.com/";
 
 //for later to show all users and their badges
 
-// export const getTrainers = () =>
-//   fetch(trainerApiUrl + "/trainers.json")
-//     .then(response => response.json())
-//     .then(users =>
-//       Object.entries(trainers || {}).map(([id, value]) => ({
-//         id,
-//         ...value
-//       }))
-//     );
+export const getTrainers = () =>
+  fetch(trainerApiUrl + "/trainers.json")
+    .then(response => response.json())
+    .then(trainers =>
+      Object.entries(trainers || {}).map(([id, value]) => ({
+        id,
+        ...value
+      }))
+    );
 
-export const addTrainer = (name, surname, badges, description, avatar) =>
+export const addTrainer = (name, surname, badges, description, avatar, length) =>
   fetch(trainerApiUrl + "/trainers.json", {
     method: "POST",
     body: JSON.stringify({
@@ -20,7 +20,8 @@ export const addTrainer = (name, surname, badges, description, avatar) =>
       surname,
       badges,
       description,
-      avatar
+      avatar,
+      id: length + 1,
     }),
     headers: {
       "Content-Type": "application/json"
@@ -37,7 +38,7 @@ export const addTrainer = (name, surname, badges, description, avatar) =>
 //     }
 //   });
 
-export const updateTrainer = (trainerId, name, surname, badges, description, avatar) =>
+export const updateTrainer = (trainerId, name, surname, badges, description, avatar, dealerId) =>
   fetch(trainerApiUrl + "/trainers/" + trainerId + ".json", {
     method: "PATCH",
     body: JSON.stringify({
@@ -45,7 +46,9 @@ export const updateTrainer = (trainerId, name, surname, badges, description, ava
       surname,
       badges,
       description,
-      avatar
+      avatar,
+      listOfBadges: [dealerId]
+
     }),
     headers: {
       "Content-Type": "application/json"

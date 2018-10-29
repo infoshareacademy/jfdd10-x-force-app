@@ -12,19 +12,23 @@ export const getBadges = () =>
       }))
     );
 
-export const addBadge = (title, description, moreInfo, avatar) =>
+export const addBadge = (title, logo, description, moreInfo, avatar, length, dealerId) => 
   fetch(badgesApiUrl + "/badges.json", {
     method: "POST",
     body: JSON.stringify({
       title,
+      logo ,
       moreInfo,
       description,
-      avatar
+      avatar,
+      id: length + 1,
+      IdTrainerWhoCanGiveThisBadge: [dealerId]
     }),
     headers: {
       "Content-Type": "application/json"
     }
   });
+
 
   //for later to delate trainer in seting
 

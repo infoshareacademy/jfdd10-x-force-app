@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import "./BadgeMaker.css";
 
 class BadgeMaker extends Component {
-  static propTypes = {
-    firebaseRef: PropTypes.func
-  };
+
   state = {
     badgeTitleAdd: "",
     badgeLogoAdd: "",
@@ -26,35 +24,33 @@ class BadgeMaker extends Component {
     });
   };
 
-  makeHandleEnterEditMode = badge => event => {
-    this.props.firebaseRef.child(badge.id).update({
-      inEdit: true
-    });
+  // makeHandleEnterEditMode = badge => event => {
+  //   this.props.firebaseRef.child(badge.id).update({
+  //     inEdit: true
+  //   });
 
-    this.setState({
-      badgeTitleEdit: badge.title,
-      badgeLogoEdit: badge.logo,
-      badgeDescriptionEdit: badge.description,
-      badgeMoreInfoEdit: badge.moreInfo
-    });
-  };
+  //   this.setState({
+  //     badgeTitleEdit: badge.title,
+  //     badgeLogoEdit: badge.logo,
+  //     badgeDescriptionEdit: badge.description,
+  //     badgeMoreInfoEdit: badge.moreInfo
+  //   });
+  // };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.firebaseRef.push({
-      id: Date.now(),
-      title: this.state.badgeTitleAdd,
-      logo: this.state.badgeLogoAdd,
-      description: this.state.badgeDescriptionAdd,
-      moreInfo: this.state.badgeMoreInfoAdd
-    });
-
-    this.setState({
-      taskTitleAdd: "",
-      // badgeLogoAdd: "",
-      badgeDescriptionAdd: "",
-      badgeMoreInfoAdd: ""
-    });
+    this.props
+      .badgeAdd(
+        this.state.badgeTitleAdd,
+        this.state.badgeLogoAdd,
+        this.state.badgeDescriptionAdd,
+        this.state.badgeMoreInfoAdd,
+        "avatar"
+      )
+      .then(this.props.getBadges);
+    this.props
+      .trainerUpdate(this.props.args, "avatar")
+      .then(this.props.getTrainers);
   };
 
   // componentDidMount() {
@@ -77,8 +73,8 @@ class BadgeMaker extends Component {
           <input
             className="make badge"
             placeholder="Badge Title"
-            value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            value={this.state.badgeTitleAdd}
+            onChange={this.makeHandleChange("badgeTitleAdd")}
           />
           <br />
           <br />
