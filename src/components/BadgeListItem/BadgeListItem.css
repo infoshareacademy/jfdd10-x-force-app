@@ -58,6 +58,14 @@
         font-size: 25px;
         
     }
+
+    .badgeListItem .description{
+
+        font-size: 20px;
+ 
+    }
+    .badgeListItem .link{
+        font-size: 20px;}
 }
 
 @media (min-width: 415px) {
@@ -110,11 +118,21 @@
         justify-content: flex-end;
         padding: 5px;
         padding-top: 13px;
+    
         
     }
     .badgeListItem .link{
         font-size: 25px;
         
+    }
+    .badgeListItem .description{
+
+        font-size: 25px;
+ 
+    }
+    .badgeListItem .link{
+        font-size: 20px;
+ 
     }
 }
 
