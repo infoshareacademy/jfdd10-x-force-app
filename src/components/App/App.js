@@ -5,6 +5,8 @@ import BadgeView from '../BadgeView/BadgeView'
 import HomeView from '../HomeView/HomeView';
 import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
 import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
+import { Button, } from "semantic-ui-react";
+
 import './App.css';
 
 class App extends Component {
@@ -28,12 +30,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Router>
+           
             <div className="App">
             <div className="navigation">
               <ul>
-                <li><NavLink className='links' exact to="/"> Główna</NavLink></li>
-                <li><NavLink className='links'  to="/badges">Odznaki</NavLink></li>
-                <li><NavLink className='links'  to="/badgedealersview">Trenerzy</NavLink></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badgedealersview">Trenerzy</NavLink></Button></li>
+                
               </ul>
               </div>
 
@@ -46,6 +50,7 @@ class App extends Component {
               <Route path="/badgedealersview/:badgeDealerViewId" component={BadgeDealerView} />
           
             </div>
+        
           </Router>                                            
         </header>
       </div>

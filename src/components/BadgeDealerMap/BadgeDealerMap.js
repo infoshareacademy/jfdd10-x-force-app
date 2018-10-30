@@ -6,6 +6,9 @@ import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerMap.css";
 
+
+
+
 class BadgeDealerMap extends Component {
   static propTypes = {
     dealers: PropTypes.array,
