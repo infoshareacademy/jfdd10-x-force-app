@@ -40,7 +40,7 @@ class BadgesView extends Component {
   }
 
   componentDidMount() {
-    fetch("https://x-force-app.firebaseio.com/badges.json")
+    fetch("https://infoshare-da073.firebaseio.com/badges.json")
       .then(response => response.json())
       .then(data =>
         Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
