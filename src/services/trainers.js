@@ -1,4 +1,4 @@
-const trainerApiUrl = "https://x-force-app.firebaseio.com/";
+const trainerApiUrl = "https://infoshare-da073.firebaseio.com/";
 
 //for later to show all users and their badges
 
