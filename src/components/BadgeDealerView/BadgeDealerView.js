@@ -102,11 +102,16 @@ class BadgeDealerView extends Component {
               </div>
               <div className="dealer_header">Te odznaki posiadam</div>
               <div className="dealer_badges">
+              {console.log('before:', this.state.badges)}
+              
                 <BadgeMaker
-                  dealer={dealer}
+                  // dealer={dealer}  
                   badgeAdd={(...args) => addBadge(...args, this.state.badges.length, dealerId).then(this.getBadges)}
-                  trainerUpdate={(...args) => updateTrainer(...args, dealerId )}
+                  trainerUpdate={(...args) => updateTrainer(...args, badgeDealerViewId, this.state.badges.length)}
                 />
+                {console.log(this.props)}
+              {console.log('after:', this.state.badges)}
+
                 <BadgesOfDealerView
                   trainerObject={trainerObject}
                   badges={this.state.badges}

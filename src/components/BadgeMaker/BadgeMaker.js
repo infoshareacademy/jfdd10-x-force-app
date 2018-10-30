@@ -5,13 +5,14 @@ import "./BadgeMaker.css";
 
 class BadgeMaker extends Component {
   state = {
+    id: null,
     badgeTitleAdd: "",
-    badgeLogoAdd: "",
+    badgeLogoAdd: null,
     badgeDescriptionAdd: "",
     badgeMoreInfoAdd: "",
 
     badgeTitleEdit: "",
-    badgeLogoEdit: "",
+    badgeLogoEdit: null,
     badgeDescriptionEdit: "",
     badgeMoreInfoEdit: "",
     badges: []
@@ -44,11 +45,10 @@ class BadgeMaker extends Component {
         this.state.badgeLogoAdd,
         this.state.badgeDescriptionAdd,
         this.state.badgeMoreInfoAdd,
-        "avatar"
       )
       .then(this.props.getBadges);
     this.props
-      .trainerUpdate(this.props.dealer.id, , "avatar")
+      .trainerUpdate(this.props.badgeDealerViewId, this.props.badgeId)
       .then(this.props.getTrainers);
   };
 
@@ -80,11 +80,10 @@ class BadgeMaker extends Component {
           <label for="avatar">Logo: </label>
           <input
             type="file"
-            // name="avatar"
             accept="image/png, image/jpeg"
             className="make badge"
             placeholder="Badge Logo"
-            // value={this.state.badgeLogoAdd}
+            value={this.state.badgeLogoAdd}
             onChange={this.makeHandleChange("badgeLogoAdd")}
           />
           <br />

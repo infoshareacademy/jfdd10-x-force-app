@@ -12,13 +12,13 @@ export const getTrainers = () =>
       }))
     );
 
-export const addTrainer = (name, surname, badges, description, avatar, length) =>
+export const addTrainer = (name, surname, position, description, avatar, length) =>
   fetch(trainerApiUrl + "/trainers.json", {
     method: "POST",
     body: JSON.stringify({
       name,
       surname,
-      badges,
+      position,
       description,
       avatar,
       id: length + 1,
@@ -38,16 +38,16 @@ export const addTrainer = (name, surname, badges, description, avatar, length) =
 //     }
 //   });
 
-export const updateTrainer = (trainerId, name, surname, badges, description, avatar, dealerId) =>
+export const updateTrainer = (trainerId, name, surname, position, description, avatar, badgeId) =>
   fetch(trainerApiUrl + "/trainers/" + trainerId + ".json", {
     method: "PATCH",
     body: JSON.stringify({
       name,
       surname,
-      badges,
+      position,
       description,
       avatar,
-      listOfBadges: [dealerId]
+      listOfBadges: [badgeId]
 
     }),
     headers: {
