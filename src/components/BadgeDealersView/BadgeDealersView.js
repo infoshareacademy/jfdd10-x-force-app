@@ -9,21 +9,21 @@ class BadgeDealersView extends Component {
     ownBadges: []
   };
 
-  componentDidMount() {
-    fetch("https://infoshare-da073.firebaseio.com/trainers.json")
-      .then(response => response.json())
-      .then(data =>
-        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
-      )
-      .then(dealers => this.setState({ dealers }));
+  // componentDidMount() {
+  //   fetch("https://infoshare-da073.firebaseio.com/trainers.json")
+  //     .then(response => response.json())
+  //     .then(data =>
+  //       Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
+  //     )
+  //     .then(dealers => this.setState({ dealers }));
 
-    fetch("https://infoshare-da073.firebaseio.com/badges.json")
-      .then(response => response.json())
-      .then(data =>
-        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
-      )
-      .then(badges => this.setState({ badges }));
-  }
+  //   fetch("https://infoshare-da073.firebaseio.com/badges.json")
+  //     .then(response => response.json())
+  //     .then(data =>
+  //       Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
+  //     )
+  //     .then(badges => this.setState({ badges }));
+  // }
 
   render() {
     console.log("sanity check", this.state.badges);
