@@ -34,9 +34,9 @@ class App extends Component {
             <div className="App">
             <div className="navigation">
               <ul>
-                <li><Button inverted color='blue'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
-                <li><Button inverted color='blue'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
-                <li><Button inverted color='blue'><NavLink className='links'  to="/badgedealersview">Trenerzy</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badgedealersview">Trenerzy</NavLink></Button></li>
                 
               </ul>
               </div>

@@ -18,7 +18,7 @@ body{
   
   .navigation{
     font-size: 20px;
-    margin: 0 auto
+    margin-top: 10px
   
    
   }
@@ -39,10 +39,14 @@ body{
 
   .navigation li{
   
-    
+   
     border-radius: 10px;
     padding: 5px;
     }
+
+  .linksButton{
+    width: 90%
+  }  
 
     
 
@@ -71,8 +75,49 @@ body{
   
   .navigation ul{
   
+  
+
+  margin-bottom: 40px;
+  padding-top: 40px;
+  }
+
+  .navigation li{
+  
+    
+    border-radius: 10px;
+    padding: 5px;
+    }
+
+    
+
+}
+
+@media (min-width: 670px) {
+
+  .App{
+    text-align: center;
+    
+  }
+  
+  .navigation{
+    font-size: 20px;
+   
+  
+   
+  }
+
+  .links{
+    text-decoration: none;
+    font-size: 30px
+    
+  }
+  
+  
+  .navigation ul{
+  
   display: flex;
   justify-content: space-around;
+
   margin-bottom: 40px;
   padding-top: 40px;
   }
