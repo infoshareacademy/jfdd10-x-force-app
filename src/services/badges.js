@@ -5,12 +5,12 @@ const badgesApiUrl = "https://infoshare-da073.firebaseio.com/";
 export const getBadges = () =>
   fetch(badgesApiUrl + "/badges.json")
     .then(response => response.json())
-    .then(badges =>
-      Object.entries(badges || {}).map(([id, value]) => ({
-        id,
-        ...value
-      }))
-    );
+    // .then(badges =>
+    //   Object.entries(badges || {}).map(([id, value]) => ({
+    //     id,
+    //     ...value
+    //   }))
+    // );
 
 export const addBadge = (title, logo, description, moreInfo, length, dealerId) => 
   fetch(badgesApiUrl + "/badges.json", {

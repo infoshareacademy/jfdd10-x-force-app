@@ -1,26 +1,20 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
-import PropTypes from "prop-types";
 
 class BadgesOfDealerView extends Component {
-  static propTypes = {
-    badges: PropTypes.array,
-    trainerObject: PropTypes.array
-  };
-
   render() {
+    const dealer = this.props.dealer
+    const badges = this.props.badges
     return (
       <div className="BadgesOfDealerView">
-        {this.props.trainerObject &&
-          this.props.trainerObject.listOfBadges && (
+        {dealer && badges &&
+          dealer.badgeIds && (
             <BadgeList
               onlyLogo={this.props.onlyLogo}
-              badges={this.props.trainerObject.listOfBadges.map(
-                trainerBadgeNumber =>
-                  this.props.badges.find(
-                    badge => badge && badge.id === trainerBadgeNumber
-                  )
+              badges={Object.keys(dealer.badgeIds).map(
+                id =>
+                  badges[id] && ({ id, ...badges[id]})
               ).filter(Boolean)}
             />
           )}
