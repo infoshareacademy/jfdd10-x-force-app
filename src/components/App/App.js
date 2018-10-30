@@ -95,11 +95,11 @@ class App extends Component {
                   ) : null}
                 </ul>
                 <div className="register">
-                  <NavLink className="links" to="/singupformview">
+                  <NavLink className={user ? "links loggedIn" : "links "} to="/singupformview">
                     Rejestracja
                   </NavLink>
                 </div>
-                <div className="register">
+                <div className="logged">
                   <NavLink
                     className={user ? "links loggedIn" : "links "}
                     to="/singinformview"
