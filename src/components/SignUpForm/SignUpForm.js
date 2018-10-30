@@ -30,7 +30,7 @@ class SignUpForm extends Component {
       .then((data) => {
         console.log(this.state.isTrainer)
         firebase.database().ref('/users/' + data.user.uid).set({ name: this.state.name, isTrainer: this.state.isTrainer })
-        this.setState({ erro: null })
+        this.setState({ error: null })
       }).then(() => this.props.history.push('/'))
       .catch(error => this.setState({ error }));
   };

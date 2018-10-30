@@ -10,7 +10,7 @@ class SingUpFormView extends Component {
     return  (
       <div className="SingUpFormView">
      
-        SingUpFormView
+       
         <SingUpForm />
       </div>
     )

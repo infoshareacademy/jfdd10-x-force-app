@@ -45,5 +45,7 @@ body{
     }
 
     
-
+.loggedIn{
+  display: none
+}
 }

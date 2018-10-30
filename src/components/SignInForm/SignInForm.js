@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import "./SignInForm.css";
+import {withRouter} from 'react-router-dom';
 
 class SignInForm extends Component {
   state = {
@@ -22,6 +23,7 @@ class SignInForm extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(() => this.setState({ error: null }))
+      .then(() => this.props.history.push('/'))
       .catch(error => this.setState({ error }));
   };
 
@@ -51,4 +53,4 @@ class SignInForm extends Component {
   }
 }
 
-export default SignInForm;
+export default withRouter(SignInForm);
