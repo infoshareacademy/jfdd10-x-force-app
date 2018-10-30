@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
@@ -8,6 +9,18 @@ import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
 import "./App.css";
 import { getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
+=======
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import BadgesView from '../BadgesView/BadgesView'
+import BadgeView from '../BadgeView/BadgeView'
+import HomeView from '../HomeView/HomeView';
+import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
+import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
+import { Button, } from "semantic-ui-react";
+
+import './App.css';
+>>>>>>> origin/master
 
 class App extends Component {
   state = {
@@ -27,29 +40,12 @@ class App extends Component {
         <header className="App-header">
           <Router>
             <div className="App">
-              <div className="navigation">
-                <ul>
-                  <li>
-                    <NavLink className="links" exact to="/">
-                      Główna
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="links" to="/badges">
-                      Odznaki
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="links" to="/badge-dealers">
-                      Trenerzy
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="links" to="/badge-maker">
-                      Badge maker
-                    </NavLink>
-                  </li>
-                </ul>
+            <div className="navigation">
+              <ul>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badge-dealers">Trenerzy</NavLink></Button></li>
+              </ul>
               </div>
 
               <Route

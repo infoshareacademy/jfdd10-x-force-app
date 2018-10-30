@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesOfDealerView.css";
 
+
 class BadgesOfDealerView extends Component {
   render() {
     const dealer = this.props.dealer
