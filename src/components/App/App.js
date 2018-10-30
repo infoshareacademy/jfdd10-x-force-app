@@ -66,7 +66,7 @@ class App extends Component {
                   }
                 }) => <BadgeView badge={this.state.badges && this.state.badges[badgeId]} dealers={this.state.dealers}/>}
               />
-              <Route exact path="/badge-dealers" component={({}) => (<BadgeDealersView />) />
+              <Route exact path="/badge-dealers" component={() => (<BadgeDealersView dealers={this.state.dealers} badges={this.state.badges}/>)} />
               <Route
                 path="/badge-dealers/:dealerId"
                 component={({
