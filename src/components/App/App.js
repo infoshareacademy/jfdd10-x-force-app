@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
@@ -7,20 +6,10 @@ import HomeView from "../HomeView/HomeView";
 import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
 import "./App.css";
+import { Button, } from "semantic-ui-react";
 import { getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
-=======
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
-import BadgesView from '../BadgesView/BadgesView'
-import BadgeView from '../BadgeView/BadgeView'
-import HomeView from '../HomeView/HomeView';
-import BadgeDealersView from '../BadgeDealersView/BadgeDealersView'
-import BadgeDealerView from '../BadgeDealerView/BadgeDealerView'
-import { Button, } from "semantic-ui-react";
 
-import './App.css';
->>>>>>> origin/master
 
 class App extends Component {
   state = {
