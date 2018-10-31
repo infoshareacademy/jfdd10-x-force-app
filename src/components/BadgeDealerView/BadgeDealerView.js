@@ -9,12 +9,14 @@ import snapshotToArray from '../../snapshotToArray';
 class BadgeDealerView extends Component {
 
   state = {
-    dealers: []
+    dealers: [],
+    badges: []
   }
 
   static getDerivedStateFromProps(props) {
     return {
-      dealers: snapshotToArray(props.dealers)
+      dealers: snapshotToArray(props.dealers),
+      badges: snapshotToArray(props.badges)
     }
   }
 
@@ -48,9 +50,11 @@ class BadgeDealerView extends Component {
             <BadgeDealerMap
               center={dealer.position}
               dealers={this.state.dealers}
-              trainerObject={dealer}
-              badges={this.props.badges}
+              dealerId={dealer.dealerId}
+              badges={this.state.badges}
             />
+            {console.log(this.props)}
+            
           </div>
           <div className="dealer_header">Te odznaki posiadam</div>
           <div className="dealer_badges">

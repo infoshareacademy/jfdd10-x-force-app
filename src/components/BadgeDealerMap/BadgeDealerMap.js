@@ -6,16 +6,13 @@ import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerMap.css";
 
-
-
-
 class BadgeDealerMap extends Component {
   static propTypes = {
     dealers: PropTypes.array,
     center: PropTypes.array,
     badges: PropTypes.array,
     badgeDealerViewId: PropTypes.number,
-    trainerObject: PropTypes.array
+    // dealer: PropTypes.string,
   };
 
   render() {
@@ -23,15 +20,13 @@ class BadgeDealerMap extends Component {
       <div className="BadgeDealerMap">
         <div id="mapid">
           {
-            <Map center={this.props.center} zoom={17} >
-            
+            <Map center={this.props.center} zoom={17}>
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
               {this.props.dealers.map(trainer => (
                 <Marker
-                
                   key={trainer.id}
                   center={trainer.position}
                   position={trainer.position}
@@ -50,9 +45,10 @@ class BadgeDealerMap extends Component {
                       />
                     }
                     <div className="badgesMap">
-                      <BadgesOfDealerView 
-                        trainerObject={this.props.trainerObject}
+                      <BadgesOfDealerView
+                        dealer={this.props.dealer}
                         badges={this.props.badges}
+                        dealerId={this.props.dealerId}
                         onlyLogo={true}
                       />
                     </div>

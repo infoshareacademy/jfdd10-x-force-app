@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
 import { updateDealer, getDealers } from "../../services/dealers";
+// import firebase from 'firebase';
+import axios from 'axios'
 
 class BadgeMaker extends Component {
   state = {
@@ -18,8 +20,16 @@ class BadgeMaker extends Component {
     });
   };
 
+  fileSelectedHandler = event => {
+    console.log(event.target.files[0]);
+    
+  }
+
   handleSubmit = event => {
     event.preventDefault();
+    this.setState({
+      logo: event.target.files[0]
+    })
     addBadge(
       this.props.dealerId,
       this.state
@@ -42,11 +52,11 @@ class BadgeMaker extends Component {
           <label for="avatar">Logo: </label>
           <input
             type="file"
-            accept="image/png, image/jpeg"
+            accept="image/*"
             className="make badge"
             placeholder="Badge Logo"
             value={this.state.logo}
-            onChange={this.makeHandleChange("logo")}
+            onChange={this.fileSelectedHandler}
           />
           <br />
           <br />
