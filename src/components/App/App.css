@@ -22,6 +22,9 @@ body{
   
    
   }
+  .nav{
+    display: flex;
+  }
 
   .links{
     text-decoration: none;

@@ -1,17 +1,13 @@
 import React, { Component } from "react";
-import {
-  Route,
-  NavLink,
-  withRouter
-} from "react-router-dom";
+import { Route, NavLink, withRouter } from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
 import BadgeView from "../BadgeView/BadgeView";
-import { Button, } from "semantic-ui-react";
+import { Button, Modal, Header, Image } from "semantic-ui-react";
 import HomeView from "../HomeView/HomeView";
 import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
-import SingUpFormView from "../SingUpFormView/SingUpFormView";
-import SingInFormView from "../SingInFormView/SingInFormView";
+import SignUpFormView from "../SignUpFormView/SignUpFormView";
+import SignInFormView from "../SignInFormView/SignInFormView";
 import BadgeDealerProfileView from "../BadgeDealerProfileView/BadgeDealerProfileView";
 import firebase from "firebase";
 import "./App.css";
@@ -22,8 +18,12 @@ class App extends Component {
   state = {
     badges: null,
     dealers: null,
-    user: null
+    user: null,
+    open: false
   };
+
+  show = dimmer => () => this.setState({ dimmer, open: true })
+  close = () => this.setState({ open: false })
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
@@ -59,9 +59,32 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
+    const { open, dimmer } = this.state
 
     return (
       <div className="App">
+        <div className="nav">
+          <div className="register">
+            <Button  onClick={this.show('blurring')} inverted color="blue" className="linksButton">
+              <NavLink
+                className={user ? "links loggedIn" : "links "}
+                to="/sign-up"
+              >
+                Rejestracja
+              </NavLink>
+            </Button>
+          </div>
+          <div className="logged">
+            <Button inverted color="blue" className="linksButton">
+              <NavLink
+                className={user ? "links loggedIn" : "links "}
+                to="/sign-in"
+              >
+                Logowanie
+              </NavLink>
+            </Button>
+          </div>
+        </div>
         {user ? (
           <div>
             <p>
@@ -75,51 +98,40 @@ class App extends Component {
           <div className="App">
             <div className="navigation">
               <ul>
-                {/* <li>
-                  <NavLink className="links" exact to="/">
-                    Główna
-                  </NavLink>
-                </li>
+              
                 <li>
-                  <NavLink className="links" to="/badges">
-                    Odznaki
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="links" to="/badge-dealers">
-                    Trenerzy
-                  </NavLink>
-                </li> */}
-                <li><Button inverted color='blue' className='linksButton'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
-                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
-                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badge-dealers">Trenerzy</NavLink></Button></li>
-                {user ? (
-                  <li><Button inverted color='blue' className='linksButton'>
-                    <NavLink className="links" to="/badge-dealer-profile">
-                      Mój profil
+                  <Button inverted color="blue" className="linksButton">
+                    <NavLink className="links" exact to="/">
+                      {" "}
+                      Główna
                     </NavLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button inverted color="blue" className="linksButton">
+                    <NavLink className="links" to="/badges">
+                      Odznaki
+                    </NavLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button inverted color="blue" className="linksButton">
+                    <NavLink className="links" to="/badge-dealers">
+                      Trenerzy
+                    </NavLink>
+                  </Button>
+                </li>
+                {user ? (
+                  <li>
+                    <Button inverted color="blue" className="linksButton">
+                      <NavLink className="links" to="/badge-dealer-profile">
+                        Mój profil
+                      </NavLink>
                     </Button>
                   </li>
                 ) : null}
               </ul>
-              <div className="register">
-                <NavLink
-                  className={user ? "links loggedIn" : "links "}
-                  to="/sign-up"
-                >
-                  Rejestracja
-                </NavLink>
-              </div>
-              <div className="logged">
-                <NavLink
-                  className={user ? "links loggedIn" : "links "}
-                  to="/sign-in"
-                >
-                  Logowanie
-                </NavLink>
-              </div>
             </div>
-
 
             <Route
               exact
@@ -164,14 +176,31 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/sign-up" component={SingUpFormView} />
-            <Route path="/sign-in" component={SingInFormView} />
+            <Route path="/sign-up" component={SignUpFormView} />
+            <Route path="/sign-in" component={SignInFormView} />
             <Route
               path="/badge-dealer-profile"
               component={BadgeDealerProfileView}
             />
           </div>
         </header>
+        <Modal dimmer={dimmer} open={open} onClose={this.close}>
+          <Modal.Header>Register</Modal.Header>
+          <Modal.Content image>
+            
+            <Modal.Description>
+              <Header>Register</Header>
+              <p>We've found the following gravatar image associated with your e-mail address.</p>
+              <p>Is it okay to use this photo?</p>
+            </Modal.Description>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color='black' onClick={this.close}>
+              Close
+            </Button>
+            
+          </Modal.Actions>
+        </Modal>
       </div>
     );
   }
