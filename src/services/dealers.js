@@ -34,6 +34,17 @@ export const addDealer = (
     }
   });
 
+export const setBadgeOwnership = (dealerId, badgeId) => 
+  fetch(`${dealerApiUrl}/${dealerId}/badgeIds.json`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      [badgeId]: true
+    }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+
 export const updateDealer = (dealerId, dealerData) =>
   fetch(`${dealerApiUrl}/${dealerId}.json`, {
     method: "PATCH",

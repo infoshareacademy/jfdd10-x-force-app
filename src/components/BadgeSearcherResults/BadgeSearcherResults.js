@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./BadgeSearcherResults.css";
-import BadgeList from "../BadgeList/BadgeList";
 import BadgeListItem from "../BadgeListItem/BadgeListItem";
 class BadgeSearcherResults extends Component {
   badgesFound = () => {

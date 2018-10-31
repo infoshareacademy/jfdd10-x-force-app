@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./BadgeView.css";
-import { getBadges } from "../../services/badges";
-import { getDealers } from "../../services/dealers";
 import snapshotToArray from "../../snapshotToArray";
 
 class BadgeView extends Component {
