@@ -4,8 +4,6 @@ import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerView.css";
 import BadgeMaker from "../BadgeMaker/BadgeMaker";
-import { addBadge, getBadges } from "../../services/badges";
-import { getDealer } from "../../services/dealers";
 import snapshotToArray from '../../snapshotToArray';
 
 class BadgeDealerView extends Component {
