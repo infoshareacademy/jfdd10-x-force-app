@@ -94,10 +94,11 @@ class App extends Component {
                 <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
                 <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badge-dealers">Trenerzy</NavLink></Button></li>
                 {user ? (
-                  <li>
+                  <li><Button inverted color='blue' className='linksButton'>
                     <NavLink className="links" to="/badge-dealer-profile">
                       Mój profil
                     </NavLink>
+                    </Button>
                   </li>
                 ) : null}
               </ul>
