@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import SignUpForm from '../SignUpForm/SignUpForm'
 
 
-import './SingUpFormView.css'
+import './SignUpFormView.css'
 
 class SignUpFormView extends Component {
   
   render() {
     return  (
-      <div className="SingUpFormView">
+      <div className="SignUpFormView">
      
        
         <SignUpForm />

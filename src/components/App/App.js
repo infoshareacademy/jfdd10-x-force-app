@@ -190,8 +190,7 @@ class App extends Component {
             
             <Modal.Description>
               <Header>Register</Header>
-              <p>We've found the following gravatar image associated with your e-mail address.</p>
-              <p>Is it okay to use this photo?</p>
+              <SignUpFormView/>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>

@@ -64,6 +64,7 @@ class SignUpForm extends Component {
             value={this.state.name}
             onChange={this.handleChange}
           />
+          <div className='SignUpForm_trainer'>
           <label>Jesteś trenerem?</label>
           <input
             type="checkbox"
@@ -72,6 +73,7 @@ class SignUpForm extends Component {
             onChange={() => this.setState({ isTrainer: !this.state.isTrainer })}
           />
           <button>Sign up</button>
+          </div>
         </form>
       </div>
     );
