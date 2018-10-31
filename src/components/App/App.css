@@ -130,5 +130,7 @@ body{
     }
 
     
-
+.loggedIn{
+  display: none
+}
 }
