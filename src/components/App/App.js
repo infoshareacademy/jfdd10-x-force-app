@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
 import BadgeView from "../BadgeView/BadgeView";
+import { Button, } from "semantic-ui-react";
 import HomeView from "../HomeView/HomeView";
 import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
@@ -74,7 +75,7 @@ class App extends Component {
           <div className="App">
             <div className="navigation">
               <ul>
-                <li>
+                {/* <li>
                   <NavLink className="links" exact to="/">
                     Główna
                   </NavLink>
@@ -88,7 +89,10 @@ class App extends Component {
                   <NavLink className="links" to="/badge-dealers">
                     Trenerzy
                   </NavLink>
-                </li>
+                </li> */}
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
+                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badge-dealers">Trenerzy</NavLink></Button></li>
                 {user ? (
                   <li>
                     <NavLink className="links" to="/badge-dealer-profile">
