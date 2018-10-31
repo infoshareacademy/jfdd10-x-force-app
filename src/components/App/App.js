@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import {
+  Route,
+  NavLink,
+  withRouter
+} from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
 import BadgeView from "../BadgeView/BadgeView";
 import HomeView from "../HomeView/HomeView";
-import { withRouter } from "react-router-dom";
 import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
 import SingUpFormView from "../SingUpFormView/SingUpFormView";
@@ -11,18 +14,19 @@ import SingInFormView from "../SingInFormView/SingInFormView";
 import BadgeDealerProfileView from "../BadgeDealerProfileView/BadgeDealerProfileView";
 import firebase from "firebase";
 import "./App.css";
+import { getBadges } from "../../services/badges";
+import { getDealers } from "../../services/dealers";
 
 class App extends Component {
   state = {
-    badges: [],
-    trainerId: null,
+    badges: null,
+    dealers: null,
     user: null
   };
 
   componentDidMount() {
-    fetch("/data/badges.json")
-      .then(response => response.json())
-      .then(allBadges => this.setState({ badges: allBadges }));
+    getBadges().then(badges => this.setState({ badges }));
+    getDealers().then(dealers => this.setState({ dealers }));
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -54,6 +58,7 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
+
     return (
       <div className="App">
         {user ? (
@@ -80,13 +85,13 @@ class App extends Component {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="links" to="/badgedealersview">
+                  <NavLink className="links" to="/badge-dealers">
                     Trenerzy
                   </NavLink>
                 </li>
                 {user ? (
                   <li>
-                    <NavLink className="links" to="/badgedealerprofile">
+                    <NavLink className="links" to="/badge-dealer-profile">
                       Mój profil
                     </NavLink>
                   </li>
@@ -95,7 +100,7 @@ class App extends Component {
               <div className="register">
                 <NavLink
                   className={user ? "links loggedIn" : "links "}
-                  to="/singupformview"
+                  to="/sign-up"
                 >
                   Rejestracja
                 </NavLink>
@@ -103,35 +108,61 @@ class App extends Component {
               <div className="logged">
                 <NavLink
                   className={user ? "links loggedIn" : "links "}
-                  to="/singinformview"
+                  to="/sign-in"
                 >
                   Logowanie
                 </NavLink>
               </div>
             </div>
 
+
             <Route
               exact
               path="/"
               component={() => <HomeView badges={this.state.badges} />}
             />
-
-            {/* <BadgeSearcher badges={this.state.badges}/> */}
             <Route exact path="/badges" component={BadgesView} />
-            <Route path="/badges/:badgeId" component={BadgeView} />
+            <Route
+              path="/badges/:badgeId"
+              component={({
+                match: {
+                  params: { badgeId }
+                }
+              }) => (
+                <BadgeView
+                  badge={this.state.badges && this.state.badges[badgeId]}
+                  dealers={this.state.dealers}
+                />
+              )}
+            />
             <Route
               exact
-              path="/badgedealersview"
-              component={BadgeDealersView}
+              path="/badge-dealers"
+              component={() => (
+                <BadgeDealersView
+                  dealers={this.state.dealers}
+                  badges={this.state.badges}
+                />
+              )}
             />
             <Route
-              path="/badgedealersview/:badgeDealerViewId"
-              component={BadgeDealerView}
+              path="/badge-dealers/:dealerId"
+              component={({
+                match: {
+                  params: { dealerId }
+                }
+              }) => (
+                <BadgeDealerView
+                  badges={this.state.badges}
+                  dealers={this.state.dealers}
+                  dealerId={dealerId}
+                />
+              )}
             />
-            <Route path="/singupformview" component={SingUpFormView} />
-            <Route path="/singinformview" component={SingInFormView} />
+            <Route path="/sign-up" component={SingUpFormView} />
+            <Route path="/sign-in" component={SingInFormView} />
             <Route
-              path="/badgedealerprofile"
+              path="/badge-dealer-profile"
               component={BadgeDealerProfileView}
             />
           </div>

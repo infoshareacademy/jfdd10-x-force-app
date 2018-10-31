@@ -1,28 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./BadgeView.css";
+import { getBadges } from "../../services/badges";
+import { getDealers } from "../../services/dealers";
+import snapshotToArray from "../../snapshotToArray";
 
 class BadgeView extends Component {
-  state = {
-    badges: [],
-    trainers: []
-  };
-
-  componentDidMount() {
-    fetch(`${process.env.PUBLIC_URL}/data/badges.json`)
-      .then(response => response.json())
-      .then(badges => this.setState({ badges }));
-
-    fetch(`${process.env.PUBLIC_URL}/data/trainers.json`)
-      .then(response => response.json())
-      .then(trainers => this.setState({ trainers }));
+  static getDerivedStateFromProps(props) {
+    return {
+      badges: snapshotToArray(props.badges)
+    };
   }
 
   render() {
-    const badgeId = parseInt(this.props.match.params.badgeId);
-    const badge = this.state.badges.find(badge => badge.id === badgeId);
-
-    if (badge === undefined) {
+    const dealers = this.props.dealers
+    const badge = this.props.badge;
+    if (!badge) {
       return <p>Loading badge...</p>;
     }
     return (
@@ -35,14 +28,13 @@ class BadgeView extends Component {
 
         <div>
           <p className="color"> Trenerzy którzy posiadają odznakę:</p>
-          {badge.IdTrainerWhoCanGiveThisBadge.map(id =>
-            this.state.trainers.find(trainer => trainer.id === id)
-          )
+          {dealers && badge.badgeOwnerIds && Object.keys(badge.badgeOwnerIds)
+            .map(id => dealers[id] && { id, ...dealers[id]})
             .filter(Boolean)
-            .map(trainer => (
+            .map(dealer => (
               <p>
-                <Link className="linki" to={`/badgedealersview/${trainer.id}`}>
-                  {trainer.name} {trainer.surname}
+                <Link className="linki" to={`/badge-dealers/${dealer.id}`}>
+                  {dealer.name} {dealer.surname}
                 </Link>
               </p>
             ))}

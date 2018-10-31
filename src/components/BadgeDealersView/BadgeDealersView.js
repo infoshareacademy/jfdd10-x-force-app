@@ -1,36 +1,31 @@
 import React, { Component } from "react";
 import BadgeDealerList from "../BadgeDealerList/BadgeDealerList";
 import "./BadgeDealersView.css";
-
+import snapshotToArray from '../../snapshotToArray';
 
 class BadgeDealersView extends Component {
   state = {
     dealers: [],
-    badges: [],
-    ownBadges:[]
+    badges: []
   };
 
-  componentDidMount() {
-    fetch("/data/trainers.json")
-      .then(response => response.json())
-      .then(x => this.setState({ dealers: x }));
 
-    fetch("/data/badges.json")
-      .then(response => response.json())
-      .then(badge => this.setState({ badges: badge }));
+  static getDerivedStateFromProps(props) {
+    return {
+      dealers: snapshotToArray(props.dealers),
+      badges: snapshotToArray(props.badges)
+    }
   }
 
- 
-
-
   render() {
-    console.log('sanity check', this.state.badges);
     return (
       <div className="BadgeDealersView">
         <h1>Trenerzy</h1>
-        
-        <BadgeDealerList badges={this.state.badges} badgeDealers={this.state.dealers} />
-        
+
+        <BadgeDealerList
+          badges={this.props.badges}
+          badgeDealers={this.state.dealers}
+        />
       </div>
     );
   }

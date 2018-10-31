@@ -4,17 +4,15 @@ import PropTypes from "prop-types";
 import "./BadgeMaker.css";
 
 class BadgeMaker extends Component {
-  static propTypes = {
-    firebaseRef: PropTypes.func
-  };
   state = {
+    id: null,
     badgeTitleAdd: "",
-    badgeLogoAdd: "",
+    badgeLogoAdd: null,
     badgeDescriptionAdd: "",
     badgeMoreInfoAdd: "",
 
     badgeTitleEdit: "",
-    badgeLogoEdit: "",
+    badgeLogoEdit: null,
     badgeDescriptionEdit: "",
     badgeMoreInfoEdit: "",
     badges: []
@@ -26,64 +24,90 @@ class BadgeMaker extends Component {
     });
   };
 
+  // makeHandleEnterEditMode = badge => event => {
+  //   this.props.firebaseRef.child(badge.id).update({
+  //     inEdit: true
+  //   });
+
+  //   this.setState({
+  //     badgeTitleEdit: badge.title,
+  //     badgeLogoEdit: badge.logo,
+  //     badgeDescriptionEdit: badge.description,
+  //     badgeMoreInfoEdit: badge.moreInfo
+  //   });
+  // };
+
   handleSubmit = event => {
     event.preventDefault();
-    this.props.firebaseRef.push({
-      id: Date.now(),
-      title: this.state.badgeTitleAdd,
-      logo: this.state.badgeLogoAdd,
-      description: this.state.badgeDescriptionAdd,
-      moreInfo: this.state.badgeMoreInfoAdd
-    });
-
-    this.setState({
-      taskTitleAdd: "",
-      badgeLogoAdd: "",
-      badgeDescriptionAdd: "",
-      badgeMoreInfoAdd: ""
-    });
+    this.props
+      .badgeAdd(
+        this.state.badgeTitleAdd,
+        this.state.badgeLogoAdd,
+        this.state.badgeDescriptionAdd,
+        this.state.badgeMoreInfoAdd,
+      )
+      .then(this.props.getBadges);
+    this.props
+      .trainerUpdate(this.props.badgeDealerViewId, this.props.badgeId)
+      .then(this.props.getTrainers);
   };
 
-  componentDidMount() {
-    this.props.firebaseRef.on("value", snapshot => {
-      const tasks = Object.entries(snapshot.val() || {})
-        .map(([id, value]) => ({ id, ...value }))
-        .reverse();
+  // componentDidMount() {
+  //   this.props.firebaseRef.on("value", snapshot => {
+  //     const badges = Object.entries(snapshot.val() || {})
+  //       .map(([id, value]) => ({ id, ...value }))
+  //       .reverse();
 
-      this.setState({
-        tasks
-      });
-    });
-  }
+  //     this.setState({
+  //       badges
+  //     });
+  //   });
+  // }
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <label for="avatar">Tytuł: </label>
           <input
             className="make badge"
             placeholder="Badge Title"
-            value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            value={this.state.badgeTitleAdd}
+            onChange={this.makeHandleChange("badgeTitleAdd")}
           />
+          <br />
+          <br />
+          <label for="avatar">Logo: </label>
           <input
+            type="file"
+            accept="image/png, image/jpeg"
             className="make badge"
             placeholder="Badge Logo"
-            value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            value={this.state.badgeLogoAdd}
+            onChange={this.makeHandleChange("badgeLogoAdd")}
           />
+          <br />
+          <br />
+          <label for="avatar">Opis: </label>
           <input
             className="make badge"
             placeholder="Badge Description"
-            value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            value={this.state.badgeDescriptionAdd}
+            onChange={this.makeHandleChange("badgeDescriptionAdd")}
           />
+          <br />
+          <br />
+          <label for="avatar">Więcej informacji: </label>
           <input
             className="make badge"
-            placeholder="Badge Name"
-            value={this.state.taskTitleAdd}
-            onChange={this.makeHandleChange("taskTitleAdd")}
+            placeholder="Badge more info"
+            value={this.state.badgeMoreInfoAdd}
+            onChange={this.makeHandleChange("badgeMoreInfoAdd")}
           />
+          <br />
+          <br />
+
+          <button>ADD</button>
         </form>
       </div>
     );

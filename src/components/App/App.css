@@ -4,28 +4,112 @@
 }
 
 body{
-  background-color: #2D4471;
-  height: 100%;
-
+  background: url(https://images.unsplash.com/photo-1525121211281-e941dc8c5f9e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7d94d53f20d2e54268cfe09b87ce183&auto=format&fit=crop&w=2134&q=80) center;
+  background-size: 100%
 }
 
 
 @media (min-width: 100px) {
 
   .App{
+
     text-align: center;
-    background-color: #2D4471;
   }
   
   .navigation{
     font-size: 20px;
+    margin-top: 10px
   
    
   }
 
   .links{
     text-decoration: none;
-    color: black;
+    font-size: 30px
+    
+  }
+  
+  
+  .navigation ul{
+  
+  
+  justify-content: space-around;
+  margin-bottom: 40px;
+  }
+
+  .navigation li{
+  
+   
+    border-radius: 10px;
+    padding: 5px;
+    }
+
+  .linksButton{
+    width: 90%
+  }  
+
+    
+
+}
+
+@media (min-width: 412px) {
+
+  .App{
+    text-align: center;
+    
+  }
+  
+  .navigation{
+    font-size: 20px;
+    margin: 0 auto
+  
+   
+  }
+
+  .links{
+    text-decoration: none;
+    font-size: 30px
+    
+  }
+  
+  
+  .navigation ul{
+  
+  
+
+  margin-bottom: 40px;
+  padding-top: 40px;
+  }
+
+  .navigation li{
+  
+    
+    border-radius: 10px;
+    padding: 5px;
+    }
+
+    
+
+}
+
+@media (min-width: 670px) {
+
+  .App{
+    text-align: center;
+    
+  }
+  
+  .navigation{
+    font-size: 20px;
+   
+  
+   
+  }
+
+  .links{
+    text-decoration: none;
+    font-size: 30px
+    
   }
   
   
@@ -33,13 +117,14 @@ body{
   
   display: flex;
   justify-content: space-around;
+
   margin-bottom: 40px;
   padding-top: 40px;
   }
 
   .navigation li{
   
-    background-color: #A2B3D5;
+    
     border-radius: 10px;
     padding: 5px;
     }
