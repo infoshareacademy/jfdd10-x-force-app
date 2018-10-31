@@ -54,9 +54,8 @@ class BadgeDealerView extends Component {
           </div>
           <div className="dealer_header">Te odznaki posiadam</div>
           <div className="dealer_badges">
-            {console.log("before:", this.props.badges)}
 
-            <BadgeMaker dealerId={this.props.dealerId} />
+            <BadgeMaker dealerId={this.props.dealerId}/>
 
             <BadgesOfDealerView dealer={dealer} badges={this.props.badges} />
           </div>

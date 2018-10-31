@@ -1,20 +1,15 @@
 import React, { Component } from "react";
 
 import "./BadgeMaker.css";
+import { addBadge, getBadges } from "../../services/badges";
+import { updateDealer, getDealers } from "../../services/dealers";
 
 class BadgeMaker extends Component {
   state = {
-    id: null,
-    badgeTitleAdd: "",
-    badgeLogoAdd: null,
-    badgeDescriptionAdd: "",
-    badgeMoreInfoAdd: "",
-
-    badgeTitleEdit: "",
-    badgeLogoEdit: null,
-    badgeDescriptionEdit: "",
-    badgeMoreInfoEdit: "",
-    badges: []
+    title: "",
+    logo: null,
+    description: "",
+    moreInfo: ""
   };
 
   makeHandleChange = fieldName => event => {
@@ -23,45 +18,13 @@ class BadgeMaker extends Component {
     });
   };
 
-  // makeHandleEnterEditMode = badge => event => {
-  //   this.props.firebaseRef.child(badge.id).update({
-  //     inEdit: true
-  //   });
-
-  //   this.setState({
-  //     badgeTitleEdit: badge.title,
-  //     badgeLogoEdit: badge.logo,
-  //     badgeDescriptionEdit: badge.description,
-  //     badgeMoreInfoEdit: badge.moreInfo
-  //   });
-  // };
-
   handleSubmit = event => {
     event.preventDefault();
-    this.props
-      .badgeAdd(
-        this.state.badgeTitleAdd,
-        this.state.badgeLogoAdd,
-        this.state.badgeDescriptionAdd,
-        this.state.badgeMoreInfoAdd,
-      )
-      .then(this.props.getBadges);
-    this.props
-      .trainerUpdate(this.props.badgeDealerViewId, this.props.badgeId)
-      .then(this.props.getTrainers);
+    addBadge(
+      this.props.dealerId,
+      this.state
+    ).then(getBadges).then(getDealers);
   };
-
-  // componentDidMount() {
-  //   this.props.firebaseRef.on("value", snapshot => {
-  //     const badges = Object.entries(snapshot.val() || {})
-  //       .map(([id, value]) => ({ id, ...value }))
-  //       .reverse();
-
-  //     this.setState({
-  //       badges
-  //     });
-  //   });
-  // }
 
   render() {
     return (
@@ -71,8 +34,8 @@ class BadgeMaker extends Component {
           <input
             className="make badge"
             placeholder="Badge Title"
-            value={this.state.badgeTitleAdd}
-            onChange={this.makeHandleChange("badgeTitleAdd")}
+            value={this.state.title}
+            onChange={this.makeHandleChange("title")}
           />
           <br />
           <br />
@@ -82,8 +45,8 @@ class BadgeMaker extends Component {
             accept="image/png, image/jpeg"
             className="make badge"
             placeholder="Badge Logo"
-            value={this.state.badgeLogoAdd}
-            onChange={this.makeHandleChange("badgeLogoAdd")}
+            value={this.state.logo}
+            onChange={this.makeHandleChange("logo")}
           />
           <br />
           <br />
@@ -91,8 +54,8 @@ class BadgeMaker extends Component {
           <input
             className="make badge"
             placeholder="Badge Description"
-            value={this.state.badgeDescriptionAdd}
-            onChange={this.makeHandleChange("badgeDescriptionAdd")}
+            value={this.state.description}
+            onChange={this.makeHandleChange("description")}
           />
           <br />
           <br />
@@ -100,8 +63,8 @@ class BadgeMaker extends Component {
           <input
             className="make badge"
             placeholder="Badge more info"
-            value={this.state.badgeMoreInfoAdd}
-            onChange={this.makeHandleChange("badgeMoreInfoAdd")}
+            value={this.state.moreInfo}
+            onChange={this.makeHandleChange("moreInfo")}
           />
           <br />
           <br />

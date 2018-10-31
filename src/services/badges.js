@@ -1,3 +1,4 @@
+import {setBadgeOwnership} from './dealers';
 const badgesApiUrl = "https://infoshare-da073.firebaseio.com/";
 
 //for later to show all users and their badges
@@ -12,21 +13,21 @@ export const getBadges = () =>
     //   }))
     // );
 
-export const addBadge = (title, logo, description, moreInfo, length, dealerId) => 
+export const addBadge = (dealerId, badgeData) => 
   fetch(badgesApiUrl + "/badges.json", {
     method: "POST",
     body: JSON.stringify({
-      title,
-      logo ,
-      moreInfo,
-      description,
-      id: length + 1,
-      IdTrainerWhoCanGiveThisBadge: [dealerId]
+      ...badgeData,
+      badgeOwnerIds: {[dealerId]: true}
     }),
     headers: {
       "Content-Type": "application/json"
     }
-  });
+  }).then(
+    response => response.json()
+  ).then(
+    ({name: badgeId}) => setBadgeOwnership(dealerId, badgeId)
+  )
 
 
   //for later to delate trainer in seting
@@ -39,13 +40,13 @@ export const addBadge = (title, logo, description, moreInfo, length, dealerId) =
 //     }
 //   });
 
-export const updateBadges = (badgesId, title, description, avatar, moreInfo) =>
+export const updateBadges = (badgesId, title, description, logo, moreInfo) =>
   fetch(badgesApiUrl + "/badges/" + badgesId + ".json", {
     method: "PATCH",
     body: JSON.stringify({
       title,
       description,
-      avatar,
+      logo,
       moreInfo
     }),
     headers: {
