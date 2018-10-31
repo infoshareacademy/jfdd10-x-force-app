@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import firebase from "firebase";
 
 import "./SignUpForm.css";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class SignUpForm extends Component {
   static propTypes = {};
@@ -27,11 +27,15 @@ class SignUpForm extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((data) => {
-        console.log(this.state.isTrainer)
-        firebase.database().ref('/users/' + data.user.uid).set({ name: this.state.name, isTrainer: this.state.isTrainer })
-        this.setState({ error: null })
-      }).then(() => this.props.history.push('/'))
+      .then(data => {
+        console.log(this.state.isTrainer);
+        firebase
+          .database()
+          .ref("/users/" + data.user.uid)
+          .set({ name: this.state.name, isTrainer: this.state.isTrainer });
+        this.setState({ error: null });
+      })
+      .then(() => this.props.history.push("/"))
       .catch(error => this.setState({ error }));
   };
 
@@ -59,7 +63,12 @@ class SignUpForm extends Component {
             onChange={this.handleChange}
           />
           <label>Jesteś trenerem?</label>
-           <input type="checkbox" name="trainer" checked={this.state.isTrainer} onChange={() => this.setState({ isTrainer: !this.state.isTrainer })}/>
+          <input
+            type="checkbox"
+            name="trainer"
+            checked={this.state.isTrainer}
+            onChange={() => this.setState({ isTrainer: !this.state.isTrainer })}
+          />
           <button>Sign up</button>
         </form>
       </div>

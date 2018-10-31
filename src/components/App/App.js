@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
 import BadgeView from "../BadgeView/BadgeView";
 import HomeView from "../HomeView/HomeView";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
 import SingUpFormView from "../SingUpFormView/SingUpFormView";
@@ -48,8 +48,8 @@ class App extends Component {
         function(error) {
           console.warn("error");
         }
-      ).then(() => this.props.history.push('/'))
-      
+      )
+      .then(() => this.props.history.push("/"));
   };
 
   render() {
@@ -66,75 +66,75 @@ class App extends Component {
         ) : null}
 
         <header className="App-header">
-          
-            <div className="App">
-              <div className="navigation">
-                <ul>
-                  <li>
-                    <NavLink className="links" exact to="/">
-                     
-                      Główna
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="links" to="/badges">
-                      Odznaki
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="links" to="/badgedealersview">
-                      Trenerzy
-                    </NavLink>
-                  </li>
-                  {user ? (
-                    <li>
-                      <NavLink className="links" to="/badgedealerprofile">
-                        Mój profil
-                      </NavLink>
-                    </li>
-                  ) : null}
-                </ul>
-                <div className="register">
-                  <NavLink className={user ? "links loggedIn" : "links "} to="/singupformview">
-                    Rejestracja
+          <div className="App">
+            <div className="navigation">
+              <ul>
+                <li>
+                  <NavLink className="links" exact to="/">
+                    Główna
                   </NavLink>
-                </div>
-                <div className="logged">
-                  <NavLink
-                    className={user ? "links loggedIn" : "links "}
-                    to="/singinformview"
-                  >
-                    Logowanie
+                </li>
+                <li>
+                  <NavLink className="links" to="/badges">
+                    Odznaki
                   </NavLink>
-                </div>
+                </li>
+                <li>
+                  <NavLink className="links" to="/badgedealersview">
+                    Trenerzy
+                  </NavLink>
+                </li>
+                {user ? (
+                  <li>
+                    <NavLink className="links" to="/badgedealerprofile">
+                      Mój profil
+                    </NavLink>
+                  </li>
+                ) : null}
+              </ul>
+              <div className="register">
+                <NavLink
+                  className={user ? "links loggedIn" : "links "}
+                  to="/singupformview"
+                >
+                  Rejestracja
+                </NavLink>
               </div>
-
-              <Route
-                exact
-                path="/"
-                component={() => <HomeView badges={this.state.badges} />}
-              />
-
-              {/* <BadgeSearcher badges={this.state.badges}/> */}
-              <Route exact path="/badges" component={BadgesView} />
-              <Route path="/badges/:badgeId" component={BadgeView} />
-              <Route
-                exact
-                path="/badgedealersview"
-                component={BadgeDealersView}
-              />
-              <Route
-                path="/badgedealersview/:badgeDealerViewId"
-                component={BadgeDealerView}
-              />
-              <Route path="/singupformview" component={SingUpFormView} />
-              <Route path="/singinformview" component={SingInFormView} />
-              <Route
-                path="/badgedealerprofile"
-                component={BadgeDealerProfileView}
-              />
+              <div className="logged">
+                <NavLink
+                  className={user ? "links loggedIn" : "links "}
+                  to="/singinformview"
+                >
+                  Logowanie
+                </NavLink>
+              </div>
             </div>
-          
+
+            <Route
+              exact
+              path="/"
+              component={() => <HomeView badges={this.state.badges} />}
+            />
+
+            {/* <BadgeSearcher badges={this.state.badges}/> */}
+            <Route exact path="/badges" component={BadgesView} />
+            <Route path="/badges/:badgeId" component={BadgeView} />
+            <Route
+              exact
+              path="/badgedealersview"
+              component={BadgeDealersView}
+            />
+            <Route
+              path="/badgedealersview/:badgeDealerViewId"
+              component={BadgeDealerView}
+            />
+            <Route path="/singupformview" component={SingUpFormView} />
+            <Route path="/singinformview" component={SingInFormView} />
+            <Route
+              path="/badgedealerprofile"
+              component={BadgeDealerProfileView}
+            />
+          </div>
         </header>
       </div>
     );
