@@ -1,36 +1,26 @@
 .AppIntro {
     display: flex;
     position: fixed;
-   
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  flex-direction: column;
-  background: url(./223.jpg) center;
-  background-size: 100% 100%;
-
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    flex-direction: column;
+    background: url(./223.jpg) center;
+    background-size: 100% 100%;
 }
 
-
-
-
 .Ficzer {
-
     width: 100vw;
     height: 100vh;
-    
     padding: 0px;
     margin: 0px auto;
-    
-   
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     cursor: zoom-in;
-
 }
 
 .Ficzerbox {
@@ -42,7 +32,7 @@
     width: 250px;
     margin: 0px auto;
     height: 450px;
-    background-color: #A2B3D5;
+    background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
     margin: 0px 10px;
     transition: 1s ease-out;
     /*animacja pudełek*/
@@ -50,17 +40,13 @@
     animation-name: slidein;
     animation-iteration-count: 1;
     border-radius: 10px
-  
 }
 
 @keyframes slidein {
-    0%{
+    0% {
         margin-left: 100%;
         width: 100px;
     }
-
-  
-
     100% {
         margin-left: 0 auto;
         width: 250px;
@@ -69,18 +55,17 @@
 
 .Ficzerbox:hover {
     transform: scale(1.4);
-    background: #bdb5af;
+   
     z-index: 2;
     box-shadow: 2px 2px 2px #000;
 }
 
 .Foto {
     margin-top: 3px;
-    
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    box-shadow: 1px 1px 2px rgb(192, 164, 164);
+    box-shadow: 0px 0px 10px #4c494d;
     transition: 0.5s ease-in-out;
 }
 
@@ -88,31 +73,28 @@
     margin-top: 15px;
     transform: scale(1.2);
     z-index: 2;
-    box-shadow: 1px 1px 3px rgb(192, 164, 164);
+  
 }
 
 .Opis {
-    background: rgb(214, 214, 214);
+   
     width: 90%;
     height: 100%;
     margin: 2px;
     box-sizing: border-box;
-    box-shadow: 1px 1px 3px rgb(192, 164, 164);
+    
     text-align: center;
-    box-sizing: content-box; 
+    box-sizing: content-box;
     overflow: hidden;
-
 }
 
 .Close {
     width: 20vw;
     margin: 0 auto;
     margin-bottom: 20px;
-
 }
 
-
-.f1{
+.f1 {
     background: url("https://png.icons8.com/ios/100/000000/flex-biceps-filled.png") no-repeat center;
     background-size: 60%
 }
@@ -122,36 +104,31 @@
     background-size: 60%
 }
 
-
 .f3 {
     background: url("https://png.icons8.com/ios/100/000000/deadlift-filled.png") no-repeat center;
     background-size: 60%
 }
-
 
 .f4 {
     background: url("https://png.icons8.com/ios/100/000000/bench-press-filled.png") no-repeat center;
     background-size: 60%
 }
 
-
 .f5 {
     background: url("https://png.icons8.com/ios/100/000000/prenatal-yoga-filled.png") no-repeat center;
     background-size: 60%
 }
 
-
-.AppIntroButton{
+.AppIntroButton {
     margin: 0 auto;
     margin-bottom: 80px;
-    
 }
-.IntroButton{
+
+.IntroButton {
     height: 50px
 }
 
-@media (max-width: 1400px) {
-
+@media (max-width: 400px) {
     .Ficzer {
         width: 100vw;
         height: 100vh;
@@ -160,31 +137,24 @@
         display: flex;
         flex-direction: row;
     }
-    
     .Ficzerbox {
         width: 250px;
         height: 450px;
         margin: 0px 10px;
         flex-wrap: wrap;
     }
-
     .Foto {
         margin-top: 3px;
-        
         width: 100px;
         height: 100px;
         border-radius: 50%;
         box-shadow: 1px 1px 2px rgb(192, 164, 164);
         transition: 0.5s ease-in-out;
     }
-  
     .Opis {
         width: 90%;
         height: 100%;
         margin: 2px;
         box-sizing: border-box;
-    
     }
-      
-  
-  }
+}
