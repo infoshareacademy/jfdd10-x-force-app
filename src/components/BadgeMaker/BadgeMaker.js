@@ -19,6 +19,7 @@ class BadgeMaker extends Component {
   };
 
   handleSubmit = event => {
+    console.log(this.props.dealerId)
     event.preventDefault();
     addBadge(
       this.props.dealerId,

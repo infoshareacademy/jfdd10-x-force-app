@@ -31,7 +31,7 @@ class App extends Component {
           .database()
           .ref("/users/" + user.uid)
           .once("value")
-          .then(snapshot => this.setState({ user: snapshot.val() }));
+          .then(snapshot => this.setState({ user: { uid: user.uid, ...(snapshot.val() || {}) } }));
       }
     });
   }
