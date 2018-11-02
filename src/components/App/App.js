@@ -31,7 +31,20 @@ class App extends Component {
           .database()
           .ref("/users/" + user.uid)
           .once("value")
-          .then(snapshot => this.setState({ user: { uid: user.uid, ...(snapshot.val() || {}) } }));
+          .then(snapshot => {
+            let fetchedUser = { uid: user.uid, ...(snapshot.val() || {}) }
+            if (fetchedUser.isTrainer) {
+              firebase
+              .database()
+              .ref("/dealers/" + user.uid)
+              .once("value")
+              .then(snapshot => {
+                this.setState({ user: {...fetchedUser, ...snapshot.val()} })
+              });
+            } else {
+              this.setState({ user: fetchedUser })
+            }           
+          });
       }
     });
   }
@@ -184,7 +197,7 @@ class App extends Component {
             { user ?
             <Route
               path="/user-profile"
-              component={() => (<UserProfileView user={this.state.user}/>)}
+              component={() => (<UserProfileView dealers={this.state.dealers} user={this.state.user} badges={this.state.badges}/>)}
             />
             : null
             }
