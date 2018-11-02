@@ -5,15 +5,17 @@ import {rootRef} from '../setupFirebase';
 export const getBadges = () => rootRef.child('badges').once("value").then(snapshot => snapshot.val());
 
 export function addBadge(dealerId, badgeData) {
-  firebase
+  
+  return firebase
     .database()
     .ref("badges/")
     .push({
       ...badgeData,
       badgeOwnerIds: { [dealerId]: true }
     })
-    .then(response => response.json())
-    .then(({ name: badgeId }) => setBadgeOwnership(dealerId, badgeId));
+    .then(ref => {
+      setBadgeOwnership(dealerId, ref.toString().substring((ref.root.toString()+'badges/').length))
+    });
 }
 
 export const updateBadges = (badgesId, title, description, logo, moreInfo) =>
