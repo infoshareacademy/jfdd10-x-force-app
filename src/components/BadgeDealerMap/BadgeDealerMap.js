@@ -29,7 +29,7 @@ class BadgeDealerMap extends Component {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
-              {this.props.dealers.map(trainer => (
+              {this.props.dealers.filter(dealer => !!dealer.position).map(trainer => (
                 <Marker
                 
                   key={trainer.id}

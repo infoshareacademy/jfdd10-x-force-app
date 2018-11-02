@@ -45,12 +45,14 @@ class BadgeDealerView extends Component {
           </div>
           <div className="dealer_header">Tu mnie znajdziesz</div>
           <div className="dealer_map">
+          {dealer.position &&
             <BadgeDealerMap
               center={dealer.position}
               dealers={this.state.dealers}
               trainerObject={dealer}
               badges={this.props.badges}
             />
+          }
           </div>
           <div className="dealer_header">Te odznaki posiadam</div>
           <div className="dealer_badges">

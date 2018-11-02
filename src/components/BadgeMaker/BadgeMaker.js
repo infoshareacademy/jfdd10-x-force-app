@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
-import { updateDealer, getDealers } from "../../services/dealers";
+import { getDealers } from "../../services/dealers";
 
 class BadgeMaker extends Component {
   state = {
@@ -19,6 +19,7 @@ class BadgeMaker extends Component {
   };
 
   handleSubmit = event => {
+    console.log(this.props.dealerId)
     event.preventDefault();
     addBadge(
       this.props.dealerId,

@@ -1,18 +1,14 @@
 import React, { Component } from "react";
-import {
-  Route,
-  NavLink,
-  withRouter
-} from "react-router-dom";
+import { Route, NavLink, withRouter } from "react-router-dom";
 import BadgesView from "../BadgesView/BadgesView";
 import BadgeView from "../BadgeView/BadgeView";
-import { Button, } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import HomeView from "../HomeView/HomeView";
 import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
 import SingUpFormView from "../SingUpFormView/SingUpFormView";
 import SingInFormView from "../SingInFormView/SingInFormView";
-import BadgeDealerProfileView from "../BadgeDealerProfileView/BadgeDealerProfileView";
+import UserProfileView from "../UserProfileView/UserProfileView";
 import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
@@ -35,7 +31,7 @@ class App extends Component {
           .database()
           .ref("/users/" + user.uid)
           .once("value")
-          .then(snapshot => this.setState({ user: snapshot.val() }));
+          .then(snapshot => this.setState({ user: { uid: user.uid, ...(snapshot.val() || {}) } }));
       }
     });
   }
@@ -90,14 +86,34 @@ class App extends Component {
                     Trenerzy
                   </NavLink>
                 </li> */}
-                <li><Button inverted color='blue' className='linksButton'><NavLink className='links' exact to="/"> Główna</NavLink></Button></li>
-                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badges">Odznaki</NavLink></Button></li>
-                <li><Button inverted color='blue' className='linksButton'><NavLink className='links'  to="/badge-dealers">Trenerzy</NavLink></Button></li>
-                {user ? (
-                  <li><Button inverted color='blue' className='linksButton'>
-                    <NavLink className="links" to="/badge-dealer-profile">
-                      Mój profil
+                <li>
+                  <Button inverted color="blue" className="linksButton">
+                    <NavLink className="links" exact to="/">
+                      {" "}
+                      Główna
                     </NavLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button inverted color="blue" className="linksButton">
+                    <NavLink className="links" to="/badges">
+                      Odznaki
+                    </NavLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button inverted color="blue" className="linksButton">
+                    <NavLink className="links" to="/badge-dealers">
+                      Trenerzy
+                    </NavLink>
+                  </Button>
+                </li>
+                {user ? (
+                  <li>
+                    <Button inverted color="blue" className="linksButton">
+                      <NavLink className="links" to="/user-profile">
+                        Mój profil
+                      </NavLink>
                     </Button>
                   </li>
                 ) : null}
@@ -119,7 +135,6 @@ class App extends Component {
                 </NavLink>
               </div>
             </div>
-
 
             <Route
               exact
@@ -166,10 +181,13 @@ class App extends Component {
             />
             <Route path="/sign-up" component={SingUpFormView} />
             <Route path="/sign-in" component={SingInFormView} />
+            { user ?
             <Route
-              path="/badge-dealer-profile"
-              component={BadgeDealerProfileView}
+              path="/user-profile"
+              component={() => (<UserProfileView user={this.state.user}/>)}
             />
+            : null
+            }
           </div>
         </header>
       </div>
