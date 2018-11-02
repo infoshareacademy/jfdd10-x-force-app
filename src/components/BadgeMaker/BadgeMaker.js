@@ -7,7 +7,7 @@ import { getDealers } from "../../services/dealers";
 class BadgeMaker extends Component {
   state = {
     title: "",
-    logo: '',
+    logo: "",
     description: "",
     moreInfo: ""
   };
@@ -19,18 +19,17 @@ class BadgeMaker extends Component {
   };
 
   handleSubmit = event => {
-    console.log(this.props.dealerId)
+    console.log(this.props.dealerId);
     event.preventDefault();
-    addBadge(
-      this.props.dealerId,
-      this.state
-    ).then(getBadges).then(getDealers);
+    addBadge(this.props.dealerId, this.state)
+      .then(getBadges)
+      .then(getDealers);
   };
 
   render() {
     return (
       <div>
-        <form encType='multipart/form-data' onSubmit={this.handleSubmit}>
+        <form encType="multipart/form-data" onSubmit={this.handleSubmit}>
           <label for="avatar">Tytuł: </label>
           <input
             className="make badge"
