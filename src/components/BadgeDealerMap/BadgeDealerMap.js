@@ -51,7 +51,7 @@ class BadgeDealerMap extends Component {
                     }
                     <div className="badgesMap">
                       <BadgesOfDealerView 
-                        trainerObject={this.props.trainerObject}
+                        dealer={this.props.trainerObject}
                         badges={this.props.badges}
                         onlyLogo={true}
                       />

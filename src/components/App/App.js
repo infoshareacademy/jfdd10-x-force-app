@@ -23,7 +23,9 @@ class App extends Component {
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
-    getDealers().then(dealers => this.setState({ dealers }));
+    getDealers().then(dealers => {
+      this.setState({ dealers });
+    });
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -31,7 +33,11 @@ class App extends Component {
           .database()
           .ref("/users/" + user.uid)
           .once("value")
-          .then(snapshot => this.setState({ user: { uid: user.uid, ...(snapshot.val() || {}) } }));
+          .then(snapshot =>
+            this.setState({
+              user: { uid: user.uid, ...(snapshot.val() || {}) }
+            })
+          );
       }
     });
   }
@@ -71,21 +77,6 @@ class App extends Component {
           <div className="App">
             <div className="navigation">
               <ul>
-                {/* <li>
-                  <NavLink className="links" exact to="/">
-                    Główna
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="links" to="/badges">
-                    Odznaki
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="links" to="/badge-dealers">
-                    Trenerzy
-                  </NavLink>
-                </li> */}
                 <li>
                   <Button inverted color="blue" className="linksButton">
                     <NavLink className="links" exact to="/">
@@ -181,13 +172,12 @@ class App extends Component {
             />
             <Route path="/sign-up" component={SingUpFormView} />
             <Route path="/sign-in" component={SingInFormView} />
-            { user ?
-            <Route
-              path="/user-profile"
-              component={() => (<UserProfileView user={this.state.user}/>)}
-            />
-            : null
-            }
+            {user ? (
+              <Route
+                path="/user-profile"
+                component={() => <UserProfileView user={this.state.user} />}
+              />
+            ) : null}
           </div>
         </header>
       </div>
