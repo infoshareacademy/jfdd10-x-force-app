@@ -35,7 +35,9 @@ class SignUpForm extends Component {
           .set({ name: this.state.name, isTrainer: this.state.isTrainer });
         this.setState({ error: null });
       })
-      .then(() => this.props.history.push("/"))
+      .then(() => {this.props.history.push("/"); if (this.props.afterSignUpSuccess) {
+        this.props.afterSignUpSuccess()
+      }})
       .catch(error => this.setState({ error }));
   };
 

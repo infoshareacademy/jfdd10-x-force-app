@@ -11,7 +11,7 @@ class SignUpFormView extends Component {
       <div className="SignUpFormView">
      
        
-        <SignUpForm />
+        <SignUpForm {...this.props} />
       </div>
     )
   }

@@ -195,7 +195,7 @@ class App extends Component {
             
             <Modal.Description>
               <Header>Register</Header>
-              <SignUpFormView/>
+              <SignUpFormView afterSignUpSuccess={this.close}/>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
@@ -211,7 +211,7 @@ class App extends Component {
             
             <Modal.Description>
               <Header>Logowanie</Header>
-              <SignInFormView afterSuccess={this.close2}/>
+              <SignInFormView afterSignInSuccess={this.close2}/>
               
             </Modal.Description>
           </Modal.Content>
