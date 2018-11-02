@@ -35,7 +35,7 @@ class BadgeSearcher extends Component {
           <BadgeSearcherForm processSearchPhrase={this.processSearchPhrase} />
           <BadgeSearcherResults
             badges={this.state.badges.filter(badge =>
-              badge.title
+              badge.title && badge.title
                 .toLowerCase()
                 .includes(this.state.searchPhrase.toLowerCase())
             )}
