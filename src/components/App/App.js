@@ -23,7 +23,7 @@ class App extends Component {
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
-    getDealers().then(dealers => this.setState({ dealers }));
+    // getDealers().then(dealers => this.setState({ dealers }));
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
