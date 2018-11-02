@@ -3,7 +3,6 @@ import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerView.css";
-import BadgeMaker from "../BadgeMaker/BadgeMaker";
 import snapshotToArray from '../../snapshotToArray';
 
 class BadgeDealerView extends Component {
@@ -45,18 +44,19 @@ class BadgeDealerView extends Component {
           </div>
           <div className="dealer_header">Tu mnie znajdziesz</div>
           <div className="dealer_map">
+          {dealer.position &&
             <BadgeDealerMap
               center={dealer.position}
               dealers={this.state.dealers}
               trainerObject={dealer}
               badges={this.props.badges}
             />
+          }
           </div>
           <div className="dealer_header">Te odznaki posiadam</div>
           <div className="dealer_badges">
 
-            <BadgeMaker dealerId={this.props.dealerId}/>
-
+           
             <BadgesOfDealerView dealer={dealer} badges={this.props.badges} />
           </div>
         </div>

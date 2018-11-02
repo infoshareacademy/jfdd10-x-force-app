@@ -5,6 +5,7 @@ class BadgeDealerListItem extends Component {
   render() {
     const dealer = this.props.dealer
     const badges = this.props.badges
+    console.log(dealer);
     return (
       <div className="contener">
         <div className="logo">
@@ -18,7 +19,7 @@ class BadgeDealerListItem extends Component {
             <p className="description">{dealer.description}</p>
           </div>
           <div className="badges">
-            {badges && Object.keys(dealer.badgeIds)
+            {badges && Object.keys(dealer.badgeIds || {})
               .map(badgeId => badges[badgeId] && ({id: badgeId, ...badges[badgeId]}))
               .map(
                 badgeItem =>

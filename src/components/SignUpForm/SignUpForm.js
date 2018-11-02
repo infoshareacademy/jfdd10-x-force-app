@@ -27,13 +27,23 @@ class SignUpForm extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(data => {
-        console.log(this.state.isTrainer);
-        firebase
-          .database()
-          .ref("/users/" + data.user.uid)
-          .set({ name: this.state.name, isTrainer: this.state.isTrainer });
-        this.setState({ error: null });
+      .then(data => {      
+          console.log(this.state.isTrainer);
+          firebase
+            .database()
+            .ref("/users/" + data.user.uid)
+            .set({ name: this.state.name, isTrainer: this.state.isTrainer });
+          this.setState({ error: null });
+         
+        
+        if (this.state.isTrainer === true) {
+          console.log(this.state.isTrainer);
+          firebase
+            .database()
+            .ref("/dealers/" + data.user.uid)
+            .set({ name: this.state.name, isTrainer: this.state.isTrainer });
+          this.setState({ error: null });
+        }
       })
       .then(() => {this.props.history.push("/"); if (this.props.afterSignUpSuccess) {
         this.props.afterSignUpSuccess()

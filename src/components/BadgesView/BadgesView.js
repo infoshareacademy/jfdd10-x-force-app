@@ -3,6 +3,7 @@ import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesView.css";
 import { Transition, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import snapshotToArray from '../../snapshotToArray';
 
 class BadgesView extends Component {
   constructor() {
@@ -39,13 +40,10 @@ class BadgesView extends Component {
     this.setState({ isVisibleLeft: !this.state.isVisibleLeft });
   }
 
-  componentDidMount() {
-    fetch("https://infoshare-da073.firebaseio.com/badges.json")
-      .then(response => response.json())
-      .then(data =>
-        Object.entries(data || {}).map(([id, value]) => ({ id, ...value }))
-      )
-      .then(badges => this.setState({ badges }));
+  static getDerivedStateFromProps(props) {
+    return {
+      badges: snapshotToArray(props.badges)
+    }
   }
 
   render() {

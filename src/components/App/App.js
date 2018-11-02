@@ -8,7 +8,7 @@ import BadgeDealersView from "../BadgeDealersView/BadgeDealersView";
 import BadgeDealerView from "../BadgeDealerView/BadgeDealerView";
 import SignUpFormView from "../SignUpFormView/SignUpFormView";
 import SignInFormView from "../SignInFormView/SignInFormView";
-import BadgeDealerProfileView from "../BadgeDealerProfileView/BadgeDealerProfileView";
+import UserProfileView from "../UserProfileView/UserProfileView";
 import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
@@ -31,7 +31,9 @@ class App extends Component {
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
-    getDealers().then(dealers => this.setState({ dealers }));
+    getDealers().then(dealers => {
+      this.setState({ dealers });
+    });
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -39,7 +41,11 @@ class App extends Component {
           .database()
           .ref("/users/" + user.uid)
           .once("value")
-          .then(snapshot => this.setState({ user: snapshot.val() }));
+          .then(snapshot =>
+            this.setState({
+              user: { uid: user.uid, ...(snapshot.val() || {}) }
+            })
+          );
       }
     });
   }
@@ -130,7 +136,7 @@ class App extends Component {
                 {user ? (
                   <li>
                     <Button inverted color="blue" className="linksButton">
-                      <NavLink className="links" to="/badge-dealer-profile">
+                      <NavLink className="links" to="/user-profile">
                         Mój profil
                       </NavLink>
                     </Button>
@@ -144,7 +150,7 @@ class App extends Component {
               path="/"
               component={() => <HomeView badges={this.state.badges} />}
             />
-            <Route exact path="/badges" component={BadgesView} />
+            <Route exact path="/badges" component={() => (<BadgesView badges={this.state.badges}/> )} />
             <Route
               path="/badges/:badgeId"
               component={({
@@ -184,10 +190,12 @@ class App extends Component {
             />
             <Route path="/sign-up" component={SignUpFormView} />
             <Route path="/sign-in" component={SignInFormView} />
-            <Route
-              path="/badge-dealer-profile"
-              component={BadgeDealerProfileView}
-            />
+            {user ? (
+              <Route
+                path="/user-profile"
+                component={() => <UserProfileView user={this.state.user} />}
+              />
+            ) : null}
           </div>
         </header>
         <Modal dimmer={signInDimmer} open={signInOpen} onClose={this.signInClose}>
