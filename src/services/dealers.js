@@ -1,16 +1,16 @@
 import { rootRef } from "../setupFirebase";
 
-export const getDealers = rootRef
+export const getDealers = () => rootRef
   .child("dealers")
   .once("value")
-  .then(snapshot => snapshot.val());
+  .then(snapshot => snapshot.val())
 
 export const getDealer = dealerId =>
   rootRef
     .child("dealers")
     .child(dealerId)
     .once("value")
-    .then(snapshot => snapshot.val());
+    .then(snapshot => snapshot.val())
 
 export const addDealer = (name, surname, position, description, avatar) =>
   rootRef.child("dealers").push({
