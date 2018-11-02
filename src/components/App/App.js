@@ -19,15 +19,15 @@ class App extends Component {
     badges: null,
     dealers: null,
     user: null,
-    open: false,
-    open2: false
+    signInOpen: false,
+    SignUpOpen: false
   };
 
-  show = dimmer => () => this.setState({ dimmer, open: true })
-  close = () => this.setState({ open: false })
+  signInShow = signInDimmer => () => this.setState({ signInDimmer, signInOpen: true })
+  signInClose = () => this.setState({ signInOpen: false })
 
-  show2 = dimmer2 => () => this.setState({ dimmer2, open2: true })
-  close2 = () => this.setState({ open2: false })
+  SignUpShow = SignUpDimmer => () => this.setState({ SignUpDimmer, SignUpOpen: true })
+  SignUpClose = () => this.setState({ SignUpOpen: false })
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
@@ -63,14 +63,14 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
-    const { open, dimmer } = this.state
-    const { open2, dimmer2 } = this.state
+    const { signInOpen, signInDimmer } = this.state
+    const { SignUpOpen, dimmer2 } = this.state
 
     return (
       <div className="App">
         <div className="nav">
-          <div className={user? 'loggedIn register' :"register"}>
-            <Button  onClick={this.show('blurring')} inverted color="blue" className="linksButton">
+          <div className={user? 'loggedIn signIp' :"signIn"}>
+            <Button  onClick={this.signInShow('blurring')} inverted color="blue" className="linksButton">
               <NavLink
                 className="links"
                 to="/sign-up"
@@ -79,8 +79,8 @@ class App extends Component {
               </NavLink>
             </Button>
           </div>
-          <div className={user? 'loggedIn logged' :"logged"}>
-            <Button onClick={this.show2('blurring')} inverted color="blue" className="linksButton">
+          <div className={user? 'loggedIn signUp' :"signUp"}>
+            <Button onClick={this.SignUpShow('blurring')} inverted color="blue" className="linksButton">
               <NavLink
                 className="links"
                 to="/sign-in"
@@ -89,15 +89,16 @@ class App extends Component {
               </NavLink>
             </Button>
           </div>
-        </div>
-        {user ? (
+          <div className='log'>
+          {user ? (
           <div>
-            <p>
-              {user.name} {user.isTrainer ? "****" : ""}
-            </p>
-            <button onClick={() => this.logOut()}>Log out</button>
+            
+            <Button inverted color="blue" className="linksButton" onClick={() => this.logOut()}>Log out</Button>
           </div>
         ) : null}
+          </div>
+        </div>
+       
 
         <header className="App-header">
           <div className="App">
@@ -189,34 +190,34 @@ class App extends Component {
             />
           </div>
         </header>
-        <Modal dimmer={dimmer} open={open} onClose={this.close}>
+        <Modal dimmer={signInDimmer} open={signInOpen} onClose={this.signInClose}>
           <Modal.Header>Register</Modal.Header>
           <Modal.Content image>
             
             <Modal.Description>
               <Header>Register</Header>
-              <SignUpFormView afterSignUpSuccess={this.close}/>
+              <SignUpFormView afterSignUpSuccess={this.signInClose}/>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='black' onClick={this.close}>
+            <Button color='black' onClick={this.signInClose}>
               Close
             </Button>
             
           </Modal.Actions>
         </Modal>
-        <Modal dimmer={dimmer2} open={open2} onClose={this.close2}>
+        <Modal dimmer={dimmer2} open={SignUpOpen} onClose={this.SignUpClose}>
           <Modal.Header>Logowanie</Modal.Header>
           <Modal.Content image>
             
             <Modal.Description>
               <Header>Logowanie</Header>
-              <SignInFormView afterSignInSuccess={this.close2}/>
+              <SignInFormView afterSignInSuccess={this.SignUpClose}/>
               
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='black' onClick={this.close2}>
+            <Button color='black' onClick={this.SignUpClose}>
               Close
             </Button>
             
