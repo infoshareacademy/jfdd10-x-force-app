@@ -7,7 +7,7 @@ import { getDealers } from "../../services/dealers";
 class BadgeMaker extends Component {
   state = {
     title: "",
-    logo: null,
+    logo: '',
     description: "",
     moreInfo: ""
   };
@@ -30,7 +30,7 @@ class BadgeMaker extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form encType='multipart/form-data' onSubmit={this.handleSubmit}>
           <label for="avatar">Tytuł: </label>
           <input
             className="make badge"

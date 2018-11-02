@@ -132,7 +132,7 @@ class App extends Component {
               path="/"
               component={() => <HomeView badges={this.state.badges} />}
             />
-            <Route exact path="/badges" component={BadgesView} />
+            <Route exact path="/badges" component={() => (<BadgesView badges={this.state.badges}/> )} />
             <Route
               path="/badges/:badgeId"
               component={({
