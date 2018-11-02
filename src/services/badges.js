@@ -1,5 +1,5 @@
 import {setBadgeOwnership} from './dealers';
-const badgesApiUrl = "https://infoshare-da073.firebaseio.com/";
+const badgesApiUrl = "https://x-force-app.firebaseio.com/";
 
 //for later to show all users and their badges
 

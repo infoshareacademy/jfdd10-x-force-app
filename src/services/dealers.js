@@ -1,4 +1,4 @@
-const dealerApiUrl = "https://infoshare-da073.firebaseio.com/dealers";
+const dealerApiUrl = "https://x-force-app.firebaseio.com/dealers";
 
 export const getDealers = () =>
   fetch(`${dealerApiUrl}.json`)
