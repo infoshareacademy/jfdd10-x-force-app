@@ -14,7 +14,7 @@ export function addBadge(dealerId, badgeData) {
       badgeOwnerIds: { [dealerId]: true }
     })
     .then(ref => {
-      setBadgeOwnership(dealerId, ref.toString().substring((ref.root.toString()+'badges/').length))
+      setBadgeOwnership(dealerId, ref.key)
     });
 }
 
