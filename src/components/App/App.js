@@ -19,11 +19,15 @@ class App extends Component {
     badges: null,
     dealers: null,
     user: null,
-    open: false
+    open: false,
+    open2: false
   };
 
   show = dimmer => () => this.setState({ dimmer, open: true })
   close = () => this.setState({ open: false })
+
+  show2 = dimmer2 => () => this.setState({ dimmer2, open2: true })
+  close2 = () => this.setState({ open2: false })
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
@@ -60,24 +64,25 @@ class App extends Component {
   render() {
     const { user } = this.state;
     const { open, dimmer } = this.state
+    const { open2, dimmer2 } = this.state
 
     return (
       <div className="App">
         <div className="nav">
-          <div className="register">
+          <div className={user? 'loggedIn register' :"register"}>
             <Button  onClick={this.show('blurring')} inverted color="blue" className="linksButton">
               <NavLink
-                className={user ? "links loggedIn" : "links "}
+                className="links"
                 to="/sign-up"
               >
                 Rejestracja
               </NavLink>
             </Button>
           </div>
-          <div className="logged">
-            <Button inverted color="blue" className="linksButton">
+          <div className={user? 'loggedIn logged' :"logged"}>
+            <Button onClick={this.show2('blurring')} inverted color="blue" className="linksButton">
               <NavLink
-                className={user ? "links loggedIn" : "links "}
+                className="links"
                 to="/sign-in"
               >
                 Logowanie
@@ -195,6 +200,23 @@ class App extends Component {
           </Modal.Content>
           <Modal.Actions>
             <Button color='black' onClick={this.close}>
+              Close
+            </Button>
+            
+          </Modal.Actions>
+        </Modal>
+        <Modal dimmer={dimmer2} open={open2} onClose={this.close2}>
+          <Modal.Header>Logowanie</Modal.Header>
+          <Modal.Content image>
+            
+            <Modal.Description>
+              <Header>Logowanie</Header>
+              <SignInFormView afterSuccess={this.close2}/>
+              
+            </Modal.Description>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color='black' onClick={this.close2}>
               Close
             </Button>
             

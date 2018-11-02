@@ -11,7 +11,7 @@ class SignInFormView extends Component {
     return  (
       <div className="SignInFormView">
         
-        <SignInForm/>
+        <SignInForm {...this.props}/>
       </div>
     )
   }
