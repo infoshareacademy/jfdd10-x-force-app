@@ -213,7 +213,7 @@
     }
 }
 /* ---------------------------------------------------------------------------------- */
-@media (max-width: 869px) {
+@media (max-width: 879px) {
     .AppIntro {
         position: fixed;
         display: flex;
