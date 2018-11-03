@@ -69,7 +69,7 @@ class App extends Component {
             user: null
           });
         },
-        function(error) {
+        function (error) {
           console.warn("error");
         }
       )
@@ -84,42 +84,36 @@ class App extends Component {
     return (
       <div className="App">
         <div className="nav">
-          <div className={user? 'loggedIn signIp' :"signIn"}>
-            <Button  onClick={this.signInShow('blurring')} inverted color="blue" className="linksButton">
-              <NavLink
-                className="links"
-                to="/sign-up"
-              >
+          <div className={user ? 'loggedIn signIp' : "signIn"}>
+            <Button onClick={this.signInShow('blurring')} inverted color="blue" className="linksButton">
+              
                 Rejestracja
-              </NavLink>
+              
             </Button>
           </div>
-          <div className={user? 'loggedIn signUp' :"signUp"}>
+          <div className={user ? 'loggedIn signUp' : "signUp"}>
             <Button onClick={this.SignUpShow('blurring')} inverted color="blue" className="linksButton">
-              <NavLink
-                className="links"
-                to="/sign-in"
-              >
+              
                 Logowanie
-              </NavLink>
+              
             </Button>
           </div>
           <div className='log'>
-          {user ? (
-          <div>
-            
-            <Button inverted color="blue" className="linksButton" onClick={() => this.logOut()}>Log out</Button>
-          </div>
-        ) : null}
+            {user ? (
+              <div>
+
+                <Button inverted color="blue" className="linksButton" onClick={() => this.logOut()}>Log out</Button>
+              </div>
+            ) : null}
           </div>
         </div>
-       
+
 
         <header className="App-header">
           <div className="App">
             <div className="navigation">
               <ul>
-              
+
                 <li>
                   <Button inverted color="blue" className="linksButton">
                     <NavLink className="links" exact to="/">
@@ -159,7 +153,7 @@ class App extends Component {
               path="/"
               component={() => <HomeView badges={this.state.badges} />}
             />
-            <Route exact path="/badges" component={() => (<BadgesView badges={this.state.badges}/> )} />
+            <Route exact path="/badges" component={() => (<BadgesView badges={this.state.badges} />)} />
             <Route
               path="/badges/:badgeId"
               component={({
@@ -167,11 +161,11 @@ class App extends Component {
                   params: { badgeId }
                 }
               }) => (
-                <BadgeView
-                  badge={this.state.badges && this.state.badges[badgeId]}
-                  dealers={this.state.dealers}
-                />
-              )}
+                  <BadgeView
+                    badge={this.state.badges && this.state.badges[badgeId]}
+                    dealers={this.state.dealers}
+                  />
+                )}
             />
             <Route
               exact
@@ -190,12 +184,12 @@ class App extends Component {
                   params: { dealerId }
                 }
               }) => (
-                <BadgeDealerView
-                  badges={this.state.badges}
-                  dealers={this.state.dealers}
-                  dealerId={dealerId}
-                />
-              )}
+                  <BadgeDealerView
+                    badges={this.state.badges}
+                    dealers={this.state.dealers}
+                    dealerId={dealerId}
+                  />
+                )}
             />
             <Route path="/sign-up" component={SignUpFormView} />
             <Route path="/sign-in" component={SignInFormView} />
@@ -211,34 +205,34 @@ class App extends Component {
         <Modal dimmer={signInDimmer} open={signInOpen} onClose={this.signInClose}>
           <Modal.Header>Register</Modal.Header>
           <Modal.Content image>
-            
+
             <Modal.Description>
               <Header>Register</Header>
-              <SignUpFormView afterSignUpSuccess={this.signInClose}/>
+              <SignUpFormView afterSignUpSuccess={this.signInClose} />
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
             <Button color='black' onClick={this.signInClose}>
               Close
             </Button>
-            
+
           </Modal.Actions>
         </Modal>
         <Modal dimmer={dimmer2} open={SignUpOpen} onClose={this.SignUpClose}>
           <Modal.Header>Logowanie</Modal.Header>
           <Modal.Content image>
-            
+
             <Modal.Description>
               <Header>Logowanie</Header>
-              <SignInFormView afterSignInSuccess={this.SignUpClose}/>
-              
+              <SignInFormView afterSignInSuccess={this.SignUpClose} />
+
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
             <Button color='black' onClick={this.SignUpClose}>
               Close
             </Button>
-            
+
           </Modal.Actions>
         </Modal>
       </div>
