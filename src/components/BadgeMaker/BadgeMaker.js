@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import firebase from "firebase";
 
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
@@ -7,9 +8,11 @@ import { getDealers } from "../../services/dealers";
 class BadgeMaker extends Component {
   state = {
     title: "",
-    logo: "",
+    logo: null,
+    error: null,
     description: "",
-    moreInfo: ""
+    moreInfo: "",
+    logoName: ""
   };
 
   makeHandleChange = fieldName => event => {
@@ -18,9 +21,41 @@ class BadgeMaker extends Component {
     });
   };
 
+  handleLogoChange = event => {
+    this.setState({
+      logo: event.target.files[0]
+    });
+  };
+
   handleSubmit = event => {
-    console.log(this.props.dealerId);
     event.preventDefault();
+    const logo = this.state.logo;
+    var storageRef = firebase.storage().ref("/images");
+
+    // if (!logo.name.endsWith(".png") || !logo.name.endsWith(".jpeg")) {
+    //   this.setState({
+    //     error: new Error("Obsługuwiane jest tylko png / jpeg")
+    //   });
+    //   return;
+    // }
+    var thisRef = storageRef.child(logo.name);
+
+    // thisRef.put(logo).then(function(snapshot) {
+    //   console.log("Uploade badge logo", snapshot);
+    //   thisRef.getDownloadURL().then(function(url) {
+    //     console.log(url);
+    //   });
+    // });
+    thisRef.put(logo);
+    thisRef.getDownloadURL().then( (url) => this.setState({
+      logoName: url
+    }))
+    // this.setState({
+    //   logoName: thisRef.getDownloadURL().then(function(url) {
+    //     console.log(url);
+    //   })
+    // });
+
     addBadge(this.props.dealerId, this.state)
       .then(getBadges)
       .then(getDealers);
@@ -29,8 +64,10 @@ class BadgeMaker extends Component {
   render() {
     return (
       <div>
+        {this.state.error && <p>{this.state.error.message}</p>}
+
         <form encType="multipart/form-data" onSubmit={this.handleSubmit}>
-          <label for="avatar">Tytuł: </label>
+          <label for="title">Tytuł: </label>
           <input
             className="make badge"
             placeholder="Badge Title"
@@ -39,18 +76,16 @@ class BadgeMaker extends Component {
           />
           <br />
           <br />
-          <label for="avatar">Logo: </label>
+          <label for="logo">Logo: </label>
           <input
             type="file"
             accept="image/png, image/jpeg"
-            className="make badge"
-            placeholder="Badge Logo"
-            value={this.state.logo}
-            onChange={this.makeHandleChange("logo")}
+            className="makeBadge"
+            onChange={this.handleLogoChange}
           />
           <br />
           <br />
-          <label for="avatar">Opis: </label>
+          <label for="description">Opis: </label>
           <input
             className="make badge"
             placeholder="Badge Description"
@@ -59,7 +94,7 @@ class BadgeMaker extends Component {
           />
           <br />
           <br />
-          <label for="avatar">Więcej informacji: </label>
+          <label for="moreInfo">Więcej informacji: </label>
           <input
             className="make badge"
             placeholder="Badge more info"
@@ -69,7 +104,7 @@ class BadgeMaker extends Component {
           <br />
           <br />
 
-          <button>ADD</button>
+          <button type="submit">Dodaj Badga</button>
         </form>
       </div>
     );
