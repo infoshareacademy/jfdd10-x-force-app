@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./BadgeDealerListItem.css";
 import { Link } from "react-router-dom";
+import { Button} from 'semantic-ui-react'
 class BadgeDealerListItem extends Component {
   render() {
     const dealer = this.props.dealer
@@ -13,9 +14,9 @@ class BadgeDealerListItem extends Component {
         </div>
         <div className="section2">
           <div className="description">
-            <p className="name">
+            <h6 className="name">
               {dealer.name} {dealer.surname}
-            </p>
+            </h6>
             <p className="description">{dealer.description}</p>
           </div>
           <div className="badges">
@@ -27,9 +28,9 @@ class BadgeDealerListItem extends Component {
               )}
           </div>
           <p className="link_contener">
-            <Link className="link" to={`/badge-dealers/${dealer.id}`}>
-              Więcej
-            </Link>
+          <Button inverted color='blue'><Link className="link" to={`/badge-dealers/${dealer.id}`}>Więcej
+              
+            </Link></Button>
           </p>
         </div>
       </div>

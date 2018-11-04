@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import BadgeMaker from "../BadgeMaker/BadgeMaker";
 import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
-import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
 
+import UserSearcher from "../UserSearcher/UserSearcher";
 class UserProfileView extends Component {
   state = {
     isEditMode: false
@@ -33,7 +33,6 @@ class UserProfileView extends Component {
           )}
           <Button onClick={this.toggleEditMode}>Edytuj Profil</Button>
 
-          {console.log(this.state.isEditMode)}
           <div className="dealer_header">
             <p>
               {" "}
@@ -67,6 +66,12 @@ class UserProfileView extends Component {
         <div className="dealer_badges">
           <BadgesOfDealerView dealer={user} badges={this.props.badges} />
         </div>
+         { user.isTrainer ? <div className="dealer_header">Znajdź użytownika</div> : null }
+        {user.isTrainer ? (
+            <div>
+            <UserSearcher users={this.props.users} />
+          </div>
+        ) : null}
       </div>
     );
   }

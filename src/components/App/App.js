@@ -12,6 +12,7 @@ import UserProfileView from "../UserProfileView/UserProfileView";
 import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
+import {getUsers} from "../../services/users";
 import { getDealers } from "../../services/dealers";
 import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
 
@@ -19,6 +20,7 @@ class App extends Component {
   state = {
     badges: null,
     dealers: null,
+    users: null,
     user: null,
     signInOpen: false,
     SignUpOpen: false
@@ -34,6 +36,7 @@ class App extends Component {
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
+    getUsers().then(users => this.setState({users}))
     getDealers().then(dealers => {
       this.setState({ dealers });
     });
@@ -83,9 +86,8 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
-    const { signInOpen, signInDimmer } = this.state;
-    const { SignUpOpen, dimmer2 } = this.state;
-
+    const { signInOpen, signInDimmer } = this.state
+    const { SignUpOpen, dimmer2 } = this.state
     return (
       <div className="App">
         <div className="nav">
