@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BadgeMaker from "../BadgeMaker/BadgeMaker";
 import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
-import UserSearcher from "../UserSearcher/UserSearcher"
+import UserSearcher from "../UserSearcher/UserSearcher";
 class UserProfileView extends Component {
   render() {
     const user = this.props.user;
@@ -40,15 +40,17 @@ class UserProfileView extends Component {
             )}
           </div>
         </div>
-        
+
         {user.isTrainer ? <BadgeMaker dealerId={user.uid} /> : null}
         <div className="dealer_header">Te odznaki posiadam</div>
         <div className="dealer_badges">
           <BadgesOfDealerView dealer={user} badges={this.props.badges} />
         </div>
-        <div>
-          <UserSearcher users={this.props.users}/>
+        {user.isTrainer ? (
+          <div>
+            <UserSearcher users={this.props.users} />
           </div>
+        ) : null}
       </div>
     );
   }

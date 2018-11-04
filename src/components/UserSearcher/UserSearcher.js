@@ -25,6 +25,7 @@ class UserSearcher extends Component {
           <UserSearcherForm processSearchPhrase={this.processSearchPhrase} />
           <UserSearcherResults
             users={this.state.users.filter(user =>
+                user.isTrainer === false).filter(user =>
               user.name
                 .toLowerCase()
                 .includes(this.state.searchPhrase.toLowerCase())
