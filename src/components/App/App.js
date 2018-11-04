@@ -13,6 +13,7 @@ import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
+import UserProfileFormEdit from '../UserProfileFormEdit/UserProfileFormEdit';
 
 class App extends Component {
   state = {
@@ -213,6 +214,18 @@ class App extends Component {
             <Route path="/sign-in" component={SignInFormView} />
             {user ? (
               <Route
+                path="/user-profile/UserProfileFormEdit"
+                component={() => (
+                  <UserProfileFormEdit
+                    dealers={this.state.dealers}
+                    user={this.state.user}
+                    badges={this.state.badges}
+                  />
+                )}
+              />
+            ) : null}
+            {user ? (
+              <Route
                 path="/user-profile"
                 component={() => (
                   <UserProfileView
@@ -223,6 +236,9 @@ class App extends Component {
                 )}
               />
             ) : null}
+
+
+
           </div>
         </header>
         <Modal
