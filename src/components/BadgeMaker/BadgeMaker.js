@@ -40,20 +40,20 @@ class BadgeMaker extends Component {
           logo: url,
           description: this.state.description,
           moreInfo: this.state.moreInfo
-        }
-  
+        };
+
         addBadge(this.props.dealerId, badgeData)
           .then(getBadges)
-          .then(getDealers)
+          .then(getDealers);
       });
-    })
+    });
   };
 
   render() {
     return (
       <div>
         {this.state.error && <p>{this.state.error.message}</p>}
-
+        <div className="dealer_header">Tworzenie Badga</div>
         <form encType="multipart/form-data" onSubmit={this.handleSubmit}>
           <label for="title">Tytuł: </label>
           <input
