@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+
+.logo img{
+    
+    max-width: 240px ;
+    max-height: 240px;
+    
+}
+
 @media (min-width: 100px) {
 
 .contener{
@@ -11,7 +19,7 @@
     border-radius: 10px;
     background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
     width: 90%;
-    box-shadow: 0px 0px 150px #cd0adf;
+    box-shadow: 0px 0px 150px #0adf63;
 }
 
 .avatar{
@@ -20,6 +28,9 @@
     padding: 10px;
     border-radius: 50%;
 }
+
+
+
 
 .name{
     font-size: 20px;
@@ -59,6 +70,10 @@
 .description{
     padding: 0px 10px;
     font-size: 14px;
+    
+}
+.description p {
+    text-align: left
 }
 
 }

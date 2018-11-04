@@ -1,10 +1,11 @@
 .dystrybution{
    margin:  auto;
-    width: 300px;
-   color: rgb(10, 51, 112);
+    width: 350px;
+    background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
    margin-top: 50px;
    margin-bottom: 50px;
-   text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC, -1px 1px 20px rgba(158,163,164,0);
+   border-radius: 10px;
+   box-shadow: 0px 0px 22px #000;
    
 
 }
