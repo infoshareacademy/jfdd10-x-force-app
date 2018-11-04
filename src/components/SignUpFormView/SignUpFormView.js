@@ -1,20 +1,16 @@
-import React, { Component } from 'react'
-import SignUpForm from '../SignUpForm/SignUpForm'
+import React, { Component } from "react";
+import SignUpForm from "../SignUpForm/SignUpForm";
 
-
-import './SignUpFormView.css'
+import "./SignUpFormView.css";
 
 class SignUpFormView extends Component {
-  
   render() {
-    return  (
+    return (
       <div className="SignUpFormView">
-     
-       
         <SignUpForm {...this.props} />
       </div>
-    )
+    );
   }
 }
 
-export default SignUpFormView
+export default SignUpFormView;

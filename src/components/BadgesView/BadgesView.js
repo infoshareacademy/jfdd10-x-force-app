@@ -3,7 +3,7 @@ import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesView.css";
 import { Transition, Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import snapshotToArray from '../../snapshotToArray';
+import snapshotToArray from "../../snapshotToArray";
 
 class BadgesView extends Component {
   constructor() {
@@ -15,8 +15,6 @@ class BadgesView extends Component {
       badgesPerPage: 5,
       isVisibleLeft: true,
       isVisableRight: true
-
-      // paginatedBadge: []
     };
     this.handlePageChange = this.handlePageChange.bind(this);
   }
@@ -43,7 +41,7 @@ class BadgesView extends Component {
   static getDerivedStateFromProps(props) {
     return {
       badges: snapshotToArray(props.badges)
-    }
+    };
   }
 
   render() {
@@ -74,7 +72,6 @@ class BadgesView extends Component {
 
     return (
       <div>
-        {console.log(badges)}
         <ul key={badges.id}>
           <BadgeList badges={currentBadges} />
         </ul>

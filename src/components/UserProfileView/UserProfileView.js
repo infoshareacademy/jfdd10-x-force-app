@@ -9,7 +9,6 @@ class UserProfileView extends Component {
     if (!user) {
       return <p>Loading...</p>;
     }
-    console.log(this.props.badges);
     return (
       <div className="UserProfileView">
         <div>
@@ -40,7 +39,7 @@ class UserProfileView extends Component {
             )}
           </div>
         </div>
-        
+
         {user.isTrainer ? <BadgeMaker dealerId={user.uid} /> : null}
         <div className="dealer_header">Te odznaki posiadam</div>
         <div className="dealer_badges">

@@ -23,9 +23,12 @@ class SignInForm extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(() => this.setState({ error: null }))
-      .then(() => { this.props.history.push("/"); if (this.props.afterSignInSuccess) {
-        this.props.afterSignInSuccess()
-      } })
+      .then(() => {
+        this.props.history.push("/");
+        if (this.props.afterSignInSuccess) {
+          this.props.afterSignInSuccess();
+        }
+      })
       .catch(error => this.setState({ error }));
   };
 

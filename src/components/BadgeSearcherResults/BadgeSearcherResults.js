@@ -9,13 +9,12 @@ class BadgeSearcherResults extends Component {
   };
 
   render() {
-      
     if (this.props.badges.length === 0) {
-        return (
-            <div className="badgeSearcherResults">
-                <div>No badges found</div>
-            </div>
-        );
+      return (
+        <div className="badgeSearcherResults">
+          <div>No badges found</div>
+        </div>
+      );
     }
 
     return (
