@@ -2,15 +2,15 @@ const usersApiUrl = "https://x-force-app.firebaseio.com/";
 
 //the same like trainers
 
-// export const getUsers = () =>
-//   fetch(usersApiUrl + "/users.json")
-//     .then(response => response.json())
-//     .then(users =>
-//       Object.entries(users || {}).map(([id, value]) => ({
-//         id,
-//         ...value
-//       }))
-//     );
+export const getUsers = () =>
+  fetch(usersApiUrl + "/users.json")
+    .then(response => response.json())
+    .then(users =>
+      Object.entries(users || {}).map(([id, value]) => ({
+        id,
+        ...value
+      }))
+    );
 
 export const addUser = (name, surname) =>
   fetch(usersApiUrl + "/users.json", {
