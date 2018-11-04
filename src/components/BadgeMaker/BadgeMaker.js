@@ -31,16 +31,26 @@ class BadgeMaker extends Component {
     event.preventDefault();
     const file = this.state.file;
     // var logo = this.state.logo;
-    var storageRef = firebase.storage().ref("/images");
+    var storageRef = firebase.storage().ref("/images" + file.name);
+    var upload = storageRef.put(file);
+    const database = firebase.database();
+    const ref = database.ref("badges/");
 
+    upload.on("state_changed", function complete() {
+      storageRef.getMetadata().then(metadata => {
+        ref.push({
+          url: metadata.downloadUrl[0]
+        })
+      })
+    });
     var thisRef = storageRef.child(file.name);
     thisRef.put(file);
 
     // var downloadUrl = thisRef.getDownloadURL().then(url => url);
     console.log("thisref - ", thisRef.getDownloadURL().then(function(url) {}));
 
-    var downloadUrl = thisRef.getDownloadURL().then(function(url) {
-      return url;
+    var downloadUrls = thisRef.getDownloadURL().then(function(url) {
+      console.log("url: ", url);
     });
 
     //  error why?
@@ -49,20 +59,18 @@ class BadgeMaker extends Component {
     //   return url.i;
     // });
 
-    var badgeData = this.setState({
+    this.setState({
       title: this.state.title,
-      logo: downloadUrl,
+      logo: downloadUrls,
       description: this.state.description,
       moreInfo: this.state.moreInfo
     });
 
-    console.log("url: ", downloadUrl);
+    console.log("logo badga: ", this.state.logo);
 
-    console.log(
-      addBadge(this.props.dealerId, badgeData)
-        .then(getBadges)
-        .then(getDealers)
-    );
+    // addBadge(this.props.dealerId, this.state)
+    //   .then(getBadges)
+    //   .then(getDealers);
     // addBadge(this.props.dealerId, badgeData)
     // .then(getBadges)
     // .then(getDealers);
