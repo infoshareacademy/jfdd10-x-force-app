@@ -11,7 +11,7 @@ class BadgeView extends Component {
   }
 
   render() {
-    const dealers = this.props.dealers
+    const dealers = this.props.dealers;
     const badge = this.props.badge;
     if (!badge) {
       return <p>Loading badge...</p>;
@@ -26,16 +26,18 @@ class BadgeView extends Component {
 
         <div>
           <p className="color"> Trenerzy którzy posiadają odznakę:</p>
-          {dealers && badge.badgeOwnerIds && Object.keys(badge.badgeOwnerIds)
-            .map(id => dealers[id] && { id, ...dealers[id]})
-            .filter(Boolean)
-            .map(dealer => (
-              <p>
-                <Link className="linki" to={`/badge-dealers/${dealer.id}`}>
-                  {dealer.name} {dealer.surname}
-                </Link>
-              </p>
-            ))}
+          {dealers &&
+            badge.badgeOwnerIds &&
+            Object.keys(badge.badgeOwnerIds)
+              .map(id => dealers[id] && { id, ...dealers[id] })
+              .filter(Boolean)
+              .map(dealer => (
+                <p>
+                  <Link className="linki" to={`/badge-dealers/${dealer.id}`}>
+                    {dealer.name} {dealer.surname}
+                  </Link>
+                </p>
+              ))}
         </div>
       </div>
     );

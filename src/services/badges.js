@@ -5,7 +5,6 @@ import {rootRef} from '../setupFirebase';
 export const getBadges = () => rootRef.child('badges').once("value").then(snapshot => snapshot.val());
 
 export function addBadge(dealerId, badgeData) {
-  
   return firebase
     .database()
     .ref("badges/")

@@ -3,18 +3,17 @@ import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 import "./BadgeDealerView.css";
-import snapshotToArray from '../../snapshotToArray';
+import snapshotToArray from "../../snapshotToArray";
 
 class BadgeDealerView extends Component {
-
   state = {
     dealers: []
-  }
+  };
 
   static getDerivedStateFromProps(props) {
     return {
       dealers: snapshotToArray(props.dealers)
-    }
+    };
   }
 
   render() {
@@ -44,19 +43,17 @@ class BadgeDealerView extends Component {
           </div>
           <div className="dealer_header">Tu mnie znajdziesz</div>
           <div className="dealer_map">
-          {dealer.position &&
-            <BadgeDealerMap
-              center={dealer.position}
-              dealers={this.state.dealers}
-              trainerObject={dealer}
-              badges={this.props.badges}
-            />
-          }
+            {dealer.position && (
+              <BadgeDealerMap
+                center={dealer.position}
+                dealers={this.state.dealers}
+                trainerObject={dealer}
+                badges={this.props.badges}
+              />
+            )}
           </div>
           <div className="dealer_header">Te odznaki posiadam</div>
           <div className="dealer_badges">
-
-           
             <BadgesOfDealerView dealer={dealer} badges={this.props.badges} />
           </div>
         </div>

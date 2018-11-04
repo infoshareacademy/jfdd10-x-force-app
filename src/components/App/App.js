@@ -14,6 +14,7 @@ import "./App.css";
 import { getBadges } from "../../services/badges";
 import {getUsers} from "../../services/users";
 import { getDealers } from "../../services/dealers";
+import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
 
 class App extends Component {
   state = {
@@ -25,11 +26,13 @@ class App extends Component {
     SignUpOpen: false
   };
 
-  signInShow = signInDimmer => () => this.setState({ signInDimmer, signInOpen: true })
-  signInClose = () => this.setState({ signInOpen: false })
+  signInShow = signInDimmer => () =>
+    this.setState({ signInDimmer, signInOpen: true });
+  signInClose = () => this.setState({ signInOpen: false });
 
-  SignUpShow = SignUpDimmer => () => this.setState({ SignUpDimmer, SignUpOpen: true })
-  SignUpClose = () => this.setState({ SignUpOpen: false })
+  SignUpShow = SignUpDimmer => () =>
+    this.setState({ SignUpDimmer, SignUpOpen: true });
+  SignUpClose = () => this.setState({ SignUpOpen: false });
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
@@ -45,18 +48,20 @@ class App extends Component {
           .ref("/users/" + user.uid)
           .once("value")
           .then(snapshot => {
-            let fetchedUser = { uid: user.uid, ...(snapshot.val() || {}) }
+            let fetchedUser = { uid: user.uid, ...(snapshot.val() || {}) };
             if (fetchedUser.isTrainer) {
               firebase
-              .database()
-              .ref("/dealers/" + user.uid)
-              .once("value")
-              .then(snapshot => {
-                this.setState({ user: {...fetchedUser, ...snapshot.val()} })
-              });
+                .database()
+                .ref("/dealers/" + user.uid)
+                .once("value")
+                .then(snapshot => {
+                  this.setState({
+                    user: { ...fetchedUser, ...snapshot.val() }
+                  });
+                });
             } else {
-              this.setState({ user: fetchedUser })
-            }           
+              this.setState({ user: fetchedUser });
+            }
           });
       }
     });
@@ -72,7 +77,7 @@ class App extends Component {
             user: null
           });
         },
-        function (error) {
+        function(error) {
           console.warn("error");
         }
       )
@@ -86,36 +91,46 @@ class App extends Component {
     return (
       <div className="App">
         <div className="nav">
-          <div className={user ? 'loggedIn signIp' : "signIn"}>
-            <Button onClick={this.signInShow('blurring')} inverted color="blue" className="linksButton">
-              
-                Rejestracja
-              
+          <div className={user ? "loggedIn signIp" : "signIn"}>
+            <Button
+              onClick={this.signInShow("blurring")}
+              inverted
+              color="blue"
+              className="linksButton"
+            >
+              Rejestracja
             </Button>
           </div>
-          <div className={user ? 'loggedIn signUp' : "signUp"}>
-            <Button onClick={this.SignUpShow('blurring')} inverted color="blue" className="linksButton">
-              
-                Logowanie
-              
+          <div className={user ? "loggedIn signUp" : "signUp"}>
+            <Button
+              onClick={this.SignUpShow("blurring")}
+              inverted
+              color="blue"
+              className="linksButton"
+            >
+              Logowanie
             </Button>
           </div>
-          <div className='log'>
+          <div className="log">
             {user ? (
               <div>
-
-                <Button inverted color="blue" className="linksButton" onClick={() => this.logOut()}>Log out</Button>
+                <Button
+                  inverted
+                  color="blue"
+                  className="linksButton"
+                  onClick={() => this.logOut()}
+                >
+                  Log out
+                </Button>
               </div>
             ) : null}
           </div>
         </div>
 
-
         <header className="App-header">
           <div className="App">
             <div className="navigation">
               <ul>
-
                 <li>
                   <Button inverted color="blue" className="linksButton">
                     <NavLink className="links" exact to="/">
@@ -147,6 +162,7 @@ class App extends Component {
                     </Button>
                   </li>
                 ) : null}
+                
               </ul>
             </div>
 
@@ -155,7 +171,11 @@ class App extends Component {
               path="/"
               component={() => <HomeView badges={this.state.badges} />}
             />
-            <Route exact path="/badges" component={() => (<BadgesView badges={this.state.badges} />)} />
+            <Route
+              exact
+              path="/badges"
+              component={() => <BadgesView badges={this.state.badges} />}
+            />
             <Route
               path="/badges/:badgeId"
               component={({
@@ -163,11 +183,11 @@ class App extends Component {
                   params: { badgeId }
                 }
               }) => (
-                  <BadgeView
-                    badge={this.state.badges && this.state.badges[badgeId]}
-                    dealers={this.state.dealers}
-                  />
-                )}
+                <BadgeView
+                  badge={this.state.badges && this.state.badges[badgeId]}
+                  dealers={this.state.dealers}
+                />
+              )}
             />
             <Route
               exact
@@ -186,57 +206,62 @@ class App extends Component {
                   params: { dealerId }
                 }
               }) => (
-                  <BadgeDealerView
-                    badges={this.state.badges}
-                    dealers={this.state.dealers}
-                    dealerId={dealerId}
-                  />
-                )}
+                <BadgeDealerView
+                  badges={this.state.badges}
+                  dealers={this.state.dealers}
+                  dealerId={dealerId}
+                />
+              )}
             />
             <Route path="/sign-up" component={SignUpFormView} />
             <Route path="/sign-in" component={SignInFormView} />
-            { user ?
-            <Route
-              path="/user-profile"
-              component={() => (
-              <UserProfileView 
-              dealers={this.state.dealers} users={this.state.users} user={this.state.user} badges={this.state.badges}/>)}
-            />
-            : null
-            }
+
+            {user ? (
+              <Route
+                path="/user-profile"
+                component={() => (
+                  <UserProfileView
+                    dealers={this.state.dealers}
+                    user={this.state.user}
+                    badges={this.state.badges}
+                  />
+                )}
+              />
+            ) : null}
+
+            
           </div>
         </header>
-        <Modal dimmer={signInDimmer} open={signInOpen} onClose={this.signInClose}>
+        <Modal
+          dimmer={signInDimmer}
+          open={signInOpen}
+          onClose={this.signInClose}
+        >
           <Modal.Header>Register</Modal.Header>
           <Modal.Content image>
-
             <Modal.Description>
               <Header>Register</Header>
               <SignUpFormView afterSignUpSuccess={this.signInClose} />
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='black' onClick={this.signInClose}>
+            <Button color="black" onClick={this.signInClose}>
               Close
             </Button>
-
           </Modal.Actions>
         </Modal>
         <Modal dimmer={dimmer2} open={SignUpOpen} onClose={this.SignUpClose}>
           <Modal.Header>Logowanie</Modal.Header>
           <Modal.Content image>
-
             <Modal.Description>
               <Header>Logowanie</Header>
               <SignInFormView afterSignInSuccess={this.SignUpClose} />
-
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='black' onClick={this.SignUpClose}>
+            <Button color="black" onClick={this.SignUpClose}>
               Close
             </Button>
-
           </Modal.Actions>
         </Modal>
       </div>

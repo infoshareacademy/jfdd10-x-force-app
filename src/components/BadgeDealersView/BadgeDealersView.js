@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BadgeDealerList from "../BadgeDealerList/BadgeDealerList";
 import "./BadgeDealersView.css";
-import snapshotToArray from '../../snapshotToArray';
+import snapshotToArray from "../../snapshotToArray";
 
 class BadgeDealersView extends Component {
   state = {
@@ -9,12 +9,11 @@ class BadgeDealersView extends Component {
     badges: []
   };
 
-
   static getDerivedStateFromProps(props) {
     return {
       dealers: snapshotToArray(props.dealers),
       badges: snapshotToArray(props.badges)
-    }
+    };
   }
 
   render() {

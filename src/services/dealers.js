@@ -1,5 +1,6 @@
 import { rootRef } from "../setupFirebase";
 
+
 export const getDealers = () => rootRef
   .child("dealers")
   .once("value")
@@ -30,8 +31,10 @@ export const setBadgeOwnership = (dealerId, badgeId) =>
       [badgeId]: true
     });
 
-export const updateDealer = (dealerId, dealerData) =>
+export const updateDealer = (dealerId ,dealerData) =>
 rootRef
     .child("dealers")
     .child(dealerId)
-    .update(dealerData)
+    .update({
+      ...dealerData
+    })

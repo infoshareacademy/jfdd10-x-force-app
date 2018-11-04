@@ -87,9 +87,12 @@ class Appintro extends Component {
           </div>
         </div>
 
-        <div className='AppIntroButton'>
-          <Button inverted  color="blue" className="IntroButton"
-            onClick={this.handleCloseClick}   
+        <div className="AppIntroButton">
+          <Button
+            inverted
+            color="blue"
+            className="IntroButton"
+            onClick={this.handleCloseClick}
           >
             Przejdź do aplikacji
           </Button>

@@ -2,17 +2,37 @@ import React, { Component } from "react";
 import BadgeMaker from "../BadgeMaker/BadgeMaker";
 import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
+import { Button } from "semantic-ui-react";
+import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
+
 import UserSearcher from "../UserSearcher/UserSearcher";
 class UserProfileView extends Component {
+  state = {
+    isEditMode: false
+  };
+
+  toggleEditMode = event => {
+    this.setState({
+      isEditMode: !this.state.isEditMode
+    });
+  };
+
   render() {
     const user = this.props.user;
     if (!user) {
       return <p>Loading...</p>;
     }
-    console.log(this.props.badges);
     return (
       <div className="UserProfileView">
         <div>
+          {this.state.isEditMode === true && (
+            <UserProfileFormEdit
+              user={user.uid}
+              badges={this.props.badges}
+            />
+          )}
+          <Button onClick={this.toggleEditMode}>Edytuj Profil</Button>
+
           <div className="dealer_header">
             <p>
               {" "}

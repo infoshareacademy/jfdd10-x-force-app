@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BadgeSearcherForm from "../BadgeSearcherForm/BadgeSearcherForm";
 import BadgeSearcherResults from "../BadgeSearcherResults/BadgeSearcherResults";
 import "./BadgeSearcher.css";
-import snapshotToArray from '../../snapshotToArray';
+import snapshotToArray from "../../snapshotToArray";
 
 class BadgeSearcher extends Component {
   state = {
@@ -34,10 +34,12 @@ class BadgeSearcher extends Component {
         <div>
           <BadgeSearcherForm processSearchPhrase={this.processSearchPhrase} />
           <BadgeSearcherResults
-            badges={this.state.badges.filter(badge =>
-              badge.title && badge.title
-                .toLowerCase()
-                .includes(this.state.searchPhrase.toLowerCase())
+            badges={this.state.badges.filter(
+              badge =>
+                badge.title &&
+                badge.title
+                  .toLowerCase()
+                  .includes(this.state.searchPhrase.toLowerCase())
             )}
           />
         </div>
