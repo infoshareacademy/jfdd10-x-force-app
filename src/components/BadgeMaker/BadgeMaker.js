@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import firebase from "firebase";
 
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
@@ -7,9 +8,11 @@ import { getDealers } from "../../services/dealers";
 class BadgeMaker extends Component {
   state = {
     title: "",
-    logo: '',
+    file: null,
+    // error: null,
     description: "",
-    moreInfo: ""
+    moreInfo: "",
+    logo: ""
   };
 
   makeHandleChange = fieldName => event => {
@@ -18,20 +21,41 @@ class BadgeMaker extends Component {
     });
   };
 
+  handleLogoChange = event => {
+    this.setState({
+      file: event.target.files[0]
+    });
+  };
+
   handleSubmit = event => {
-    console.log(this.props.dealerId)
     event.preventDefault();
-    addBadge(
-      this.props.dealerId,
-      this.state
-    ).then(getBadges).then(getDealers);
+    const file = this.state.file;
+    var storageRef = firebase.storage().ref("/images");
+
+    var thisRef = storageRef.child(file.name);
+    thisRef.put(file).then(() => {
+      thisRef.getDownloadURL().then(url => {
+        const badgeData = {
+          title: this.state.title,
+          logo: url,
+          description: this.state.description,
+          moreInfo: this.state.moreInfo
+        }
+  
+        addBadge(this.props.dealerId, badgeData)
+          .then(getBadges)
+          .then(getDealers)
+      });
+    })
   };
 
   render() {
     return (
       <div>
-        <form encType='multipart/form-data' onSubmit={this.handleSubmit}>
-          <label for="avatar">Tytuł: </label>
+        {this.state.error && <p>{this.state.error.message}</p>}
+
+        <form encType="multipart/form-data" onSubmit={this.handleSubmit}>
+          <label for="title">Tytuł: </label>
           <input
             className="make badge"
             placeholder="Badge Title"
@@ -40,18 +64,16 @@ class BadgeMaker extends Component {
           />
           <br />
           <br />
-          <label for="avatar">Logo: </label>
+          <label for="logo">Logo: </label>
           <input
             type="file"
             accept="image/png, image/jpeg"
-            className="make badge"
-            placeholder="Badge Logo"
-            value={this.state.logo}
-            onChange={this.makeHandleChange("logo")}
+            className="makeBadge"
+            onChange={this.handleLogoChange}
           />
           <br />
           <br />
-          <label for="avatar">Opis: </label>
+          <label for="description">Opis: </label>
           <input
             className="make badge"
             placeholder="Badge Description"
@@ -60,7 +82,7 @@ class BadgeMaker extends Component {
           />
           <br />
           <br />
-          <label for="avatar">Więcej informacji: </label>
+          <label for="moreInfo">Więcej informacji: </label>
           <input
             className="make badge"
             placeholder="Badge more info"
@@ -70,7 +92,7 @@ class BadgeMaker extends Component {
           <br />
           <br />
 
-          <button>ADD</button>
+          <button type="submit">Dodaj Badga</button>
         </form>
       </div>
     );
