@@ -4,6 +4,7 @@ import firebase from "firebase";
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
+import { stat } from "fs";
 
 class BadgeMaker extends Component {
   state = {
@@ -30,7 +31,27 @@ class BadgeMaker extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const logo = this.state.logo;
+    console.log("logo: ", logo);
+    console.log("logo - name: ", logo.name);
+
     var storageRef = firebase.storage().ref("/images");
+    // var upload = storageRef.put(this.state.logo);
+    // var postKey = firebase
+    //   .database()
+    //   .ref("dealers" + this.props.dealerId)
+    //   .push().key;
+    // const downloadUrl = upload.snapshot.downloadURL;
+    // var downloadUrl = upload.snapshot.downloadURL;
+    // var updates = {};
+
+    // updates["dealers/" + postKey] = addBadge(this.props.dealerId, this.state, this.state.logo)
+    //   .then(getBadges)
+    //   .then(getDealers);
+    // console.log(downloadUrl);
+    // firebase.database().ref().update(updates);
+
+    var thisRef = storageRef.child(logo.name);
+    thisRef.put(logo);
 
     // if (!logo.name.endsWith(".png") || !logo.name.endsWith(".jpeg")) {
     //   this.setState({
@@ -38,25 +59,35 @@ class BadgeMaker extends Component {
     //   });
     //   return;
     // }
-    var thisRef = storageRef.child(logo.name);
+    var downloadUrl = thisRef.getDownloadURL().then(url => url);
+    console.log(thisRef.getDownloadURL().then(function(url){
+      console.log(url);
+      this.setState({
+        logoName: url
+      })
+    }));
+    
+    console.log('downloadUrl' ,downloadUrl);
+    this.setState({
+      logoName: downloadUrl
+    })
+    
+    thisRef.getDownloadURL().then(url =>
+      this.setState({
+        logoName: url.i
+      })
+      
+      );
+      console.log(this.state.logoName);
 
-    // thisRef.put(logo).then(function(snapshot) {
-    //   console.log("Uploade badge logo", snapshot);
-    //   thisRef.getDownloadURL().then(function(url) {
-    //     console.log(url);
-    //   });
-    // });
-    thisRef.put(logo);
-    thisRef.getDownloadURL().then( (url) => this.setState({
-      logoName: url
-    }))
-    // this.setState({
-    //   logoName: thisRef.getDownloadURL().then(function(url) {
-    //     console.log(url);
-    //   })
-    // });
+      var badgeData = {
+        title: this.state.title,
+        logo: this.state.logoName,
+        description: this.state.description,
+        moreInfo: this.state.moreInfo
+      }
 
-    addBadge(this.props.dealerId, this.state)
+    addBadge(this.props.dealerId, badgeData)
       .then(getBadges)
       .then(getDealers);
   };
