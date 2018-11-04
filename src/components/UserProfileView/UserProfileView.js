@@ -46,8 +46,9 @@ class UserProfileView extends Component {
         <div className="dealer_badges">
           <BadgesOfDealerView dealer={user} badges={this.props.badges} />
         </div>
+         { user.isTrainer ? <div className="dealer_header">Znajdź użytownika</div> : null }
         {user.isTrainer ? (
-          <div>
+            <div>
             <UserSearcher users={this.props.users} />
           </div>
         ) : null}

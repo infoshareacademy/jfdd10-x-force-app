@@ -36,7 +36,7 @@ class UserSearcher extends Component {
         {
           this.state.error && <p>{this.state.error.message}</p>
         }
-        <Input focus placeholder='Znajdź użytkownika' value={this.state.userName} onChange={this.handleChange}/>
+        <Input focus placeholder='Nazwa' value={this.state.userName} onChange={this.handleChange}/>
         
         
       </form>  
