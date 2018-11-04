@@ -162,16 +162,7 @@ class App extends Component {
                     </Button>
                   </li>
                 ) : null}
-
-                {user ? (
-                  <li>
-                    <Button inverted color="blue" className="linksButton">
-                      <NavLink className="links" to="/User-Profile-Edit">
-                        Edycja profilu
-                      </NavLink>
-                    </Button>
-                  </li>
-                ) : null}
+                
               </ul>
             </div>
 
@@ -238,19 +229,7 @@ class App extends Component {
               />
             ) : null}
 
-            {user ? (
-              <Route
-                path="/User-Profile-Edit"
-                component={() => (
-                  <UserProfileFormEdit
-                    dealers={this.state.dealers}
-                    user={this.state.user}
-                    badges={this.state.badges}
-                  />
-                  
-                )}
-              />
-            ) : null}
+            
           </div>
         </header>
         <Modal
