@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+
+.logo img{
+    
+    max-width: 240px ;
+    max-height: 240px;
+    
+}
+
 @media (min-width: 100px) {
 
 .contener{
@@ -20,6 +28,9 @@
     padding: 10px;
     border-radius: 50%;
 }
+
+
+
 
 .name{
     font-size: 20px;
