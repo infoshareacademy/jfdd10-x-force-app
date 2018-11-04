@@ -4,16 +4,15 @@ import firebase from "firebase";
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
-import { stat } from "fs";
 
 class BadgeMaker extends Component {
   state = {
     title: "",
-    logo: null,
-    error: null,
+    file: null,
+    // error: null,
     description: "",
     moreInfo: "",
-    logoName: ""
+    logo: ""
   };
 
   makeHandleChange = fieldName => event => {
@@ -24,72 +23,94 @@ class BadgeMaker extends Component {
 
   handleLogoChange = event => {
     this.setState({
-      logo: event.target.files[0]
+      file: event.target.files[0]
     });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    const logo = this.state.logo;
-    console.log("logo: ", logo);
-    console.log("logo - name: ", logo.name);
-
+    const file = this.state.file;
+    // var logo = this.state.logo;
     var storageRef = firebase.storage().ref("/images");
-    // var upload = storageRef.put(this.state.logo);
-    // var postKey = firebase
-    //   .database()
-    //   .ref("dealers" + this.props.dealerId)
-    //   .push().key;
-    // const downloadUrl = upload.snapshot.downloadURL;
-    // var downloadUrl = upload.snapshot.downloadURL;
-    // var updates = {};
 
-    // updates["dealers/" + postKey] = addBadge(this.props.dealerId, this.state, this.state.logo)
-    //   .then(getBadges)
-    //   .then(getDealers);
-    // console.log(downloadUrl);
-    // firebase.database().ref().update(updates);
+    var thisRef = storageRef.child(file.name);
+    thisRef.put(file);
 
-    var thisRef = storageRef.child(logo.name);
-    thisRef.put(logo);
+    // var downloadUrl = thisRef.getDownloadURL().then(url => url);
+    console.log("thisref - ", thisRef.getDownloadURL().then(function(url) {}));
 
+    var downloadUrl = thisRef.getDownloadURL().then(function(url) {
+      return url;
+    });
+
+    //  error why?
+
+    // var downloadUrl = thisRef.getDownloadURL().then(function(url) {
+    //   return url.i;
+    // });
+
+    var badgeData = this.setState({
+      title: this.state.title,
+      logo: downloadUrl,
+      description: this.state.description,
+      moreInfo: this.state.moreInfo
+    });
+
+    console.log("url: ", downloadUrl);
+
+    console.log(
+      addBadge(this.props.dealerId, badgeData)
+        .then(getBadges)
+        .then(getDealers)
+    );
+    // addBadge(this.props.dealerId, badgeData)
+    // .then(getBadges)
+    // .then(getDealers);
+
+    // console.log('downloadUrl' ,downloadUrl);
+    // this.setState({
+    //   logoName: downloadUrl
+    // })
+
+    // thisRef.getDownloadURL().then(url =>
+    //   this.setState({
+    //     logoName: url.i
+    //   })
+
+    //   );
+    //   console.log(this.state.logoName);
+
+    // var uploadLogo = storageRef.put(this.state.logo);
+
+    // uploadLogo.on(
+    //   "state_changed",
+    //   function(snapshot) {},
+    //   function(error) {},
+    //   function() {
+    //     var postKey = firebase
+    //       .database()
+    //       .ref("Posts/" + this.props.dealerId)
+    //       .push().key;
+    //     var downloadUrl = uploadLogo.snapshot.downloadURL;
+    //     var updates = {};
+    //     var badgeData = addBadge(this.props.dealerId, this.state)
+    //     .then(getBadges)
+    //     .then(getDealers);
+    //     updates["Posts/" + this.props.dealerId + postKey] = badgeData
+
+    //     console.log(downloadUrl);
+    //     firebase
+    //       .database()
+    //       .ref()
+    //       .update(updates);
+    //   }
+    // );
     // if (!logo.name.endsWith(".png") || !logo.name.endsWith(".jpeg")) {
     //   this.setState({
     //     error: new Error("Obsługuwiane jest tylko png / jpeg")
     //   });
     //   return;
     // }
-    var downloadUrl = thisRef.getDownloadURL().then(url => url);
-    console.log(thisRef.getDownloadURL().then(function(url){
-      console.log(url);
-      this.setState({
-        logoName: url
-      })
-    }));
-    
-    console.log('downloadUrl' ,downloadUrl);
-    this.setState({
-      logoName: downloadUrl
-    })
-    
-    thisRef.getDownloadURL().then(url =>
-      this.setState({
-        logoName: url.i
-      })
-      
-      );
-      console.log(this.state.logoName);
-
-      var badgeData = {
-        title: this.state.title,
-        logo: this.state.logoName,
-        description: this.state.description,
-        moreInfo: this.state.moreInfo
-      }
-
-    addBadge(this.props.dealerId, badgeData)
-      .then(getBadges)
-      .then(getDealers);
   };
 
   render() {
