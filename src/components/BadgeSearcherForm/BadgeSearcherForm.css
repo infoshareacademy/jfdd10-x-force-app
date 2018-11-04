@@ -1,35 +1,12 @@
-
-
-
 @media (min-width: 100px) {
     .badgeSearcherForm{
-        border: 1px solid black;
-        width: 50%;
         margin: 0 auto;
-        border-radius: 10px;
-        background-color: #A2B3D5;
-        padding: 10px;
-    }
-    
-    .badgeSearcherForm input{
-        width: 50%;
-    }
-   
-      
-  
-  }
-
-  @media (min-width: 800px) {
-    .badgeSearcherForm{
        
-        width: 30%;
-        
     }
-    
-    .badgeSearcherForm input{
-        width: 50%;
+    .badgeSearcherForm form {
+        width: 100%;
     }
-   
-      
-  
-  }
+
+
+
+}

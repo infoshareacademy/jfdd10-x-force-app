@@ -36,7 +36,7 @@ class BadgeSearcherForm extends Component {
         {
           this.state.error && <p>{this.state.error.message}</p>
         }
-        <Input focus placeholder='Znajdź odznakę' value={this.state.badgeName} onChange={this.handleChange}/>
+        <Input className="ImputSearcher" size="huge" focus placeholder='Znajdź odznakę' value={this.state.badgeName} onChange={this.handleChange}/>
         
         
       </form>  
