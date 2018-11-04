@@ -4,7 +4,7 @@ import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import UserProfileFormEdit from '../UserProfileFormEdit/UserProfileFormEdit';
+import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
 
 class UserProfileView extends Component {
   state = {
@@ -12,7 +12,6 @@ class UserProfileView extends Component {
   };
 
   toggleEditMode = event => {
-    event.preventDefault();
     this.setState({
       isEditMode: !this.state.isEditMode
     });
@@ -26,32 +25,13 @@ class UserProfileView extends Component {
     return (
       <div className="UserProfileView">
         <div>
-          {!this.state.isEditMode ? (
-            <Link className="link" to={`/user-profile/UserProfileFormEdit`}>
-              <Button
-                toggle
-                inverted
-                color="blue"
-                className="IntroButton"
-                onClick={this.toggleEditMode}
-              >
-                Edycja Profilu
-              </Button>
-            </Link>
-          ) : (
-            <Link className="link" to={`/user-profile/`}>
-            <UserProfileFormEdit user={user} badges={this.props.badges}/>
-                <Button
-                toggle
-                inverted
-                color="blue"
-                className="IntroButton"
-                onClick={this.toggleEditMode}
-              >
-                Zaakceptuj zmiany
-              </Button>
-            </Link>
+          {this.state.isEditMode === true && (
+            <UserProfileFormEdit
+              user={user.uid}
+              badges={this.props.badges}
+            />
           )}
+          <Button onClick={this.toggleEditMode}>Edytuj Profil</Button>
 
           {console.log(this.state.isEditMode)}
           <div className="dealer_header">

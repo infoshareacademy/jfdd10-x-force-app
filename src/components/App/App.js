@@ -13,7 +13,7 @@ import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
-import UserProfileFormEdit from '../UserProfileFormEdit/UserProfileFormEdit';
+import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
 
 class App extends Component {
   state = {
@@ -160,6 +160,16 @@ class App extends Component {
                     </Button>
                   </li>
                 ) : null}
+
+                {user ? (
+                  <li>
+                    <Button inverted color="blue" className="linksButton">
+                      <NavLink className="links" to="/User-Profile-Edit">
+                        Edycja profilu
+                      </NavLink>
+                    </Button>
+                  </li>
+                ) : null}
               </ul>
             </div>
 
@@ -212,18 +222,7 @@ class App extends Component {
             />
             <Route path="/sign-up" component={SignUpFormView} />
             <Route path="/sign-in" component={SignInFormView} />
-            {user ? (
-              <Route
-                path="/user-profile/UserProfileFormEdit"
-                component={() => (
-                  <UserProfileFormEdit
-                    dealers={this.state.dealers}
-                    user={this.state.user}
-                    badges={this.state.badges}
-                  />
-                )}
-              />
-            ) : null}
+
             {user ? (
               <Route
                 path="/user-profile"
@@ -237,8 +236,19 @@ class App extends Component {
               />
             ) : null}
 
-
-
+            {user ? (
+              <Route
+                path="/User-Profile-Edit"
+                component={() => (
+                  <UserProfileFormEdit
+                    dealers={this.state.dealers}
+                    user={this.state.user}
+                    badges={this.state.badges}
+                  />
+                  
+                )}
+              />
+            ) : null}
           </div>
         </header>
         <Modal

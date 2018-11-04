@@ -12,7 +12,7 @@ class BadgeMaker extends Component {
     // error: null,
     description: "",
     moreInfo: "",
-    logo: ""
+    logo: ''
   };
 
   makeHandleChange = fieldName => event => {
@@ -32,7 +32,7 @@ class BadgeMaker extends Component {
     const file = this.state.file;
     var storageRef = firebase.storage().ref("/images");
 
-    var thisRef = storageRef.child(file.name);
+    var thisRef = file.name !== '' ? storageRef.child(file.name) : '';
     thisRef.put(file).then(() => {
       thisRef.getDownloadURL().then(url => {
         const badgeData = {
