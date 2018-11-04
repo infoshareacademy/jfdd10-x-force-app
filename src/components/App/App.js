@@ -12,12 +12,14 @@ import UserProfileView from "../UserProfileView/UserProfileView";
 import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
+import {getUsers} from "../../services/users";
 import { getDealers } from "../../services/dealers";
 
 class App extends Component {
   state = {
     badges: null,
     dealers: null,
+    users: null,
     user: null,
     signInOpen: false,
     SignUpOpen: false
@@ -31,6 +33,7 @@ class App extends Component {
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
+    getUsers().then(users => this.setState({users}))
     getDealers().then(dealers => {
       this.setState({ dealers });
     });
@@ -80,7 +83,6 @@ class App extends Component {
     const { user } = this.state;
     const { signInOpen, signInDimmer } = this.state
     const { SignUpOpen, dimmer2 } = this.state
-
     return (
       <div className="App">
         <div className="nav">
@@ -196,7 +198,9 @@ class App extends Component {
             { user ?
             <Route
               path="/user-profile"
-              component={() => (<UserProfileView dealers={this.state.dealers} user={this.state.user} badges={this.state.badges}/>)}
+              component={() => (
+              <UserProfileView 
+              dealers={this.state.dealers} users={this.state.users} user={this.state.user} badges={this.state.badges}/>)}
             />
             : null
             }
