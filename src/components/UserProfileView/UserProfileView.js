@@ -1,25 +1,18 @@
-import React, { Component } from 'react'
-import BadgeMaker from '../BadgeMaker/BadgeMaker'
-import BadgeDealerMap from '../BadgeDealerMap/BadgeDealerMap'
-import BadgesOfDealerView from '../BadgesOfDealerView/BadgesOfDealerView'
-
-
-
+import React, { Component } from "react";
+import BadgeMaker from "../BadgeMaker/BadgeMaker";
+import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
+import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 
 class UserProfileView extends Component {
-  
-
   render() {
-    const user = this.props.user 
+    const user = this.props.user;
     if (!user) {
       return <p>Loading...</p>;
     }
-    console.log(this.props.badges)
-    return  (
+    console.log(this.props.badges);
+    return (
       <div className="UserProfileView">
-
-
-      <div>
+        <div>
           <div className="dealer_header">
             <p>
               {" "}
@@ -37,27 +30,25 @@ class UserProfileView extends Component {
           </div>
           <div className="dealer_header">Tu mnie znajdziesz</div>
           <div className="dealer_map">
-          {user.position &&
-            <BadgeDealerMap
-              center={user.position}
-              dealers={this.state.dealers}
-              trainerObject={user}
-              badges={this.props.badges}
-            />
-          }
-          </div>
-          <div className="dealer_header">Te odznaki posiadam</div>
-          <div className="dealer_badges">
-
-           
-            <BadgesOfDealerView dealer={user}  badges={this.props.badges} />
+            {user.position && (
+              <BadgeDealerMap
+                center={user.position}
+                dealers={this.state.dealers}
+                trainerObject={user}
+                badges={this.props.badges}
+              />
+            )}
           </div>
         </div>
-       
-       {user.isTrainer ? <BadgeMaker dealerId={user.uid}/> : null }
+        
+        {user.isTrainer ? <BadgeMaker dealerId={user.uid} /> : null}
+        <div className="dealer_header">Te odznaki posiadam</div>
+        <div className="dealer_badges">
+          <BadgesOfDealerView dealer={user} badges={this.props.badges} />
+        </div>
       </div>
-    )
+    );
   }
 }
 
-export default UserProfileView
+export default UserProfileView;
