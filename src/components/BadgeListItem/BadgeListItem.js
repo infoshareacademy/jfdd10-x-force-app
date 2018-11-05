@@ -27,7 +27,7 @@ class BadgeListItem extends Component {
           <Card.Content>
             <Card.Header>{this.props.title}</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              
             </Card.Meta>
             <Card.Description>{this.props.description}</Card.Description>
           </Card.Content>

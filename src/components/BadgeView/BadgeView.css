@@ -12,6 +12,7 @@
    
     width: 90%;
     margin: 0 auto;
+    color: white;
 
 }
 .badgeView img{
@@ -30,7 +31,7 @@
 
 .badgeView .linki{
     text-decoration: none;
-    color: aqua;
+    color: white;
     font-weight: bold;
 }
 .badgeView .linki:hover{
@@ -38,7 +39,7 @@
 }
 .moreInfo{
     text-align: left;
-    color:aqua 
+    color:white;
     
 }
 

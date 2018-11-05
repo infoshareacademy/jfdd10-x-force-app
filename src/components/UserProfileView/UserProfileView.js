@@ -4,7 +4,7 @@ import BadgeDealerMap from "../BadgeDealerMap/BadgeDealerMap";
 import BadgesOfDealerView from "../BadgesOfDealerView/BadgesOfDealerView";
 import { Button } from "semantic-ui-react";
 import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
-
+import './UserProfileView.css'
 import UserSearcher from "../UserSearcher/UserSearcher";
 class UserProfileView extends Component {
   state = {
