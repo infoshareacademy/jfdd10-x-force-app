@@ -1,5 +1,5 @@
 .dystrybution {
-    margin: auto;
+    margin: 0 auto;
     color: white;
     width: 500px;
     margin-top: 50px;
@@ -10,6 +10,9 @@
 @media (max-width: 500px) {
     .dystrybution h1 {
         font-size: 30px
+    }
+    .dystrybution{
+        width: 80%
     }
     .dystrybution h4 {
         font-size: 15px
