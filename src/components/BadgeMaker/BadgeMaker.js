@@ -56,7 +56,7 @@ class BadgeMaker extends Component {
       <div>
         {this.state.error && <p>{this.state.error.message}</p>}
         <div className="dealer_header">Tworzenie Badga</div>
-        <Card className="dealer_headerMaker">
+        <Card color="grey" className="dealer_headerMaker">
         <form  encType="multipart/form-data" onSubmit={this.handleSubmit}>
           <label for="title">Tytuł: </label>
           <input

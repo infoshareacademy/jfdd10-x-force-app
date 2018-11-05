@@ -1,16 +1,16 @@
 .dealer_header{
-    margin: 30px auto;
+    margin: 20px auto;
+  
 }
 
 
-.Card.dealer_headerMaker{
-    display: flex;
-    justify-content: center;
-   
+.card.dealer_headerMaker{
+    margin: 0 auto;
+
     border-radius: 10px;
     box-shadow: 0px 0px 22px #000;
-    font-size: 25px;
-    width: 80%;
+ 
+    width: 50%;
     
 
 
@@ -18,27 +18,23 @@
 
 
 .dealer_headerMaker label{
-    color: aqua
+    color: rgb(90, 112, 112)
 }
 
 
 
 
-@media (min-width: 100px) {
-    .dealer_headerMaker{
-        display: flex;
-        flex-direction: column;
-
+@media (max-width: 400px) {
+    .card.dealer_headerMaker{
         margin: 0 auto;
+
+       
        
         border-radius: 10px;
         box-shadow: 0px 0px 22px #000;
-        font-size: 20px;
+       
         width: 80%;
     }
 
-    .pryy{
-        margin: 0 auto
-    }
-
+   
 }
