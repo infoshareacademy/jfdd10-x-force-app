@@ -8,6 +8,7 @@
 .dealer{
     width: 90%;
     margin: 0 auto;
+    color: white;
 }
 
 .dealer_badges{
@@ -37,7 +38,7 @@ h1{
 }
 .dealer_description{
     text-align: left;
-    color: gold;
+    color: white;
     margin: 10px;
 }
 .dealer_map{
