@@ -21,7 +21,7 @@ class BadgeDealersView extends Component {
       <div className="BadgeDealersView">
         <h1>Trenerzy</h1>
 
-        <BadgeDealerList
+        <BadgeDealerList 
           badges={this.props.badges}
           badgeDealers={this.state.dealers}
         />
