@@ -21,20 +21,18 @@ class BadgeSearcherResults extends Component {
       <div className="badgeSearcherResults">
         <div>{this.badgesFound()}</div>
 
-        <ul>
+        <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'space-around' }}>
           {this.props.badges.slice(0, 5).map(badge => (
-            <li>
-              <BadgeListItem
-                key={badge.id}
-                id={badge.id}
-                logo={badge.logo}
-                title={badge.title}
-                description={badge.description}
-                moreInfo={badge.moreInfo}
-              />
-            </li>
+            <BadgeListItem
+              key={badge.id}
+              id={badge.id}
+              logo={badge.logo}
+              title={badge.title}
+              description={badge.description}
+              moreInfo={badge.moreInfo}
+            />
           ))}
-        </ul>
+        </div>
       </div>
     );
   }
