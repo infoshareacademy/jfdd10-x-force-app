@@ -28,9 +28,9 @@ class BadgeDealerListItem extends Component {
               )}
           </div>
           <p className="link_contener">
-          <Button inverted color='blue'><Link className="link" to={`/badge-dealers/${dealer.id}`}>Więcej
+          <Link className="link" to={`/badge-dealers/${dealer.id}`}><Button inverted color='blue'>Więcej
               
-            </Link></Button>
+              </Button></Link>
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@ import firebase from "firebase";
 import "./BadgeMaker.css";
 import { addBadge, getBadges } from "../../services/badges";
 import { getDealers } from "../../services/dealers";
+import { Button,Card, Icon, Imag } from 'semantic-ui-react'
 
 class BadgeMaker extends Component {
   state = {
@@ -51,10 +52,12 @@ class BadgeMaker extends Component {
 
   render() {
     return (
+
       <div>
         {this.state.error && <p>{this.state.error.message}</p>}
         <div className="dealer_header">Tworzenie Badga</div>
-        <form encType="multipart/form-data" onSubmit={this.handleSubmit}>
+        <Card color="grey" className="dealer_headerMaker">
+        <form  encType="multipart/form-data" onSubmit={this.handleSubmit}>
           <label for="title">Tytuł: </label>
           <input
             className="make badge"
@@ -92,9 +95,11 @@ class BadgeMaker extends Component {
           <br />
           <br />
 
-          <button type="submit">Dodaj Badga</button>
+           <Button  className="BageMarkerButton"  inverted color='blue' type="submit">Dodaj Badga</Button>
         </form>
+        </Card>
       </div>
+     
     );
   }
 }

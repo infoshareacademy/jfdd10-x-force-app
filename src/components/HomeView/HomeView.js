@@ -5,10 +5,10 @@ import AppIntro from "../AppIntro/Appintro";
 class HomeView extends Component {
   render() {
     return (
-      <div>
+      <>
         <AppIntro />
         <BadgeSearcher badges={this.props.badges} />
-      </div>
+      </>
     );
   }
 }

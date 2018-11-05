@@ -34,12 +34,12 @@
     align-items: center;
    
     
-    box-shadow: 0px 0px 22px #000;
+    
     margin: 10px;
     
     background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
 
-    transition: 1s ease-out;
+    transition: 2s ease-out;
     /* animacja pudełek */
     animation-duration: 3s ;
     animation-name: slidein;
@@ -51,14 +51,14 @@
 @keyframes slidein {
     0%{
         margin-left: 100%;
-        width: 100px;
+        width: 100%;
     }
 
   
 
     100% {
-        margin-left: 0 auto;
-        width: 255px;
+        margin-left: 0;
+        width: 100%;
     }
 }
 
@@ -121,7 +121,7 @@
 
 
 /* -------------------------------------------------------- */
-@media (max-width: 300px) {
+@media (max-width: 400px) {
     .AppIntro {
         position: fixed;
         display: flex;
@@ -153,7 +153,7 @@
         display: none
     }
     .Ficzerbox {
-        width: 90%;
+        width: 80%;
         height: 50%;
         display: flex;
         flex-direction: column;
@@ -167,26 +167,7 @@
     
         transition: 1s ease-out;
         /* animacja pudełek */
-        animation-duration: 3s ;
-        animation-name: slidein;
-        animation-iteration-count: 1;
-        border-radius: 10px
-      
-    }
-    
-    @keyframes slidein {
-        0%{
-            margin-left: 100%;
-            width: 100px;
-        }
-    
-      
-    
-        100% {
-            margin-left: 0 auto;
-            width: 255px;
-        }
-    }
+    }   
 
 
     
@@ -259,25 +240,7 @@
     
         transition: 1s ease-out;
         /* animacja pudełek */
-        animation-duration: 3s ;
-        animation-name: slidein;
-        animation-iteration-count: 1;
-        border-radius: 10px
-      
-    }
-    
-    @keyframes slidein {
-        0%{
-            margin-left: 100%;
-            width: 100px;
-        }
-    
-      
-    
-        100% {
-            margin-left: 0 auto;
-            width: 255px;
-        }
+       
     }
 
 

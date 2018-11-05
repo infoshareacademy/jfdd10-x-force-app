@@ -1,161 +1,115 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
+.li_badgeListItem {
+    border-radius: 10px;
+    background: rgb(220, 213, 255);
+    /* box-shadow: 0px 0px 50px #0adf63; */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 10px auto;
+}
 
-@media (min-width: 100px) {
+.badgeListItem {
+    display: flex;
+    flex-direction: column
+}
 
+.badgeListItem img {
+    width: 15vw;
+    height: auto;
+}
 
-    .li_badgeListItem{
-       
-        border-radius: 10px;
-        box-shadow: 0px 0px 150px #0adf63;
-        /* background-color: #8a8a8a; */
-        background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
-        display: flex;
-        justify-content: space-around;
-        width: 90%;
-        margin: 10px auto;
-       
-    }
-
-    .badgeListItem{
-        display: flex;
-        flex-direction: column
-        
-
-    }
-    .badgeListItem img{
-        width: 15vw;
-        height: auto;
-        
-        
-    }
-    .badgeListItem .logo{
-        /* display: flex;
+.badgeListItem .logo {
+    /* display: flex;
         align-items: center; */
-        padding: 5px;
-        
-    }
+    padding: 5px;
+}
 
-    .badgeListItem .description{
-        /* display: flex;
+.badgeListItem .description {
+    /* display: flex;
         align-items: center; */
-        font-size: 15px;
-        padding: 5px;
-        text-align: left
-    }
-    
+    font-size: 15px;
+    padding: 5px;
+    text-align: left
+}
 
-    .link_holder{
-        /* display: flex;
+.link_holder {
+    /* display: flex;
         align-items: center;
         justify-content: flex-end; */
-        padding: 5px;
-        padding-top: 13px;
-        
-    }
-    .badgeListItem .link{
-        font-size: 25px;
-        
-    }
+    padding: 5px;
+    padding-top: 13px;
+}
 
-    .badgeListItem .description{
+.badgeListItem .link {
+    font-size: 25px;
+}
 
-        font-size: 20px;
- 
-    }
-    .badgeListItem .link{
-        font-size: 20px;}
+.badgeListItem .description {
+    font-size: 20px;
+}
+
+.badgeListItem .link {
+    font-size: 20px;
 }
 
 @media (min-width: 415px) {
-
-    .li_badgeListItem{
-       
+    .li_badgeListItem {
         border-radius: 10px;
-        box-shadow: 0px 0px 150px #0adf63;
-        /* background-color: #8a8a8a; */
-        background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
+        
         display: flex;
         justify-content: center;
         justify-content: space-around;
         width: 90%;
         margin: 10px auto;
-       
     }
-
-    
-    .badgeListItem{
+    .badgeListItem {
         display: flex;
         flex-direction: row
-       
-        
-
     }
-    .badgeListItem img{
+    .badgeListItem img {
         width: 15vw;
         height: auto;
-        
-        
     }
-    .badgeListItem .logo{
+    .badgeListItem .logo {
         display: flex;
         align-items: center;
         padding: 5px;
-        
     }
-
-    .badgeListItem .description{
+    .badgeListItem .description {
         display: flex;
         align-items: center;
         font-size: 15px;
         padding: 5px;
     }
-
-    .link_holder{
+    .link_holder {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         padding: 5px;
         padding-top: 13px;
-    
-        
     }
-    .badgeListItem .link{
+    .badgeListItem .link {
         font-size: 25px;
-        
     }
-    .badgeListItem .description{
-
+    .badgeListItem .description {
         font-size: 25px;
- 
     }
-    .badgeListItem .link{
+    .badgeListItem .link {
         font-size: 20px;
- 
     }
 }
-
-
-
-
 
 .IntroButton {
     transition: all .1s ease-in-out;
-   
- 
-
-    
 }
 
-.IntroButton:hover{
-   
+.IntroButton:hover {
     transition: all 200ms ease-in;
     transform: scale(0.9);
-    
-  
-
-    
 }

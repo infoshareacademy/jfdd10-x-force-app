@@ -1,3 +1,40 @@
-.BadgeMaker {
+.dealer_header{
+    margin: 20px auto;
   
+}
+
+
+.card.dealer_headerMaker{
+    margin: 0 auto;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 22px #000;
+ 
+    width: 60%;
+    
+
+
+}
+
+
+.dealer_headerMaker label{
+    color: rgb(90, 112, 112)
+}
+
+
+
+
+@media (max-width: 400px) {
+    .card.dealer_headerMaker{
+        margin: 0 auto;
+
+       
+       
+        border-radius: 10px;
+        box-shadow: 0px 0px 22px #000;
+       
+        width: 80%;
+    }
+
+   
 }

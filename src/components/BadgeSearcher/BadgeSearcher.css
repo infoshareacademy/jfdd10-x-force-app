@@ -1,25 +1,20 @@
-.dystrybution{
-   margin:  auto;
-    width: 350px;
-    background: url(https://images.unsplash.com/photo-1524821787474-b8a136630c6d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d45e7c20c23d8269b311ea676093718a&auto=format&fit=crop&w=1950&q=80) no-repeat center;
-   margin-top: 50px;
-   margin-bottom: 50px;
-   border-radius: 10px;
-   box-shadow: 0px 0px 22px #000;
-   
-
+.dystrybution {
+    margin: 0 auto;
+    color: white;
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
 }
 
-
 @media (max-width: 500px) {
-    .dystrybution h1{
+    .dystrybution h1 {
         font-size: 30px
     }
-    .dystrybution h4{
+    .dystrybution{
+        width: 80%
+    }
+    .dystrybution h4 {
         font-size: 15px
     }
-    
-    }
-    
-
-    
+}
