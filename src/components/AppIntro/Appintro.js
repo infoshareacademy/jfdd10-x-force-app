@@ -56,8 +56,7 @@ class Appintro extends Component {
                 ćwiczeń siłowych. Jest to ćwiczenie wielostawowe, angażujące
                 wiele grup mięśniowych, ale głównie prostowniki grzbietowe,
                 mięsień najszerszy grzbiet, dwugłowy oraz mięśnie
-                pośladkowe.Jego technika jest dość trudno, ale ziemia jest dla
-                tego produktu
+                pośladkowe.
               </h3>
             </div>
           </div>
