@@ -12,7 +12,7 @@ import UserProfileView from "../UserProfileView/UserProfileView";
 import firebase from "firebase";
 import "./App.css";
 import { getBadges } from "../../services/badges";
-import {getUsers} from "../../services/users";
+import { getUsers } from "../../services/users";
 import { getDealers } from "../../services/dealers";
 import UserProfileFormEdit from "../UserProfileFormEdit/UserProfileFormEdit";
 
@@ -36,7 +36,7 @@ class App extends Component {
 
   componentDidMount() {
     getBadges().then(badges => this.setState({ badges }));
-    getUsers().then(users => this.setState({users}))
+    getUsers().then(users => this.setState({ users }));
     getDealers().then(dealers => {
       this.setState({ dealers });
     });
@@ -86,68 +86,59 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
-    const { signInOpen, signInDimmer } = this.state
-    const { SignUpOpen, dimmer2 } = this.state
+    const { signInOpen, signInDimmer } = this.state;
+    const { SignUpOpen, dimmer2 } = this.state;
     return (
       <div className="App">
-        <div className="nav">
-          <div className={user ? "loggedIn signIp" : "signIn"}>
-            <Button
-              onClick={this.signInShow("blurring")}
-              inverted
-              color="blue"
-              className="linksButton"
-            >
-              Rejestracja
-            </Button>
-          </div>
-          <div className={user ? "loggedIn signUp" : "signUp"}>
-            <Button
-              onClick={this.SignUpShow("blurring")}
-              inverted
-              color="blue"
-              className="linksButton"
-            >
-              Logowanie
-            </Button>
-          </div>
-          <div className="log">
-            {user ? (
-              <div>
-                <Button
-                  inverted
-                  color="blue"
-                  className="linksButton"
-                  onClick={() => this.logOut()}
-                >
-                  Log out
-                </Button>
-              </div>
-            ) : null}
-          </div>
-        </div>
-
         <header className="App-header">
           <div className="App">
             <div className="navigation">
               <ul>
+                {user ? (
+                  <li>
+                    <Button inverted color="blue" onClick={() => this.logOut()}>
+                      Wylogowanie
+                    </Button>
+                  </li>
+                ) : (
+                  <>
+                    <li>
+                      <Button
+                        onClick={this.signInShow("blurring")}
+                        inverted
+                        color="blue"
+                      >
+                        Rejestracja
+                      </Button>
+                    </li>
+                    <li>
+                      <Button
+                        onClick={this.SignUpShow("blurring")}
+                        inverted
+                        color="blue"
+                      >
+                        Logowanie
+                      </Button>
+                    </li>
+                  </>
+                )}
+
                 <li>
-                  <Button inverted color="blue" className="linksButton">
+                  <Button inverted color="blue">
                     <NavLink className="links" exact to="/">
-                      {" "}
                       Główna
                     </NavLink>
                   </Button>
                 </li>
                 <li>
-                  <Button inverted color="blue" className="linksButton">
+                  <Button inverted color="blue">
                     <NavLink className="links" to="/badges">
                       Odznaki
                     </NavLink>
                   </Button>
                 </li>
                 <li>
-                  <Button inverted color="blue" className="linksButton">
+                  <Button inverted color="blue">
                     <NavLink className="links" to="/badge-dealers">
                       Trenerzy
                     </NavLink>
@@ -155,14 +146,13 @@ class App extends Component {
                 </li>
                 {user ? (
                   <li>
-                    <Button inverted color="blue" className="linksButton">
+                    <Button inverted color="blue">
                       <NavLink className="links" to="/user-profile">
                         Mój profil
                       </NavLink>
                     </Button>
                   </li>
                 ) : null}
-                
               </ul>
             </div>
 
@@ -228,8 +218,6 @@ class App extends Component {
                 )}
               />
             ) : null}
-
-            
           </div>
         </header>
         <Modal

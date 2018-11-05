@@ -8,7 +8,7 @@ class BadgeList extends Component {
   };
   render() {
     return (
-      <div style={{ display: 'flex'}}>
+      <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'space-around'}}>
         {this.props.badges.map(badge => (
           <BadgeListItem
             onlyLogo={this.props.onlyLogo}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BadgeList from "../BadgeList/BadgeList";
 import "./BadgesView.css";
-import { Transition, Icon } from "semantic-ui-react";
+import { Transition, Icon, Pagination } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import snapshotToArray from "../../snapshotToArray";
 
@@ -72,47 +72,25 @@ class BadgesView extends Component {
 
     return (
       <div>
-        <ul key={badges.id}>
-          <BadgeList badges={currentBadges} />
-        </ul>
-        <div className="container_page_numbers">
-          <span>
-            <Transition
-              animation={"pulse"}
-              duration={1000}
-              visible={this.state.isVisibleLeft}
-            >
-              <Icon
-                size="huge"
-                inverted
-                color="blue"
-                name="caret left"
-                onClick={() =>
-                  this.handlePageChangeOnArrowLeft(currentPage, pageNumbers)
-                }
-              />
-            </Transition>
-          </span>
-          <span id="page-numbers">{renderPageNumbers}</span>
+        <BadgeList badges={currentBadges} />
 
-          <span>
-            <Transition
-              animation={"pulse"}
-              duration={1000}
-              visible={this.state.isVisableRight}
-            >
-              <Icon
-                size="huge"
-                inverted
-                color="blue"
-                name="caret right"
-                onClick={() =>
-                  this.handlePageChangeOnArrowRight(currentPage, pageNumbers)
-                }
-              />
-            </Transition>
-          </span>
-        </div>
+        <Pagination
+          activePage={this.state.currentPage}
+          ellipsisItem={{
+            content: <Icon name="ellipsis horizontal" />,
+            icon: true
+          }}
+          onPageChange={(e, { activePage }) => this.setState({ currentPage: activePage })}
+          firstItem={{ content: <Icon name="angle double left" />, icon: true }}
+          lastItem={{ content: <Icon name="angle double right" />, icon: true }}
+          prevItem={{ content: <Icon name="angle left" />, icon: true }}
+          nextItem={{ content: <Icon name="angle right" />, icon: true }}
+          totalPages={pageNumbers.length}
+        />
+
+       
+        
+      
       </div>
     );
   }
